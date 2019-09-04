@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+2019-09-01 18:04:20,272 INFO  log4net 创建推广记录SpreadBLL-CreateSpread：非会员，不会升级，也无推广费用.2
+2019-09-01 18:10:35,261 INFO  log4net 创建推广记录SpreadBLL-CreateSpread：根据用户No查询不到所属组。2
+2019-09-01 18:10:35,513 INFO  log4net 创建推广记录SpreadBLL-CreateSpread异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。.用户：2
+2019-09-01 18:12:14,026 INFO  log4net 不满足升级条件。2
+2019-09-01 18:24:20,087 INFO  log4net 不满足升级条件。2
+2019-09-01 18:24:50,208 INFO  log4net 创建推广记录SpreadBLL-CreateSpread异常，异常信息为：对一个或多个实体的验证失败。有关详细信息，请参阅“EntityValidationErrors”属性。.用户：2
+2019-09-01 18:24:54,460 INFO  log4net 不满足升级条件。2
+2019-09-01 18:30:35,387 INFO  log4net 不满足升级条件。2
+2019-09-01 18:30:52,377 INFO  log4net 推广返佣单，直推人返佣单创建成功。2
+2019-09-01 18:31:01,880 INFO  log4net 推广返佣金，推广人无上级代理.2
+2019-09-01 18:35:42,980 INFO  log4net 不满足升级条件。2
+2019-09-01 18:35:48,034 INFO  log4net 推广返佣单，直推人返佣单创建成功。2
+2019-09-01 18:36:28,756 INFO  log4net 推广返佣单，上级代理返佣单创建成功。{"Id":null,"FromUserNo":"3","ToUserNo":"1","Amount":10.0,"BillType":1}

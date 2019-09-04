@@ -1,0 +1,140 @@
+﻿html {
+    font-size: calc(100vw / 7.5)
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.grade_nav p {
+    color: #333;
+    font-weight: bold;
+}
+
+.timecountdown {
+    float: right;
+    margin-right: 10px;
+    color: #FE4158;
+}
+
+    .timecountdown span {
+        background: #FE4158;
+        color: #fff;
+        width: 28px;
+        text-align: center;
+        display: inline-block;
+        padding: 0px 6px -1px 3px;
+        border-radius: 3px;
+    }
+
+.back img {
+    vertical-align: middle;
+}
+
+.pub-tit:before {
+    top: 15px;
+}
+
+p {
+    margin: 0px;
+}
+
+.arrow {
+    display: block;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    margin-right: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    z-index: 99;
+    opacity: .8;
+    -webkit-transform: rotate(135deg);
+    -webkit-animation: arrow 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes arrow {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(0px, 0px) rotate(135deg)
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(10px, 0px) rotate(135deg)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(20px, 0px) rotate(135deg)
+    }
+}
+
+.arrow1 {
+    display: block;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    margin-right: 0px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    z-index: 99;
+    opacity: .8;
+    -webkit-transform: rotate(135deg);
+    -webkit-animation: arrow1 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes arrow1 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(0px, 0px) rotate(135deg)
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(10px, 0px) rotate(135deg)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(20px, 0px) rotate(135deg)
+    }
+}
+
+.arrow2 {
+    display: block;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    margin-right: 0px;
+    border: 2px solid transparent;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    z-index: 99;
+    opacity: .8;
+    -webkit-transform: rotate(135deg);
+    -webkit-animation: arrow2 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes arrow2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(0px, 0px) rotate(135deg)
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: translate(10px, 0px) rotate(135deg)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(20px, 0px) rotate(135deg)
+    }
+}

@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90F3E3E1-FDAE-4BE4-B39B-3742465ABD46}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LoanMarket</RootNamespace>
+    <AssemblyName>LoanMarket</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Barcode, Version=2.10.0.11040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Barcode.2.10.0\lib\net40\Spire.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.7.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Barcode.2.10.0\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.608.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\BaseApiController.cs" />
+    <Compile Include="Api\BindLeaderController.cs" />
+    <Compile Include="Api\CommentController.cs" />
+    <Compile Include="Api\ForumController.cs" />
+    <Compile Include="Api\ForumViewController.cs" />
+    <Compile Include="Api\LoanController.cs" />
+    <Compile Include="Api\LoginController.cs" />
+    <Compile Include="Api\LoginoutController.cs" />
+    <Compile Include="Api\MeController.cs" />
+    <Compile Include="Api\ParamModel\BindLeaderParamModel.cs" />
+    <Compile Include="Api\ParamModel\CommentParamModel.cs" />
+    <Compile Include="Api\ParamModel\UserParamModel.cs" />
+    <Compile Include="Api\ProductController.cs" />
+    <Compile Include="Api\ProductDetailController.cs" />
+    <Compile Include="Api\ProductTypeController.cs" />
+    <Compile Include="Api\TypeViewGradeController.cs" />
+    <Compile Include="Api\RegisterController.cs" />
+    <Compile Include="Api\Test.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLL\ApiModel\BillApiModel.cs" />
+    <Compile Include="BLL\ApiModel\CommentListApiModel.cs" />
+    <Compile Include="BLL\ApiModel\ForumDetailApiModel.cs" />
+    <Compile Include="BLL\ApiModel\ForumListApiModel.cs" />
+    <Compile Include="BLL\ApiModel\ProductApiModel.cs" />
+    <Compile Include="BLL\ApiModel\ProductTypeApiModel.cs" />
+    <Compile Include="BLL\ApiModel\UserApiModel.cs" />
+    <Compile Include="BLL\BaseBLL.cs" />
+    <Compile Include="BLL\BillBLL.cs" />
+    <Compile Include="BLL\BillTypeEnum.cs" />
+    <Compile Include="BLL\CommentBLL.cs" />
+    <Compile Include="BLL\ForumBLL.cs" />
+    <Compile Include="BLL\GroupBLL.cs" />
+    <Compile Include="BLL\ProductTypeBLL.cs" />
+    <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\SpreadBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="BLL\UserGroupBLL.cs" />
+    <Compile Include="BLL\UserInfoBLL.cs" />
+    <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanController.cs" />
+    <Compile Include="Controllers\MeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DLL\BaseDLL.cs" />
+    <Compile Include="DLL\BillDLL.cs" />
+    <Compile Include="DLL\CommentDLL.cs" />
+    <Compile Include="DLL\ForumDLL.cs" />
+    <Compile Include="DLL\GroupDLL.cs" />
+    <Compile Include="DLL\ProductTypeDLL.cs" />
+    <Compile Include="DLL\ProductDLL.cs" />
+    <Compile Include="DLL\SpreadDLL.cs" />
+    <Compile Include="DLL\UserDLL.cs" />
+    <Compile Include="DLL\UserGroupDLL.cs" />
+    <Compile Include="DLL\UserInfoDLL.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Db.cs" />
+    <Compile Include="Models\LoanMarketComment.cs" />
+    <Compile Include="Models\LoanMarketForum.cs" />
+    <Compile Include="Models\LoanMarketGroup.cs" />
+    <Compile Include="Models\LoanMarketProduct.cs" />
+    <Compile Include="Models\LoanMarketProductType.cs" />
+    <Compile Include="Models\LoanMarketSpread.cs" />
+    <Compile Include="Models\LoanMarketSpreadBill.cs" />
+    <Compile Include="Models\LoanMarketUser.cs" />
+    <Compile Include="Models\LoanMarketUserGroup.cs" />
+    <Compile Include="Models\LoanMarketUserInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicClass\Extention.cs" />
+    <Compile Include="PublicClass\Extention.Object.cs" />
+    <Compile Include="PublicClass\Extention.String.cs" />
+    <Compile Include="PublicClass\GuidTool.cs" />
+    <Compile Include="PublicClass\ICache.cs" />
+    <Compile Include="PublicClass\QrCode.cs" />
+    <Compile Include="PublicClass\RedisCache.cs" />
+    <Compile Include="PublicClass\SessionTool.cs" />
+    <Compile Include="PublicModels\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\loan-index.css" />
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Files\U享圈_files\442efa002f60bdf3581128ecf5e621fa_300x300.png" />
+    <Content Include="Content\Files\U享圈_files\5ce1701d8101e.jpg" />
+    <Content Include="Content\Files\U享圈_files\5ce17039b1a08.jpg" />
+    <Content Include="Content\Files\U享圈_files\5ce1705ac9268.jpg" />
+    <Content Include="Content\Files\U享圈_files\5ce1707a1ec37.jpg" />
+    <Content Include="Content\Files\U享圈_files\5ce1709266442.jpg" />
+    <Content Include="Content\Files\U享圈_files\5cf8ef9e0ac68.png" />
+    <Content Include="Content\Files\U享圈_files\5cf9034d01bbd.png" />
+    <Content Include="Content\Files\U享圈_files\5cf90c52159ae.png" />
+    <Content Include="Content\Files\U享圈_files\5cf910d82c9da.png" />
+    <Content Include="Content\Files\U享圈_files\5d07017794c8a.png" />
+    <Content Include="Content\Files\U享圈_files\5d0992cbcd0c2.png" />
+    <Content Include="Content\Files\U享圈_files\5d141ea5206c9.png" />
+    <Content Include="Content\Files\U享圈_files\5d16ba71660b4.png" />
+    <Content Include="Content\Files\U享圈_files\5d1b18b9aa43f.png" />
+    <Content Include="Content\Files\U享圈_files\5d240747868e2.png" />
+    <Content Include="Content\Files\U享圈_files\5d255c2c8b621.png" />
+    <Content Include="Content\Files\U享圈_files\5d26f7eda8d38.png" />
+    <Content Include="Content\Files\U享圈_files\5d2abb4513eae.png" />
+    <Content Include="Content\Files\U享圈_files\5d2d32d6f1502.png" />
+    <Content Include="Content\Files\U享圈_files\5d2ee0ad3733c.png" />
+    <Content Include="Content\Files\U享圈_files\back.png" />
+    <Content Include="Content\Files\U享圈_files\iconfont.css" />
+    <Content Include="Content\Files\U享圈_files\iconl.png" />
+    <Content Include="Content\Files\U享圈_files\iconr.png" />
+    <Content Include="Content\Files\U享圈_files\index_icon1.png" />
+    <Content Include="Content\Files\U享圈_files\index_icon6.png" />
+    <Content Include="Content\Files\U享圈_files\index_icon7.png" />
+    <Content Include="Content\Files\U享圈_files\mui.min.css" />
+    <Content Include="Content\Files\U享圈_files\qkda.jpg" />
+    <Content Include="Content\Files\U享圈_files\style.css" />
+    <Content Include="Content\Files\U享圈_files\swiper.3.1.2.min.css" />
+    <Content Include="Content\Files\个人中心_files\1.png" />
+    <Content Include="Content\Files\个人中心_files\2.png" />
+    <Content Include="Content\Files\个人中心_files\3.png" />
+    <Content Include="Content\Files\个人中心_files\agent.png" />
+    <Content Include="Content\Files\个人中心_files\bk.png" />
+    <Content Include="Content\Files\个人中心_files\gz.png" />
+    <Content Include="Content\Files\个人中心_files\gz1.png" />
+    <Content Include="Content\Files\个人中心_files\gz5.png" />
+    <Content Include="Content\Files\个人中心_files\iconfont.css" />
+    <Content Include="Content\Files\个人中心_files\mui.min.css" />
+    <Content Include="Content\Files\个人中心_files\share.png" />
+    <Content Include="Content\Files\个人中心_files\style.css" />
+    <Content Include="Content\Files\个人中心_files\tc.png" />
+    <Content Include="Content\Files\个人中心_files\td.png" />
+    <Content Include="Content\Files\交流专区_files\4.png" />
+    <Content Include="Content\Files\交流专区_files\5cfa33ded8789.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d302b7ec1fb7.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d302b8596d98.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d302b8c69684.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3034d44d1b5.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3034dc26182.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d303973e2225.jpeg" />
+    <Content Include="Content\Files\交流专区_files\5d30397415545.jpeg" />
+    <Content Include="Content\Files\交流专区_files\5d30397416255.jpeg" />
+    <Content Include="Content\Files\交流专区_files\5d3128fa5ff1e.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3128ffdd80e.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3129070eb78.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d312cdc32184.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d312ce0c46dd.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d315ee33ca7c.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d315ee79a405.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d31679fb6bd4.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3167a5849d9.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d3167afde94b.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d31812970b46.jpg" />
+    <Content Include="Content\Files\交流专区_files\5d31812ced0b5.jpg" />
+    <Content Include="Content\Files\交流专区_files\iconfont.css" />
+    <Content Include="Content\Files\交流专区_files\logo.png" />
+    <Content Include="Content\Files\交流专区_files\style.css" />
+    <Content Include="Content\Files\交流专区_files\swiper.min.css" />
+    <Content Include="Content\Files\交流专区_files\weui.min.css" />
+    <Content Include="Content\Files\产品超市_files\5ce10c537e5ed.jpg" />
+    <Content Include="Content\Files\产品超市_files\5ce10cb0199cd.jpg" />
+    <Content Include="Content\Files\产品超市_files\5ce10cc5db46b.jpg" />
+    <Content Include="Content\Files\产品超市_files\5ce172e8254e1.jpg" />
+    <Content Include="Content\Files\产品超市_files\5ceead556a2d4.png" />
+    <Content Include="Content\Files\产品超市_files\5ceead65c58e9.png" />
+    <Content Include="Content\Files\产品超市_files\5ceead732a595.png" />
+    <Content Include="Content\Files\产品超市_files\5cf9034d01bbd.png" />
+    <Content Include="Content\Files\产品超市_files\5cf90c52159ae.png" />
+    <Content Include="Content\Files\产品超市_files\5cf910d82c9da.png" />
+    <Content Include="Content\Files\产品超市_files\5d0992cbcd0c2.png" />
+    <Content Include="Content\Files\产品超市_files\5d141ea5206c9.png" />
+    <Content Include="Content\Files\产品超市_files\5d1b18b9aa43f.png" />
+    <Content Include="Content\Files\产品超市_files\5d240747868e2.png" />
+    <Content Include="Content\Files\产品超市_files\5d255c2c8b621.png" />
+    <Content Include="Content\Files\产品超市_files\5d26f7eda8d38.png" />
+    <Content Include="Content\Files\产品超市_files\5d2abb4513eae.png" />
+    <Content Include="Content\Files\产品超市_files\5d2d32d6f1502.png" />
+    <Content Include="Content\Files\产品超市_files\5d2ee0ad3733c.png" />
+    <Content Include="Content\Files\产品超市_files\bg3.jpg" />
+    <Content Include="Content\Files\产品超市_files\hotproduct.png" />
+    <Content Include="Content\Files\产品超市_files\iconfont.css" />
+    <Content Include="Content\Files\产品超市_files\mui.min.css" />
+    <Content Include="Content\Files\产品超市_files\style.css" />
+    <Content Include="Content\Files\产品超市_files\swiper.3.1.2.min.css" />
+    <Content Include="Content\Files\修改资料_files\iconfont.css" />
+    <Content Include="Content\Files\修改资料_files\mui.min.css" />
+    <Content Include="Content\Files\修改资料_files\style.css" />
+    <Content Include="Content\Files\发帖子_files\iconfont.css" />
+    <Content Include="Content\Files\发帖子_files\style.css" />
+    <Content Include="Content\Files\发帖子_files\swiper.min.css" />
+    <Content Include="Content\Files\发帖子_files\weui.min.css" />
+    <Content Include="Content\Files\最新口子_files\5cf8ef9e0ac68.png" />
+    <Content Include="Content\Files\最新口子_files\5cf9034d01bbd.png" />
+    <Content Include="Content\Files\最新口子_files\5cf90c52159ae.png" />
+    <Content Include="Content\Files\最新口子_files\5cf90dcc829f8.png" />
+    <Content Include="Content\Files\最新口子_files\5cf910d82c9da.png" />
+    <Content Include="Content\Files\最新口子_files\5cf91bcc50c04.png" />
+    <Content Include="Content\Files\最新口子_files\5cf926b365bb7.png" />
+    <Content Include="Content\Files\最新口子_files\5cf926dec3474.png" />
+    <Content Include="Content\Files\最新口子_files\5cf9303e5311f.png" />
+    <Content Include="Content\Files\最新口子_files\5cf935cbc39a8.png" />
+    <Content Include="Content\Files\最新口子_files\5cfa19db47ada.png" />
+    <Content Include="Content\Files\最新口子_files\5cfc75f7db9f0.png" />
+    <Content Include="Content\Files\最新口子_files\5d01ebe02f5c3.png" />
+    <Content Include="Content\Files\最新口子_files\5d020ac15345e.png" />
+    <Content Include="Content\Files\最新口子_files\5d03704295676.png" />
+    <Content Include="Content\Files\最新口子_files\5d044de247b73.png" />
+    <Content Include="Content\Files\最新口子_files\5d06ec079ae87.png" />
+    <Content Include="Content\Files\最新口子_files\5d07017794c8a.png" />
+    <Content Include="Content\Files\最新口子_files\5d073d249039d.png" />
+    <Content Include="Content\Files\最新口子_files\5d0992cbcd0c2.png" />
+    <Content Include="Content\Files\最新口子_files\5d09da1398967.png" />
+    <Content Include="Content\Files\最新口子_files\5d0ca4acb1acc.png" />
+    <Content Include="Content\Files\最新口子_files\5d1342f2ac7c7.png" />
+    <Content Include="Content\Files\最新口子_files\5d141a4d130f4.png" />
+    <Content Include="Content\Files\最新口子_files\5d141ea5206c9.png" />
+    <Content Include="Content\Files\最新口子_files\5d14691f7c41c.png" />
+    <Content Include="Content\Files\最新口子_files\5d1483ff3b6ed.png" />
+    <Content Include="Content\Files\最新口子_files\5d15740f3ba8a.png" />
+    <Content Include="Content\Files\最新口子_files\5d16ba71660b4.png" />
+    <Content Include="Content\Files\最新口子_files\5d19a8ad02a66.png" />
+    <Content Include="Content\Files\最新口子_files\5d1aaeb30c746.png" />
+    <Content Include="Content\Files\最新口子_files\5d1b18b9aa43f.png" />
+    <Content Include="Content\Files\最新口子_files\5d22ebb00cf75.png" />
+    <Content Include="Content\Files\最新口子_files\5d240747868e2.png" />
+    <Content Include="Content\Files\最新口子_files\5d255c2c8b621.png" />
+    <Content Include="Content\Files\最新口子_files\5d26f7eda8d38.png" />
+    <Content Include="Content\Files\最新口子_files\5d2828a14ccc0.png" />
+    <Content Include="Content\Files\最新口子_files\5d2abb4513eae.png" />
+    <Content Include="Content\Files\最新口子_files\5d2bff61b152a.png" />
+    <Content Include="Content\Files\最新口子_files\5d2d32d6f1502.png" />
+    <Content Include="Content\Files\最新口子_files\5d2d510d2f785.png" />
+    <Content Include="Content\Files\最新口子_files\5d2e86d8b3e8f.png" />
+    <Content Include="Content\Files\最新口子_files\5d2e96c4450c7.png" />
+    <Content Include="Content\Files\最新口子_files\5d2ee0ad3733c.png" />
+    <Content Include="Content\Files\最新口子_files\5d2fe63d26ad1.png" />
+    <Content Include="Content\Files\最新口子_files\5d311ae44b21e.png" />
+    <Content Include="Content\Files\最新口子_files\5d311d89a2f78.png" />
+    <Content Include="Content\Files\最新口子_files\5d3120e7c3a8e.png" />
+    <Content Include="Content\Files\最新口子_files\5d3122aa2cb75.png" />
+    <Content Include="Content\Files\最新口子_files\5d312b16a7b60.png" />
+    <Content Include="Content\Files\最新口子_files\5d312f4867b6b.png" />
+    <Content Include="Content\Files\最新口子_files\5d3134dbb8c44.png" />
+    <Content Include="Content\Files\最新口子_files\5d3136b602fdf.png" />
+    <Content Include="Content\Files\最新口子_files\5d313742686bc.png" />
+    <Content Include="Content\Files\最新口子_files\5d313a2fdae75.png" />
+    <Content Include="Content\Files\最新口子_files\5d313b3ac7b59.png" />
+    <Content Include="Content\Files\最新口子_files\5d313c4f17b48.png" />
+    <Content Include="Content\Files\最新口子_files\5d313fb5e9738.png" />
+    <Content Include="Content\Files\最新口子_files\5d31426d74328.png" />
+    <Content Include="Content\Files\最新口子_files\5d31447a361a2.png" />
+    <Content Include="Content\Files\最新口子_files\5d31477de8bcc.png" />
+    <Content Include="Content\Files\最新口子_files\5d315da50e53d.png" />
+    <Content Include="Content\Files\最新口子_files\5d316234e5956.png" />
+    <Content Include="Content\Files\最新口子_files\5d31666ba9ec8.png" />
+    <Content Include="Content\Files\最新口子_files\5d31680cb0af3.png" />
+    <Content Include="Content\Files\最新口子_files\5d3168884c74d.png" />
+    <Content Include="Content\Files\最新口子_files\5d3168e351136.png" />
+    <Content Include="Content\Files\最新口子_files\5d3169f2a1dae.png" />
+    <Content Include="Content\Files\最新口子_files\5d316cd95db60.png" />
+    <Content Include="Content\Files\最新口子_files\5d316ff0ddeca.png" />
+    <Content Include="Content\Files\最新口子_files\5d3175de21bc5.png" />
+    <Content Include="Content\Files\最新口子_files\5d317a25dbd2b.png" />
+    <Content Include="Content\Files\最新口子_files\5d317d6c65ada.png" />
+    <Content Include="Content\Files\最新口子_files\5d317f1e69035.png" />
+    <Content Include="Content\Files\最新口子_files\5d31831007410.png" />
+    <Content Include="Content\Files\最新口子_files\5d31839913d7e.png" />
+    <Content Include="Content\Files\最新口子_files\5d3188f744850.png" />
+    <Content Include="Content\Files\最新口子_files\iconfont.css" />
+    <Content Include="Content\Files\最新口子_files\mui.min.css" />
+    <Content Include="Content\Files\最新口子_files\style.css" />
+    <Content Include="Content\Files\注册_files\iconfont.css" />
+    <Content Include="Content\Files\注册_files\mui.min.css" />
+    <Content Include="Content\Files\注册_files\style.css" />
+    <Content Include="Content\Files\登录_files\iconfont.css" />
+    <Content Include="Content\Files\登录_files\logo.jpg" />
+    <Content Include="Content\Files\登录_files\mui.min.css" />
+    <Content Include="Content\Files\登录_files\style.css" />
+    <Content Include="Content\Files\详情_files\1563434267623522.jpg" />
+    <Content Include="Content\Files\详情_files\1563434349440247.jpg" />
+    <Content Include="Content\Files\详情_files\5d2e974c5a13d.jpg" />
+    <Content Include="Content\Files\详情_files\5d301e1602165.jpg" />
+    <Content Include="Content\Files\详情_files\iconfont.css" />
+    <Content Include="Content\Files\详情_files\logo.png" />
+    <Content Include="Content\Files\详情_files\style.css" />
+    <Content Include="Content\Files\详情_files\swiper.min.css" />
+    <Content Include="Content\Files\详情_files\weui.min.css" />
+    <Content Include="Content\Images\banner\1.jpg" />
+    <Content Include="Content\Images\banner\2.jpg" />
+    <Content Include="Content\Images\banner\3.jpg" />
+    <Content Include="Content\Images\banner\4.jpg" />
+    <Content Include="Content\Images\banner\5.jpg" />
+    <Content Include="Content\Images\Common\卡.png" />
+    <Content Include="Content\Images\Common\书-浏览器.png" />
+    <Content Include="Content\Images\Icon\1.png" />
+    <Content Include="Content\Images\Icon\10.png" />
+    <Content Include="Content\Images\Icon\11.jpg" />
+    <Content Include="Content\Images\Icon\11.png" />
+    <Content Include="Content\Images\Icon\12.png" />
+    <Content Include="Content\Images\Icon\2.png" />
+    <Content Include="Content\Images\Icon\22.jpg" />
+    <Content Include="Content\Images\Icon\3.png" />
+    <Content Include="Content\Images\Icon\33.jpg" />
+    <Content Include="Content\Images\Icon\4.png" />
+    <Content Include="Content\Images\Icon\44.jpg" />
+    <Content Include="Content\Images\Icon\5.png" />
+    <Content Include="Content\Images\Icon\6.png" />
+    <Content Include="Content\Images\Icon\7.png" />
+    <Content Include="Content\Images\Icon\8.png" />
+    <Content Include="Content\Images\Icon\9.png" />
+    <Content Include="Content\Images\Icon\a.png" />
+    <Content Include="Content\Images\Icon\b.png" />
+    <Content Include="Content\Images\Icon\c.png" />
+    <Content Include="Content\Images\Icon\d.png" />
+    <Content Include="Content\Images\Icon\下载app.png" />
+    <Content Include="Content\Images\Icon\修改资料.png" />
+    <Content Include="Content\Images\Icon\分享赚钱.png" />
+    <Content Include="Content\Images\Icon\我的分享.png" />
+    <Content Include="Content\Images\Icon\联系客服.png" />
+    <Content Include="Content\Images\Icon\退出登录.png" />
+    <Content Include="Content\Static\境外提额.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Files\U享圈_files\clipboard.min.js" />
+    <Content Include="Content\Files\U享圈_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\U享圈_files\jquery.func.js" />
+    <Content Include="Content\Files\U享圈_files\mui.min.js" />
+    <Content Include="Content\Files\U享圈_files\swiper.3.1.2.jquery.min.js" />
+    <Content Include="Content\Files\交流专区_files\dropload.js" />
+    <Content Include="Content\Files\交流专区_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\交流专区_files\jquery.func.js" />
+    <Content Include="Content\Files\交流专区_files\swiper.min.js" />
+    <Content Include="Content\Files\交流专区_files\weui.min.js" />
+    <Content Include="Content\Files\详情_files\dropload.js" />
+    <Content Include="Content\Files\详情_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\详情_files\jquery.func.js" />
+    <Content Include="Content\Files\详情_files\swiper.min.js" />
+    <Content Include="Content\Files\详情_files\weui.min.js" />
+    <Content Include="Content\Files\产品超市_files\clipboard.min.js" />
+    <Content Include="Content\Files\产品超市_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\产品超市_files\jquery.func.js" />
+    <Content Include="Content\Files\产品超市_files\mui.min.js" />
+    <Content Include="Content\Files\产品超市_files\swiper.3.1.2.jquery.min.js" />
+    <Content Include="Content\Files\最新口子_files\clipboard.min.js" />
+    <Content Include="Content\Files\最新口子_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\最新口子_files\jquery.func.js" />
+    <Content Include="Content\Files\最新口子_files\mui.min.js" />
+    <Content Include="Content\Files\个人中心_files\132.png" />
+    <Content Include="Content\Files\个人中心_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\个人中心_files\jquery.func.js" />
+    <Content Include="Content\Files\个人中心_files\mui.min.js" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Files\修改资料_files\132.png" />
+    <Content Include="Content\Files\修改资料_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\修改资料_files\jquery.fileupload.js" />
+    <Content Include="Content\Files\修改资料_files\jquery.form.js" />
+    <Content Include="Content\Files\修改资料_files\jquery.func.js" />
+    <Content Include="Content\Files\修改资料_files\mui.min.js" />
+    <Content Include="Content\Files\修改资料_files\mui.progressbar.js" />
+    <Content Include="Content\Files\发帖子_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\发帖子_files\jquery.fileupload.js" />
+    <Content Include="Content\Files\发帖子_files\jquery.form.js" />
+    <Content Include="Content\Files\发帖子_files\jquery.func.js" />
+    <Content Include="Content\Files\发帖子_files\swiper.min.js" />
+    <Content Include="Content\Files\发帖子_files\weui.min.js" />
+    <Content Include="Content\Files\登录_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\登录_files\jquery.form.js" />
+    <Content Include="Content\Files\登录_files\jquery.func.js" />
+    <Content Include="Content\Files\登录_files\mui.min.js" />
+    <Content Include="Content\Files\注册_files\captcha" />
+    <Content Include="Content\Files\注册_files\jquery-2.2.3.min.js" />
+    <Content Include="Content\Files\注册_files\jquery.form.js" />
+    <Content Include="Content\Files\注册_files\jquery.func.js" />
+    <Content Include="Content\Files\注册_files\mui.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Common\common.js" />
+    <Content Include="Scripts\Common\jquery.form.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Loan\Index.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
+    <Content Include="Views\Forum\Detail.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Me\Index.cshtml" />
+    <Content Include="Views\Me\Edit.cshtml" />
+    <Content Include="Views\Forum\Add.cshtml" />
+    <Content Include="Views\Me\Login.cshtml" />
+    <Content Include="Views\Me\Register.cshtml" />
+    <Content Include="Views\Card\Index.cshtml" />
+    <Content Include="Views\Product\DaePipei.cshtml" />
+    <Content Include="Views\Product\XiaoePipei.cshtml" />
+    <Content Include="Views\Product\Fanyong.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Product\XingyongKa.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Product\HotProduct.cshtml" />
+    <Content Include="Views\Me\BuyPeculiarUser.cshtml" />
+    <Content Include="Views\Me\BindLeader.cshtml" />
+    <Content Include="Views\News\JingwaiTie.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\QrCode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52829</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52829/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.uxiangquan.cn/index/login/index.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/登录_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/登录_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/登录_files/style.css">
+    <script>
+
+        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
+    </script>
+    <script type="text/javascript" src="~/Content/Files/登录_files/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/登录_files/mui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/登录_files/jquery.func.js"></script>
+    <script type="text/javascript" src="~/Content/Files/登录_files/jquery.form.js"></script>
+</head>
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content loginbg">
+        <div class="logo">
+            <img src="~/Content/Images/Icon/login.png" />           
+        </div>
+        <form action="/Api/Login" method="post" id="loginForm" class="loginbox ">
+            <input type="hidden" id="gourl" value="/index/member/index.html">
+            <div class="mui-input-group">
+                <div class="mui-input-row">
+                    <label>账号</label>
+                    <input type="tel" class="mui-input-clear Mobile" placeholder="请输入手机号码" name="Mobile" id="telephone" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+                <div class="mui-input-row">
+                    <label>密码</label>
+                    <input type="password" class="mui-input-clear Password" placeholder="请输入登录密码" name="Password" id="userpwd" maxlength="50" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+            </div>
+            <a href="#" class="wjmm">忘记密码</a>
+            <div class="mui-content-padded">
+                <button type="submit" class="mui-btn mui-btn-block mui-btn-sm">登录</button>
+            </div>
+        </form>
+        <div class="forget">
+            还没有账号？<a href="/Me/Register">立即注册</a>
+        </div>
+        <div class="copy">©2019 北京漫步科技有限公司 <br><a href="http://www.beian.miit.gov.cn/"></a></div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').ajaxForm(function (data) {
+                if (data) {
+                    if (data == "登录成功") {
+                        window.location.href = "/Me/Index";
+                    } else {
+                        alert(data);
+                    }
+                } else {
+                    alert("登录失败！systemError");
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>

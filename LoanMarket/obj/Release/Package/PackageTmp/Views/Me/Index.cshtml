@@ -1,0 +1,253 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.uxiangquan.cn/index/member/index.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/个人中心_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/个人中心_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/个人中心_files/style.css">
+    <link href="~/Content/Css/style.css" rel="stylesheet" />
+    <script>
+        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
+    </script>
+    <script type="text/javascript" src="~/Content/Files/个人中心_files/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/个人中心_files/mui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/个人中心_files/jquery.func.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+
+    <style type="text/css">
+        .mui-content {
+            background-color: #fff;
+        }
+
+        .mui-table-view:before {
+            display: none
+        }
+
+        .mui-table-view:after {
+            display: none
+        }
+
+        .muilist {
+            float: left;
+            margin-top: 16px;
+        }
+
+            .muilist img {
+                width: 45px;
+                height: 45px;
+                margin: 0 auto;
+                margin-bottom: 15px;
+            }
+
+            .muilist .mui-media-body {
+                margin-bottom: 12px;
+                margin-top: 4px !important;
+            }
+
+        .muilist {
+            float: left;
+            margin-top: 16px;
+        }
+
+            .muilist img {
+                width: 45px;
+                height: 45px;
+                margin: 0 auto;
+                margin-bottom: 15px;
+            }
+
+            .muilist .mui-media-body {
+                margin-bottom: 12px;
+                margin-top: 4px !important;
+            }
+    </style>
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <footer class="mui-bar mui-bar-footer nav-bottom">
+        <ul class="clearListStyle mui-clearfix">
+            <li><a href="/Loan/Index"><span class="iconfont icon-shouye"></span>首页</a></li>
+            <li><a href="/Forum/Index"><span class="iconfont icon-icon_replieslist"></span>交流专区</a></li>
+            <li><a href="/News/Index"><span class="iconfont icon-weibiaoti35"></span>财经</a></li>
+            <li class="active"><a href="/Me/Index"><span class="iconfont icon-wode"></span>我的</a></li>
+        </ul>
+    </footer>
+    <input type="hidden" class="userNo" value="@Model" />
+
+    <div class="mui-content">
+        <div class="user-header" style="padding-top: 20px;">
+            <div class="user-head">
+                <a href="#">
+                    <img src="~/Content/Files/个人中心_files/132.png" style=" float:left; margin-right:15px;">
+                </a>
+                <div class="fz16" style="margin-top:6px;"><span>昵称：</span><span class="nickName"> 周末愉快</span></div>
+                <div class="id"><span>真实名称：</span><span class="realName">  杰克</span></div>
+                <div class="mui-pull-right22"><span>编号：</span><span class="no">11059</span></div>
+            </div>
+
+            @*<div class="cont">
+                    <div class="box-flex-12" style=" margin-bottom:25px;">
+                        <b style=" float:left; margin-right:1%;">总收入</b><br>
+                        <div class="mt102" style=" font-size:20px; color:#FF6600; font-weight:bold;">
+                            ¥ <span class="number2">361.00</span>
+                        </div>
+                    </div>
+
+                    <div class="box-flex-122" style=" width:50%; float:left;">
+                        <b style=" float:left; margin-right:1%;">已结算</b><br>
+                        <div class="mt102" style=" font-size:18px; color:#FF6600; font-weight:bold;">
+                            ¥ <span class="number2">346.00</span>
+                        </div>
+                    </div>
+
+                    <div class="box-flex-122" style=" width:50%;float:left;">
+                        <b style=" float:left; margin-right:1%;">可结算</b><br>
+                        <div class="mt102" style=" font-size:18px; color:#FF6600; font-weight:bold;">
+                            <span class="number2" style="display: inline-block;float: left;">¥ 15.00</span>
+                            <a href="http://www.uxiangquan.cn/index/member/balance1.html" style="display:inline-block;float: right;margin-right: 20px;font-size: 12px;color: #FF6600;text-align: center;width: 40px;border: 1px solid #FF6600;line-height: 18px;">提现</a>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+
+        <div class="muilist">
+            <ul class="mui-table-view mui-grid-view mui-grid-12">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Me/Edit?userId=@Model">
+                        <img src="~/Content/Images/Icon/修改资料.png" />
+                        <div class="mui-media-body">修改资料</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img src="~/Content/Images/Icon/我的分享.png" />
+                        <div class="mui-media-body">我的分享</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Me/BuyPeculiarUser?userNo=@Model">
+                        <img src="~/Content/Files/个人中心_files/gz.png">
+                        <div class="mui-media-body">升级会员</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Me/BindLeader?userNo=@Model">
+                        <img src="~/Content/Files/个人中心_files/gz1.png">
+                        <div class="mui-media-body">绑定上级</div>
+                    </a>
+                </li>
+                <!-- <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="http://uxiangquan.mikecrm.com/tjB3qA4">
+                        <img src="http://cdn.uxiangquan.cn/static/index/images/icon/1.png">
+                        <div class="mui-media-body">下款反馈</div>
+                    </a>
+                </li>  -->
+                @*<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                        <a href="#">
+                            <img src="~/Content/Files/个人中心_files/1.png">
+                            <div class="mui-media-body">我的收藏</div>
+                        </a>
+                    </li>*@
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img src="~/Content/Images/Icon/分享赚钱.png" />
+                        <div class="mui-media-body">分享赚钱</div>
+                    </a>
+                </li>
+                @*<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                        <a href="#">
+                            <img src="~/Content/Files/个人中心_files/agent.png">
+                            <div class="mui-media-body">购买代理</div>
+                        </a>
+                    </li>*@
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img src="~/Content/Images/Icon/下载app.png" />
+                        <div class="mui-media-body">下载app</div>
+                    </a>
+                </li>
+                <!-- <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/index/content/view/id/3.html">
+                        <img src="http://cdn.uxiangquan.cn/static/index/images/icon/gz2.png">
+                        <div class="mui-media-body">价格表</div>
+                    </a>
+                </li>  -->
+                @*<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                        <a href="#">
+                            <img src="~/Content/Files/个人中心_files/gz5.png">
+                            <div class="mui-media-body">关注公众号</div>
+                        </a>
+                    </li>*@
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img src="~/Content/Images/Icon/联系客服.png" />
+                        <div class="mui-media-body">联系客服</div>
+                    </a>
+                </li>
+                @*<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                        <a href="#">
+                            <img src="~/Content/Files/个人中心_files/bk.png">
+                            <div class="mui-media-body">提现密码</div>
+                        </a>
+                    </li>*@
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#" onclick="Loginout()">
+                        <img src="~/Content/Images/Icon/退出登录.png" />
+                        <div class="mui-media-body">退出登录</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        init();
+        function init() {
+            var userNo = $(".userNo").val();
+            $.ajax({
+                url: "/Api/Me",
+                data: { userId: userNo },
+                type: 'Get',
+                success: function (data) {
+                    if (data) {
+                        $(".nickName").html(data.NickName);
+                        $(".realName").html(data.RealName);
+                        $(".no").html(data.No);
+                    } else {
+                        $(".nickName").html("Error");
+                    }
+                },
+                error: function () {
+                    console.error("服务器异常");
+                }
+            })
+        }
+        //注销登录
+        function Loginout() {
+            var userNo = $(".userNo").val();
+            $.ajax({
+                url: "/Api/Loginout",
+                data: { no: userNo },
+                type: 'Get',
+                success: function (data) {
+                    window.location.href = "/Me/Login";
+                },
+                error: function () {
+                    console.error("服务器异常");
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>
