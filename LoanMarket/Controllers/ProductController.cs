@@ -14,36 +14,34 @@ namespace LoanMarket.Controllers
             return View();
         }
 
-
-
-        public ActionResult ProductList(int typeId)
-        {
-            return View(typeId);
-        }
-
         public ActionResult List(int typeId)
-        {
+        {            
             return View(typeId);
         }
+ 
+        public ActionResult DaPiPei()
+        {
+            return View();
+        }
+        public ActionResult XiaoPiPei()
+        {
+            return View();
+        }
+        public ActionResult HotProduct()
+        {
+            return View();
+        }
+        public ActionResult Card()
+        {
+            return View();
+        }
+ 
 
         /// <summary>
         /// 大额匹配
         /// </summary>
         /// <returns></returns>
-        public ActionResult DaePipei()
-        {
-            return View();
-        }
-
-
-        /// <summary>
-        /// 小额匹配
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult XiaoePipei()
-        {
-            return View();
-        }
+        
 
         /// <summary>
         /// 返佣产品
@@ -76,19 +74,7 @@ namespace LoanMarket.Controllers
         /// 热门产品
         /// </summary>
         /// <returns></returns>
-        public ActionResult HotProduct()
-        {
-            return View();
-        }
-
-        /// <summary>
-        /// 详情
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult Detail(int no)
-        {
-            return View(no);
-        }
-
+       
+ 
     }
 }

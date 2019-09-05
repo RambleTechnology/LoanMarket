@@ -238,6 +238,7 @@
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="BLL\UserGroupBLL.cs" />
     <Compile Include="BLL\UserInfoBLL.cs" />
+    <Compile Include="Controllers\BannerDetail.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -638,6 +639,9 @@
     <Content Include="Views\News\JingwaiTie.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\BannerDetail\BuildwoMillion.cshtml" />
+    <Content Include="Views\BannerDetail\MembershipModel.cshtml" />
+    <Content Include="Views\BannerDetail\OverseasWithdrawal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
