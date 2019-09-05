@@ -1,3 +1,207 @@
 5555
 
 测试提交
+
+
+<div class="mui-content">
+        <!--轮播图-->
+        <div class="banner">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1500px, 0px, 0px);">
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px" src="~/Content/Images/Icon/11.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px" src="~/Content/Images/Icon/22.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px" src="~/Content/Images/banner/3.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide swiper-slide-prev" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px" src="~/Content/Images/banner/4.jpg" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide swiper-slide-active" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px" src="~/Content/Images/Icon/44.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+            </div>
+        </div>
+        <!--八宫格-->
+        <div class="muilist">
+            <ul class="mui-table-view mui-grid-view mui-grid-12 typeData">
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Product/DaePipei">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/1.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">大额匹配</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Product/XiaoePipei">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/2.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">小额匹配</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Product/HotProduct">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/3.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">热门产品</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Card/Index">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/4.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">信用卡</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Product/List?typeId=9">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/5.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">白条花呗</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="/Product/Fanyong">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/6.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">返佣产品</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/7.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">升级会员</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+                    <a href="#">
+                        <img style="width:45px;height:45px;" src="~/Content/Images/Icon/8.png">
+                        <div class="mui-media-body dial-txt" style="font-size:13px;">在线客服</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--滚动 新闻 -->
+        <div class="index">
+            <ul class="news">
+                <a href="#">
+                    <div class="newsWrapper" style="top: -250px;">
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">U享新版使用简略！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">高级会员与初级会员权限区分</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">U享新版使用简略！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">高级会员与初级会员权限区分</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                        <li>
+                            <div class="news_icon">
+                                <img src="~/Content/Files/U享圈_files/index_icon7.png" alt="">
+                            </div>
+                            <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
+                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                        </li>
+                    </div>
+                </a>
+            </ul>
+        </div>
+        <!--四个大块 items-->
+        <div class="mui-table-view">
+            <div class="card-bank" style="background: #fff;">
+                <ul class="clearListStyle mui-clearfix items">
+                    <li class="single-item">
+                        <a href="#Hot-Product">
+                            <img src="~/Content/Images/Icon/a.png" />
+                            <span class="txt" style="width: 100%;">最新口子</span>
+                        </a>
+                    </li>
+                    <li class="single-item">
+                        <a href="#580-Up-Product">
+                            <img src="~/Content/Images/Icon/b.png" />
+                            <span class="txt" style="width: 100%;">新手指南</span>
+                        </a>
+                    </li>
+                    <li class="single-item">
+                        <a href="/News/JingwaiTie">
+                            <img src="~/Content/Images/Icon/c.png" />
+                            <span class="txt" style="width: 100%;">境外提额</span>
+                        </a>
+                    </li>
+                    <li class="single-item">
+                        <a href="#580-Down-Product">
+                            <img src="~/Content/Images/Icon/d.png" />
+                            <span class="txt" style="width: 100%;">申卡技巧</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+
+
+        <div class="copy">?2019 漫步科技有限公司 <br><a href="http://www.beian.miit.gov.cn/"></a></div>
+    </div>
