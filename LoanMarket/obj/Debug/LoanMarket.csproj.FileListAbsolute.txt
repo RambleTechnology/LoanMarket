@@ -308,8 +308,6 @@ E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CoreCompileInputs.ca
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CopyComplete
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.dll
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.pdb
-<<<<<<< HEAD
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cache
-=======
 >>>>>>> 8b5ba5edd3ddb072d1037bdafc24d016b73b3cc1
 >>>>>>> a44ef801f5156910e111fc75d1f177186c3b1116

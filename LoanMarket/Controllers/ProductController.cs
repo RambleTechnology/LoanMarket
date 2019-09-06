@@ -35,13 +35,17 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
- 
+        public ActionResult UpdateVip()
+        {
+            return View();
+        }
+
 
         /// <summary>
         /// 大额匹配
         /// </summary>
         /// <returns></returns>
-        
+
 
         /// <summary>
         /// 返佣产品
