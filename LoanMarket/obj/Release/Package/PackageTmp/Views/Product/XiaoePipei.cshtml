@@ -242,7 +242,7 @@
 
             <!--根据类别加载产品-->
             <div class="card-bank">
-                <div class="mui-table-view-cell " style="text-align:left;">今日实战下款（会员曝光）</div>
+                @*<div class="mui-table-view-cell " style="text-align:left;">今日实战下款（会员曝光）</div>*@
                 <ul class="clearListStyle mui-clearfix  data">
                     <li>
                         <a onclick="getqrcode(&#39;2962&#39;)">
@@ -251,7 +251,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="mui-table-view-cell " style="text-align:left;">实时更新存活产品</div>
+                @*<div class="mui-table-view-cell " style="text-align:left;">实时更新存活产品</div>
                 <ul class="clearListStyle mui-clearfix  data">
                     <li>
                         <a onclick="getqrcode(&#39;2962&#39;)">
@@ -268,7 +268,7 @@
                             <span class="txt" style="width: 100px;">小火龙</span>
                         </a>
                     </li>
-                </ul>
+                </ul>*@
             </div>
         </div>
     </div>
@@ -295,15 +295,13 @@
         })()
         var copybtn = null;
         var clipboard = null;
-        //init();
-        function init() {
-            //获取类别编号
-            var typeId = $(".typeId").val();
 
+        init();
+        function init() {                    
             //设置title
             $.ajax({
                 url: "/api/ProductType",
-                data: { no: typeId },
+                data: { no: 7 },
                 type: 'Get',
                 success: function (data) {
                     if (data) {
@@ -315,17 +313,18 @@
                 }
             });
 
-            //获取该类别的数据
+
+            //获取该类别的子类别数据
             $.ajax({
-                url: "/api/Product",
-                data: { typeId: typeId },
+                url: "/api/TypeViewGrade",
+                data: { id: 7 },
                 type: 'Get',
                 success: function (data) {
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
-                            html += "<a onclick='getqrcode(&#39; 2962 &#39;)'>";
+                            html += "<a href='/Product/ProductList?typeId=" + data[i].No + "'>";
                             html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
                             html += "</a>";
                             html += "</li>";

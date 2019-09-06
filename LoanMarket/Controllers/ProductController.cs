@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,33 +15,33 @@ namespace LoanMarket.Controllers
         }
 
         public ActionResult List(int typeId)
-        {            
+        {
             return View(typeId);
         }
- 
+
         public ActionResult DaPiPei()
         {
             return View();
         }
-        public ActionResult XiaoPiPei()
+        public ActionResult XiaoePiPei()
         {
             return View();
         }
-        public ActionResult HotProduct()
-        {
-            return View();
-        }
+
         public ActionResult Card()
         {
             return View();
         }
- 
+
 
         /// <summary>
         /// 大额匹配
         /// </summary>
         /// <returns></returns>
-        
+        public ActionResult DaePipei()
+        {
+            return View();
+        }
 
         /// <summary>
         /// 返佣产品
@@ -74,7 +74,20 @@ namespace LoanMarket.Controllers
         /// 热门产品
         /// </summary>
         /// <returns></returns>
-       
- 
+
+        public ActionResult HotProduct()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 产品列表
+        /// </summary>
+        /// <param name="typeId"></param>
+        /// <returns></returns>
+        public ActionResult ProductList(int typeId)
+        {
+            return View(typeId);
+        }
     }
 }

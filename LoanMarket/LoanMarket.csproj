@@ -289,7 +289,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Css\loan-index.css" />
     <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Files\bannerDetailimg\._jingwai.jpg" />
+    <Content Include="Content\Files\bannerDetailimg\._tangzhuan.jpg" />
+    <Content Include="Content\Files\bannerDetailimg\jingwai.jpg" />
+    <Content Include="Content\Files\bannerDetailimg\tangzhuan.jpg" />
+    <Content Include="Content\Files\U享圈_files\2.jpeg" />
+    <Content Include="Content\Files\U享圈_files\3.png" />
+    <Content Include="Content\Files\U享圈_files\4.jpeg" />
     <Content Include="Content\Files\U享圈_files\442efa002f60bdf3581128ecf5e621fa_300x300.png" />
+    <Content Include="Content\Files\U享圈_files\5.jpeg" />
     <Content Include="Content\Files\U享圈_files\5ce1701d8101e.jpg" />
     <Content Include="Content\Files\U享圈_files\5ce17039b1a08.jpg" />
     <Content Include="Content\Files\U享圈_files\5ce1705ac9268.jpg" />
@@ -310,10 +318,24 @@
     <Content Include="Content\Files\U享圈_files\5d2abb4513eae.png" />
     <Content Include="Content\Files\U享圈_files\5d2d32d6f1502.png" />
     <Content Include="Content\Files\U享圈_files\5d2ee0ad3733c.png" />
+    <Content Include="Content\Files\U享圈_files\6.jpeg" />
+    <Content Include="Content\Files\U享圈_files\7.jpeg" />
+    <Content Include="Content\Files\U享圈_files\8.jpeg" />
     <Content Include="Content\Files\U享圈_files\back.png" />
     <Content Include="Content\Files\U享圈_files\iconfont.css" />
     <Content Include="Content\Files\U享圈_files\iconl.png" />
     <Content Include="Content\Files\U享圈_files\iconr.png" />
+    <Content Include="Content\Files\U享圈_files\indexbanner1.jpg" />
+    <Content Include="Content\Files\U享圈_files\indexbanner2.jpg" />
+    <Content Include="Content\Files\U享圈_files\indexbanner3.jpg" />
+    <Content Include="Content\Files\U享圈_files\indexbanner4.jpg" />
+    <Content Include="Content\Files\U享圈_files\indexbanner5.jpg" />
+    <Content Include="Content\Files\U享圈_files\indexbtmicon1.jpeg" />
+    <Content Include="Content\Files\U享圈_files\indexbtmicon2.jpeg" />
+    <Content Include="Content\Files\U享圈_files\indexbtmicon3.jpeg" />
+    <Content Include="Content\Files\U享圈_files\indexbtmicon4.jpeg" />
+    <Content Include="Content\Files\U享圈_files\indexicon1.jpeg" />
+    <Content Include="Content\Files\U享圈_files\indexmessage.png" />
     <Content Include="Content\Files\U享圈_files\index_icon1.png" />
     <Content Include="Content\Files\U享圈_files\index_icon6.png" />
     <Content Include="Content\Files\U享圈_files\index_icon7.png" />
@@ -586,6 +608,9 @@
     <Content Include="Content\Files\注册_files\jquery.form.js" />
     <Content Include="Content\Files\注册_files\jquery.func.js" />
     <Content Include="Content\Files\注册_files\mui.min.js" />
+    <Content Include="Content\Files\U享圈_files\Index.cshtml" />
+    <Content Include="Content\Files\bannerDetailimg\.DS_Store" />
+    <Content Include="Content\Files\bannerDetailimg\._.DS_Store" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common\common.js" />
@@ -642,6 +667,9 @@
     <Content Include="Views\BannerDetail\BuildwoMillion.cshtml" />
     <Content Include="Views\BannerDetail\MembershipModel.cshtml" />
     <Content Include="Views\BannerDetail\OverseasWithdrawal.cshtml" />
+    <Content Include="Views\News\ShenkaJiqiao.cshtml" />
+    <Content Include="Views\News\ZuixinKouzi.cshtml" />
+    <Content Include="Views\News\XinshouZhinan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
