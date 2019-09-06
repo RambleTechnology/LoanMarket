@@ -17,6 +17,27 @@ namespace LoanMarket.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// 新手指南
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult XinshouZhinan()
+        {
+            return View();
+        }
+
+
+        /// <summary>
+        /// 最新扣子
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ZuixinKouzi()
+        {
+            return View();
+        }
+
+
         /// <summary>
         /// 境外提额
         /// </summary>
@@ -25,5 +46,17 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
+
+
+        /// <summary>
+        /// 申卡技巧
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ShenkaJiqiao()
+        {
+            return View();
+        }
+
+
     }
 }

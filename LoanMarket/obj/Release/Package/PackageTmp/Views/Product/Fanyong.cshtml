@@ -130,22 +130,12 @@
             <div class="card-bank">
                 <div class="mui-table-view-cell " style="text-align:left;">大额返佣</div>
                 <ul class="clearListStyle mui-clearfix  data">
-                    <li>
-                        <a onclick="getqrcode(&#39;2962&#39;)">
-                            <img src="~/Content/Files/最新口子_files/5d2d32d6f1502.png">
-                            <span class="txt" style="width: 100px;">小火龙</span>
-                        </a>
-                    </li>
+                   
                 </ul>
                 <hr />
                 <div class="mui-table-view-cell " style="text-align:left;">小额返佣</div>
                 <ul class="clearListStyle mui-clearfix  data">
-                    <li>
-                        <a onclick="getqrcode(&#39;2962&#39;)">
-                            <img src="~/Content/Files/最新口子_files/5d2d32d6f1502.png">
-                            <span class="txt" style="width: 100px;">小火龙</span>
-                        </a>
-                    </li>
+                  
                 </ul>
             </div>
             <!--广告位置-->
@@ -169,37 +159,20 @@
         });
         var copybtn = null;
         var clipboard = null;
-        //init();
-        function init() {
-            //获取类别编号
-            var typeId = $(".typeId").val();
-
-            //设置title
-            $.ajax({
-                url: "/api/ProductType",
-                data: { no: typeId },
-                type: 'Get',
-                success: function (data) {
-                    if (data) {
-                        $(".productTypeName").html(data.Name);
-                    }
-                },
-                error: function (e) {
-                    console.error("服务器异常" + e);
-                }
-            });
+        init();
+        function init() { 
 
             //获取该类别的数据
             $.ajax({
                 url: "/api/Product",
-                data: { typeId: typeId },
+                data: { typeId: 10 },
                 type: 'Get',
                 success: function (data) {
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
-                            html += "<a onclick='getqrcode(&#39; 2962 &#39;)'>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
                             html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
                             html += "</a>";
                             html += "</li>";
@@ -216,68 +189,15 @@
                 }
             });
         }
-        function getqrcode(id) {
-            $.ajax({
-                url: "/index/member/getqrcode.html",
-                data: { id: id },
-                type: 'post',
-                success: function (res) {
-                    if (res.code == 1) {
-                        $(".shadow-box").html(res.msg.html);
-                        copybtn = document.getElementById('copy');
-                        clipboard = new ClipboardJS(copybtn, {
-                            text: function () {
-                                return res.msg.url;
-                            }
-                        });
-                        $(".apply-shadow").show();
-                    } else {
-                        if (res.msg == 'noaccess') {
-                            location.href = "/index/Index/noaccess";
-                        } else if (res.msg == 'document') {
-                            location.href = "/index/Api/gatherpage?id=" + id;
-                        } else {
-                            alerterr(res.msg);
-                        }
-                    }
-                }
-            })
-        }
+      
 
         $(".shadow-box").on('click', '.closebox', function () {
             $('.apply-shadow').hide();
             $(".shadow-box").html('');
         })
 
-        function copy(url) {
-            clipboard.on('success', function (e) {
-                mui('#browser').popover('hide');
-                alertok('复制成功');
-            });
-            clipboard.on('error', function (e) {
-                alerterr('复制失败');
-            });
-        }
-
-        function jump(url) {
-            location.href = url;
-        }
-
-        function feedback(id, classname) {
-            $.ajax({
-                url: "/index/index/feedback.html",
-                data: { id: id },
-                type: 'post',
-                success: function (res) {
-                    if (res.code == 1) {
-                        $("." + classname).attr('disabled', true);
-                        $("." + classname).text('已反馈');
-                    } else {
-                        alerterr(res.msg);
-                    }
-                }
-            })
-        }
+       
+      
     </script>
 
 
