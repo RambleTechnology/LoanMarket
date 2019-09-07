@@ -100,6 +100,7 @@ E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CoreCompileInput
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CopyComplete
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.dll
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.pdb
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 =======
@@ -209,3 +210,6 @@ E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cac
 >>>>>>> 8b5ba5edd3ddb072d1037bdafc24d016b73b3cc1
 >>>>>>> a44ef801f5156910e111fc75d1f177186c3b1116
 >>>>>>> ef3454dbddd1d33d4ab4eaa5b50b56de4458810b
+=======
+E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cache
+>>>>>>> Stashed changes

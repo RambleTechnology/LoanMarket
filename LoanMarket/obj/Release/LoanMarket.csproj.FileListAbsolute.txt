@@ -96,6 +96,7 @@ E:\GithubCode\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.resources.dl
 E:\GithubCode\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\GithubCode\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\GithubCode\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+E:\GithubCode\LoanMarket\LoanMarket\obj\Release\LoanMarket.csprojAssemblyReference.cache
 E:\GithubCode\LoanMarket\LoanMarket\obj\Release\LoanMarket.csproj.CoreCompileInputs.cache
 E:\GithubCode\LoanMarket\LoanMarket\obj\Release\LoanMarket.csproj.CopyComplete
 E:\GithubCode\LoanMarket\LoanMarket\obj\Release\LoanMarket.dll

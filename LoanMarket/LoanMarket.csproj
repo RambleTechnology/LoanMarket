@@ -202,6 +202,7 @@
     <Compile Include="Api\CommentController.cs" />
     <Compile Include="Api\ForumController.cs" />
     <Compile Include="Api\ForumViewController.cs" />
+    <Compile Include="Api\HeiKejiController.cs" />
     <Compile Include="Api\LoanController.cs" />
     <Compile Include="Api\LoginController.cs" />
     <Compile Include="Api\LoginoutController.cs" />
@@ -545,6 +546,7 @@
     <Content Include="Content\Images\Icon\我的分享.png" />
     <Content Include="Content\Images\Icon\联系客服.png" />
     <Content Include="Content\Images\Icon\退出登录.png" />
+    <Content Include="Content\Static\baitiaohuabei.png" />
     <Content Include="Content\Static\境外提额.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -671,6 +673,9 @@
     <Content Include="Views\News\ShenkaJiqiao.cshtml" />
     <Content Include="Views\News\ZuixinKouzi.cshtml" />
     <Content Include="Views\News\XinshouZhinan.cshtml" />
+    <Content Include="Views\Product\BaitiaoHuabei.cshtml" />
+    <Content Include="Views\News\HeiKeji.cshtml" />
+    <Content Include="Views\News\NewsDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,10 +28,10 @@
       <publishTime>03/29/2018 14:51:46</publishTime>
     </File>
     <File Include="bin/LoanMarket.dll">
-      <publishTime>09/06/2019 13:44:00</publishTime>
+      <publishTime>09/07/2019 13:55:49</publishTime>
     </File>
     <File Include="bin/LoanMarket.pdb">
-      <publishTime>09/06/2019 13:44:00</publishTime>
+      <publishTime>09/07/2019 13:55:49</publishTime>
     </File>
     <File Include="bin/log4net.config">
       <publishTime>07/24/2019 18:44:39</publishTime>
@@ -1206,6 +1206,9 @@
     <File Include="Content/Site.css">
       <publishTime>07/20/2019 10:19:52</publishTime>
     </File>
+    <File Include="Content/Static/baitiaohuabei.png">
+      <publishTime>09/07/2019 13:50:32</publishTime>
+    </File>
     <File Include="Content/Static/境外提额.jpg">
       <publishTime>09/01/2019 15:27:00</publishTime>
     </File>
@@ -1309,7 +1312,7 @@
       <publishTime>07/20/2019 10:19:52</publishTime>
     </File>
     <File Include="Views/Loan/Index.cshtml">
-      <publishTime>09/05/2019 23:01:04</publishTime>
+      <publishTime>09/07/2019 13:54:00</publishTime>
     </File>
     <File Include="Views/Loan/Test.cshtml">
       <publishTime>07/20/2019 10:42:44</publishTime>
@@ -1338,6 +1341,18 @@
     <File Include="Views/News/JingwaiTie.cshtml">
       <publishTime>09/01/2019 15:28:50</publishTime>
     </File>
+    <File Include="Views/News/ShenkaJiqiao.cshtml">
+      <publishTime>09/06/2019 13:55:32</publishTime>
+    </File>
+    <File Include="Views/News/XinshouZhinan.cshtml">
+      <publishTime>09/06/2019 13:56:16</publishTime>
+    </File>
+    <File Include="Views/News/ZuixinKouzi.cshtml">
+      <publishTime>09/06/2019 13:55:57</publishTime>
+    </File>
+    <File Include="Views/Product/BaitiaoHuabei.cshtml">
+      <publishTime>09/07/2019 13:54:40</publishTime>
+    </File>
     <File Include="Views/Product/DaePipei.cshtml">
       <publishTime>09/05/2019 17:48:49</publishTime>
     </File>
@@ -1345,7 +1360,7 @@
       <publishTime>09/04/2019 10:12:32</publishTime>
     </File>
     <File Include="Views/Product/Fanyong.cshtml">
-      <publishTime>09/06/2019 13:42:52</publishTime>
+      <publishTime>09/06/2019 14:11:47</publishTime>
     </File>
     <File Include="Views/Product/HotProduct.cshtml">
       <publishTime>09/05/2019 17:59:05</publishTime>
@@ -1381,7 +1396,7 @@
       <publishTime>07/20/2019 10:19:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/06/2019 09:10:07</publishTime>
+      <publishTime>09/07/2019 13:41:02</publishTime>
     </File>
   </ItemGroup>
 </Project>
