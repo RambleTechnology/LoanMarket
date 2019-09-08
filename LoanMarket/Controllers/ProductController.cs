@@ -89,5 +89,14 @@ namespace LoanMarket.Controllers
         {
             return View(typeId);
         }
+
+          /// <summary>
+        /// 升级会员
+        /// </summary>        
+        /// <returns></returns>
+        public ActionResult UpdateVip()
+        {
+            return View();
+        }
     }
 }
