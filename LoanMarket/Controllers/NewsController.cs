@@ -58,5 +58,25 @@ namespace LoanMarket.Controllers
         }
 
 
+
+        /// <summary>
+        /// 每日黑科技
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult HeiKeji()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 滚动新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult NewsDetail()
+        {
+            return View();
+        }
+
+
     }
 }

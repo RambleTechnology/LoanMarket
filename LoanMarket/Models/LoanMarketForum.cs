@@ -17,6 +17,8 @@ namespace LoanMarket.Models
         [StringLength(10)]
         public string Title { get; set; }
 
+        public string Type { get; set; }
+
         public string ContentBody { get; set; }
 
         public DateTime? CreateTime { get; set; }

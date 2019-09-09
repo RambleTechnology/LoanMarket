@@ -90,6 +90,7 @@ namespace LoanMarket.Controllers
             return View(typeId);
         }
 
+<<<<<<< HEAD
           /// <summary>
         /// 升级会员
         /// </summary>        
@@ -98,5 +99,18 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
+=======
+        /// <summary>
+        /// 白条花呗
+        /// </summary>
+        /// <param name="typeId"></param>
+        /// <returns></returns>
+        public ActionResult BaitiaoHuabei()
+        {
+            return View();
+        }
+
+
+>>>>>>> f6ac364d0bbfe9697c7f95e851443bb213b92c86
     }
 }
