@@ -5,3 +5,5 @@
 LoanMarket.sln
 /LoanMarket/Log/*
 /.vs/config/applicationhost.config
+test.txt
+/text/*
