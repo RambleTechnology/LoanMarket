@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 E:\GithubCode\LoanMarket\LoanMarket\bin\ApplicationInsights.config
 E:\GithubCode\LoanMarket\LoanMarket\bin\log4net.config
 E:\GithubCode\LoanMarket\LoanMarket\bin\LoanMarket.dll.config
@@ -101,9 +103,7 @@ E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CopyComplete
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.dll
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.pdb
 <<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-=======
+>>>>>>> f6ac364d0bbfe9697c7f95e851443bb213b92c86
 E:\Github\LoanMarket\LoanMarket\bin\ApplicationInsights.config
 E:\Github\LoanMarket\LoanMarket\bin\log4net.config
 E:\Github\LoanMarket\LoanMarket\bin\LoanMarket.dll.config
@@ -202,14 +202,13 @@ E:\Github\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\Github\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\Github\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\Github\LoanMarket\LoanMarket\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cache
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CoreCompileInputs.cache
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csproj.CopyComplete
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.dll
 E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.pdb
-E:\Github\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cache
 >>>>>>> 8b5ba5edd3ddb072d1037bdafc24d016b73b3cc1
 >>>>>>> a44ef801f5156910e111fc75d1f177186c3b1116
 >>>>>>> ef3454dbddd1d33d4ab4eaa5b50b56de4458810b
-=======
 E:\GithubCode\LoanMarket\LoanMarket\obj\Debug\LoanMarket.csprojAssemblyReference.cache
 >>>>>>> Stashed changes
