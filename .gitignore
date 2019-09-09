@@ -1,9 +1,6 @@
-/.vs
-/obj
-/bin
-.user
-/Log
-/LoanMarket/obj
-/.vs/config
-*.sln
-*.vs
+/.vs/*
+*.user
+/obj/
+/bin/
+LoanMarket.sln
+/LoanMarket/Log/*
