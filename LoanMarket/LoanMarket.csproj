@@ -279,7 +279,6 @@
     <Compile Include="PublicClass\GuidTool.cs" />
     <Compile Include="PublicClass\ICache.cs" />
     <Compile Include="PublicClass\QrCode.cs" />
-    <Compile Include="PublicClass\RedisCache.cs" />
     <Compile Include="PublicClass\SessionTool.cs" />
     <Compile Include="PublicModels\User.cs" />
   </ItemGroup>
