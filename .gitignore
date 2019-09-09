@@ -4,3 +4,4 @@
 /bin/
 LoanMarket.sln
 /LoanMarket/Log/*
+/.vs/config/*
