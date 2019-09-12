@@ -106,6 +106,51 @@
             width: 80px;
             height: 20px;
         }
+        .banner {
+            position:relative;
+        }
+        .topmessage {
+            position:absolute;
+            top:22%;
+            line-height:16px;
+            color:#333;
+        
+        }
+        .topmessage p {
+            padding-left:5px;
+        }
+        .moresshow {
+            width:80%;
+            margin:10% 10% 0 10%;
+            height:240px;
+            background:#fff;
+            line-height: 16px;
+            color:#333;
+        }
+        .moresshow p{
+            margin-top:15px;
+            padding:0 10px 0 10px;
+        }
+        .bgMessage {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+        .closeMessage {
+            float: right;
+            padding-right: 30px;
+            margin-bottom: 10px
+        }
+        #moreMessage {
+            color:#f24a00;
+        }
     </style>
 </head>
 
@@ -124,10 +169,23 @@
             <!--图片轮播-->
             <div class="banner">
 
-                <a href="#">
-                    <img style="min-height: 188px" src="~/Content/Files/U享圈_files/5ce1707a1ec37.jpg">
-                </a>
-
+                 
+                <img style="background:pink;width:100%;height:188px;"/>
+                <div class="topmessage">
+                    <h4 style="text-align:center;padding-bottom:10px;">申请须知</h4>
+                    <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
+                    <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
+                    <p style="text-align:center;" id="moreMessage">点击查看更多详情》</p>
+                </div>
+                <div class="bgMessage" style="display:none;">
+                    <div class="moresshow" style="">
+                        <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
+                        <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
+                        <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
+                        <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
+                        <p class="closeMessage">关闭详情</p>
+                    </div>
+                </div>
             </div>
             <!--滚动新闻-->
             <div class="index">
@@ -138,72 +196,47 @@
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">U享新版使用简略！</div>
+                                <div class="text">恭喜张先生 135****0795拍拍贷下款20000</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
                             <li>
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">高级会员与初级会员权限区分</div>
+                                <div class="text">恭喜李先生 136****5432飞贷下款85000</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
                             <li>
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
+                                <div class="text">恭喜刘女士 136****宜人贷下款40000</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
                             <li>
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
+                                <div class="text">恭喜赵先生 151****7788推广团队达到50人升级为总监</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
                             <li>
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
+                                <div class="text">恭喜孙女士 189****6932团队推广佣金200000，分红佣金10000</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
                             <li>
                                 <div class="news_icon">
                                     <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                                 </div>
-                                <div class="text">U享新版使用简略！</div>
+                                <div class="text">恭喜宁先生 157****3522推广光大信用卡一张，获取佣金100</div>
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
-                            <li>
-                                <div class="news_icon">
-                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                                </div>
-                                <div class="text">高级会员与初级会员权限区分</div>
-                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                            </li>
-                            <li>
-                                <div class="news_icon">
-                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                                </div>
-                                <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
-                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                            </li>
-                            <li>
-                                <div class="news_icon">
-                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                                </div>
-                                <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
-                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                            </li>
-                            <li>
-                                <div class="news_icon">
-                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                                </div>
-                                <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
-                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                            </li>
+
+
+
                         </div>
                     </a>
                 </ul>
@@ -241,6 +274,13 @@
 
 
     <script type="text/javascript">
+        
+        $("#moreMessage").on("click", function () {
+            $(".bgMessage").show();
+        })
+        $(".closeMessage").on("click", function () {
+            $(".bgMessage").hide();
+        })
         var banner_swiper = new Swiper('.banner .swiper-container', {
             pagination: '.banner .swiper-pagination',
             autoplay: 3000
