@@ -99,6 +99,14 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
+        /// <summary>
+        /// 会员协议
+        /// </summary>        
+        /// <returns></returns>
+        public ActionResult VipArgee()
+        {
+            return View();
+        }
 
         /// <summary>
         /// 白条花呗
