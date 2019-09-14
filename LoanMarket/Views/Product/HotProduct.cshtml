@@ -215,6 +215,7 @@
                     </div>
                 </div>
             </div>
+            <!--滚动新闻-->
             <div class="index">
                 <ul class="news">
                     <a href="#">
@@ -262,11 +263,10 @@
                                 <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                             </li>
 
-
                         </div>
                     </a>
                 </ul>
-            </div>
+            </div>  
         </div>
             <!--根据类别加载产品-->
             <div class="card-bank">
@@ -336,6 +336,14 @@
             pagination: '.banner .swiper-pagination',
             autoplay: 3000
         });
+        (() => {
+            var n = 1
+            setInterval(() => {
+                let topHeight = '-' + n * 50 + 'px'
+                $(".newsWrapper").animate({ top: topHeight }, 200)
+                n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
+            }, 3000)
+        })()
         var copybtn = null;
         var clipboard = null;
         init();
