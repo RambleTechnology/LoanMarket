@@ -249,7 +249,7 @@
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
-                    <a href="#">
+                    <a href="/Product/kefu">
                         <img style="width:45px;height:45px;" src="/Content/Files/U享圈_files/8.jpeg">
                         <div class="mui-media-body dial-txt" style="font-size:13px;">在线客服</div>
                     </a>
@@ -258,77 +258,34 @@
         </div>
         <div class="index">
             <ul class="news">
-                <a href="/News/NewsDetail">
-                    <div class="newsWrapper" style="top: -250px;">
+                <a href="javascript:void(0);">
+                    <div class="newsWrapper NewsList" style="top: -250px;">
                         <li>
-                       
                             <div class="news_icon" >
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text">U享新版使用简略！</div>
+                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                         <li>
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text">高级会员与初级会员权限区分</div>
+                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                         <li>
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
+                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                         <li>
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">U享新版使用简略！</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">高级会员与初级会员权限区分</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">不看征信不查征信！疯狂放水，人人最低1800， 芝麻分580以上秒批，速度连撸！【你我借】共享</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">0抵押0担保又好下款的产品哪里找？一枝花来报道啦！1分钟申请，10分钟审核，可快至30分钟放款 【一枝花】共享！</div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text">【宝利管家】洪水来了，机审，秒过，秒到账！</div>
+                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                     </div>
@@ -345,7 +302,7 @@
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
-                    <a href="/News/ZuixinKouzi">
+                    <a href="/Product/ZuixinKouzi?typeId=15">
                         <img style="width:45px;height:45px;" src="/Content/Files/U享圈_files/indexbtmicon1.jpeg">
                         <div class="mui-media-body dial-txt" style="font-size:13px;">最新口子</div>
                     </a>
@@ -415,6 +372,9 @@
 
     <script type="text/javascript">
         //initProductTypeList();
+
+        //FindNewsList();
+
         //类别列表
         function initProductTypeList() {
             $.ajax({
@@ -444,6 +404,50 @@
                     console.error("服务器异常");
                 }
             })
+        }
+
+        //newslist
+        function FindNewsList() {
+            //获取列表
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "滚动新闻" },
+                type: 'Get',
+                success: function (data) {
+                    debugger
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            //CommentCount: 3
+                            //ContentBody: "<p>欢迎使用 wangEditor 富文本编辑器</p><p><img src="http://47.104.186.251:8001/Upload/News/1.jpg" style="max-width:100%;"><br></p>"
+                            //CreateTime: null
+                            //CreateUserIcon: null
+                            //CreateUserNickName: "dfhdf "
+                            //CreateUserNo: null
+                            //LikeCount: 3
+                            //No: 25
+                            //Title: "3         "
+                            //ViewCount: 3
+                            html += " <li>";
+                            html += "<div class='news_icon'>";
+                            html += " <img src = '~/Content/Files/U享圈_files/indexmessage.png'  >";
+                            html += "</div>";
+                            html += "<div class='text'><a href='/News/NewsDetail?no=" + data[i].No + "'> " + data[i].Title + "</a></div>";
+                            html += "<div class='back'><img src='~/Content/Files/U享圈_files/back.png'></div>";
+                            html += " </li>";
+                            }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".NewsList").html(html);
+                    NewsWrapper();
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
         }
 
         //产品列表
@@ -536,13 +540,23 @@
 
         //新闻
         (() => {
-            var n = 1
+            var n = 1;
             setInterval(() => {
                 let topHeight = '-' + n * 50 + 'px'
                 $(".newsWrapper").animate({ top: topHeight }, 200)
                 n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
             }, 3000)
         })()
+
+
+        function NewsWrapper() {
+            var n = 1;
+            setInterval(() => {
+                let topHeight = '-' + n * 50 + 'px'
+                $(".newsWrapper").animate({ top: topHeight }, 200)
+                n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
+            }, 3000)
+        }
 
     </script>
 </body>

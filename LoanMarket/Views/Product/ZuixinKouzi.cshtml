@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>产品列表</title>
+    <title>最新口子</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
@@ -16,11 +16,7 @@
     <link rel="stylesheet" href="~/Content/Files/最新口子_files/iconfont.css">
     <link rel="stylesheet" href="~/Content/Files/最新口子_files/style.css">
     <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
-    <link href="~/Content/Css/style.css" rel="stylesheet" />
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
+    <link href="~/Content/Css/style.css" rel="stylesheet" /> 
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery.func.js"></script>
@@ -106,27 +102,14 @@
 </head>
 
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
-    <footer class="mui-bar mui-bar-footer nav-bottom">
-        <ul class="clearListStyle mui-clearfix">
-            <li class="active"><a href="/Loan/Index"><span class="iconfont icon-shouye"></span>首页</a></li>
-            <li><a href="/Forum/Index"><span class="iconfont icon-icon_replieslist"></span>交流专区</a></li>
-            <li><a href="/News/Index"><span class="iconfont icon-weibiaoti35"></span>财经</a></li>
-            <li><a href="/Me/Index"><span class="iconfont icon-wode"></span>我的</a></li>
-        </ul>
-    </footer>
+   
     <div class="mui-content">
         <div class="mui-table-view" style="margin-top: 0px">
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">产品类别</div>
-
             <!--根据类别加载产品-->
             <div class="card-bank">
                 <ul class="clearListStyle mui-clearfix  data">
-                    <li>
-                        <a onclick="getqrcode(&#39;2962&#39;)">
-                            <img src="~/Content/Files/最新口子_files/5d2d32d6f1502.png">
-                            <span class="txt" style="width: 100px;">小火龙</span>
-                        </a>
-                    </li>
+                   
                 </ul>
             </div>
 
@@ -139,11 +122,8 @@
             <div class="mui-table-view detail">
                 <li class="mui-table-view-cell borderbutton" style="font-weight:bold;color:#1e5bca">
                     <span class="TypeAndName"> 精选单品-华山论借</span>
-                    <button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;" >
-                        <a href="/Product/Kefu">
-                            失效反馈
-                        </a>
-                    </button>
+                    @*<button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;" onclick="feedback(&#39;3100&#39;,&#39;feedback3100&#39;)">
+                        失效反馈</button>*@
                 </li>
                 <li class="mui-table-view-cell borderbutton">
                     <span class="Describe">1、20-40岁<br>2、有稳定工作收入<br>3、机审无回访<br></span>
@@ -165,9 +145,9 @@
                             扫码立即申请
                         </div>
                     </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
-                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
+                        @*<button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
                                 复制链接
-                            </button>
+                            </button>*@
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
                         </a>
@@ -181,10 +161,7 @@
     <input type="hidden" value="@Model" class="typeId" />
 
     <script type="text/javascript">
-        var banner_swiper = new Swiper('.banner .swiper-container', {
-            pagination: '.banner .swiper-pagination',
-            autoplay: 3000
-        });
+      
         var copybtn = null;
         var clipboard = null;
         init();

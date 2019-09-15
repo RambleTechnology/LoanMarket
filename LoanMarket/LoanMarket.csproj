@@ -202,6 +202,7 @@
     <Compile Include="Api\CommentController.cs" />
     <Compile Include="Api\ForumController.cs" />
     <Compile Include="Api\ForumViewController.cs" />
+    <Compile Include="Api\NewsDetailsController.cs" />
     <Compile Include="Api\HeiKejiController.cs" />
     <Compile Include="Api\LoanController.cs" />
     <Compile Include="Api\LoginController.cs" />
@@ -517,6 +518,10 @@
     <Content Include="Content\Images\banner\3.jpg" />
     <Content Include="Content\Images\banner\4.jpg" />
     <Content Include="Content\Images\banner\5.jpg" />
+    <Content Include="Content\Images\Common\22.jpg" />
+    <Content Include="Content\Images\Common\shenka.png" />
+    <Content Include="Content\Images\Common\tie.jpg" />
+    <Content Include="Content\Images\Common\tie1.jpg" />
     <Content Include="Content\Images\Common\卡.png" />
     <Content Include="Content\Images\Common\书-浏览器.png" />
     <Content Include="Content\Images\Icon\1.png" />
@@ -539,6 +544,11 @@
     <Content Include="Content\Images\Icon\b.png" />
     <Content Include="Content\Images\Icon\c.png" />
     <Content Include="Content\Images\Icon\d.png" />
+    <Content Include="Content\Images\Icon\download.png" />
+    <Content Include="Content\Images\Icon\download2.png" />
+    <Content Include="Content\Images\Icon\loginout.png" />
+    <Content Include="Content\Images\Icon\share.png" />
+    <Content Include="Content\Images\Icon\upvip.png" />
     <Content Include="Content\Images\Icon\下载app.png" />
     <Content Include="Content\Images\Icon\修改资料.png" />
     <Content Include="Content\Images\Icon\分享赚钱.png" />
@@ -546,6 +556,18 @@
     <Content Include="Content\Images\Icon\联系客服.png" />
     <Content Include="Content\Images\Icon\退出登录.png" />
     <Content Include="Content\Static\baitiaohuabei.png" />
+    <Content Include="Content\Static\heikeji1.jpg" />
+    <Content Include="Content\Static\heikeji2.jpg" />
+    <Content Include="Content\Static\jingwai1.jpg" />
+    <Content Include="Content\Static\jingwai2.jpg" />
+    <Content Include="Content\Static\jingwai3.jpg" />
+    <Content Include="Content\Static\jingwai4.jpg" />
+    <Content Include="Content\Static\jingwai5.png" />
+    <Content Include="Content\Static\jingwaitie.jpg" />
+    <Content Include="Content\Static\vipup1.jpg" />
+    <Content Include="Content\Static\vipup2.jpg" />
+    <Content Include="Content\Static\WechatIMG1.jpeg" />
+    <Content Include="Content\Static\xinshou.mp4" />
     <Content Include="Content\Static\境外提额.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -626,6 +648,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Product\Kefu.cshtml" />
+    <Content Include="Views\Me\ZaixianKefu.cshtml" />
     <None Include="Views\Product\UpdateVip.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -674,7 +698,8 @@
     <Content Include="Views\News\XinshouZhinan.cshtml" />
     <Content Include="Views\Product\BaitiaoHuabei.cshtml" />
     <Content Include="Views\News\HeiKeji.cshtml" />
-    <Content Include="Views\News\NewsDetail.cshtml" />
+    <Content Include="Views\News\NewsDetails.cshtml" />
+    <Content Include="Views\Product\ZuixinKouzi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

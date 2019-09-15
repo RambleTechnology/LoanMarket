@@ -77,6 +77,16 @@ namespace LoanMarket.Controllers
 
         }
 
+        /// <summary>
+        /// 在线客服
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ZaixianKefu( )
+        {
+            return View();
+
+        }
+
 
     }
 }

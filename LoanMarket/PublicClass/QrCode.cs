@@ -28,6 +28,7 @@ using Spire.Barcode;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -48,10 +49,10 @@ namespace LoanMarket.PublicClass
             settings.Type = BarCodeType.QRCode;
 
             //设置二维码数据
-            settings.Data = "http://www.jiaodai.online/Content/Images/banner/4.jpg";
+            settings.Data = content;
 
             //设置显示文本
-            settings.Data2D = "http://www.jiaodai.online/Content/Images/banner/4.jpg";
+            settings.Data2D = content;
 
             //设置数据类型为数字
             settings.QRCodeDataMode = QRCodeDataMode.Numeric;
@@ -70,6 +71,9 @@ namespace LoanMarket.PublicClass
             string rootPath = HttpContext.Current.Server.MapPath("~");
             string imgName = DateTime.Now.ToString("yyyMMddHHmmssffff") + ".png";
             string fullPath = rootPath + "Content\\Images\\QrCode\\" + imgName;
+            if (File.Exists(fullPath)) {
+                File.Delete(fullPath);
+            }
             image.Save(fullPath);
             return imgName;
         }

@@ -72,9 +72,9 @@ namespace LoanMarket.Controllers
         /// 滚动新闻
         /// </summary>
         /// <returns></returns>
-        public ActionResult NewsDetail()
+        public ActionResult NewsDetails(int no)
         {
-            return View();
+            return View(no);
         }
 
 

@@ -91,7 +91,7 @@ namespace LoanMarket.Controllers
         }
 
 
-          /// <summary>
+        /// <summary>
         /// 升级会员
         /// </summary>        
         /// <returns></returns>
@@ -110,6 +110,20 @@ namespace LoanMarket.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// 最新口子
+        /// </summary>
+        /// <param name="typeId"></param>
+        /// <returns></returns>
+        public ActionResult ZuixinKouzi(int typeId)
+        {
+            return View(typeId);
+        }
+        public ActionResult Kefu()
+        {
+            return View();
+        }
 
     }
 }

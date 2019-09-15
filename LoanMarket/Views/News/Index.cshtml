@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="~/Content/Files/产品超市_files/iconfont.css">
     <link rel="stylesheet" href="~/Content/Files/产品超市_files/style.css">
     <link href="~/Content/Css/style.css" rel="stylesheet" />
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
     <script type="text/javascript" src="~/Content/Files/产品超市_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/产品超市_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/产品超市_files/jquery.func.js"></script>
@@ -129,15 +125,57 @@
 
     <div class="mui-content">
 
-     <p>
-         财经新闻版块
-     </p>
-
+        <p>
+            财经新闻版块:列表
+        </p>
+        <div class="list"></div>
     </div>
 
 
+    <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
 
+    <script>
 
+        init();
+
+        function init() {
+            //获取列表
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "财经" },
+                type: 'Get',
+                success: function (data) {
+                    debugger
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            //CommentCount: 3
+                            //ContentBody: "<p>欢迎使用 wangEditor 富文本编辑器</p><p><img src="http://47.104.186.251:8001/Upload/News/1.jpg" style="max-width:100%;"><br></p>"
+                            //CreateTime: null
+                            //CreateUserIcon: null
+                            //CreateUserNickName: "dfhdf "
+                            //CreateUserNo: null
+                            //LikeCount: 3
+                            //No: 25
+                            //Title: "3         "
+                            //ViewCount: 3
+                            html += "<p>  <a href='/News/NewsDetails?no="+data[i].No+"'>  " + data[i].Title + "  </s>   </p>";
+
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".list").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+        }
+
+    </script>
 
 
 

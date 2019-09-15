@@ -27,6 +27,7 @@
 using LoanMarket.BLL.ApiModel;
 using LoanMarket.Models;
 using LoanMarket.PublicClass;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +78,7 @@ namespace LoanMarket.BLL
         public ProductApiModel GetProduct(int no)
         {
             LoanMarketProduct marketProduct = product.GetProduct(no);
+            log.Info("产品详情,二维码"+JsonConvert.SerializeObject(marketProduct));
             return new ProductApiModel()
             {
                 No = marketProduct.No,
