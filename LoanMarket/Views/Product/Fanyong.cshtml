@@ -106,6 +106,81 @@
             width: 80px;
             height: 20px;
         }
+        .banner {
+            width: 100%;
+            height: 122px;
+            position: relative;
+            background-image: url(/Content/Static/topmessagebg.png);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .topmessage {
+            position: absolute;
+            top: 3%;
+            line-height: 7px;
+            color: #333;
+            width: 57%;
+            margin: 0 11%;
+        }
+
+            .topmessage h4 {
+                padding-bottom: 10px;
+                text-align: center;
+                padding-left: 35px;
+                color: #f00;
+                font-size: 19px;
+            }
+
+            .topmessage p {
+                padding-left: 5px;
+                line-height: 16px;
+                color: #333;
+            }
+
+        .moresshow {
+            width: 80%;
+            margin: 10% 10% 0 10%; 
+            background: #fff;
+            line-height: 16px;
+            color: #333;
+            border-radius: 14px;
+        }
+
+        .moresshow p {
+            margin-top: 15px;
+            padding: 0 10px 0 10px;
+            line-height:18px;
+            color:#333;
+        }
+
+        .bgMessage {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+
+        .closeMessage {
+            float: right;
+            padding-right: 30px;
+            margin-bottom: 10px
+        }
+
+        #moreMessage {
+            color: #fff;
+            text-align: center;
+            padding-top: 4px;
+            position: absolute;
+            bottom: -7px;
+            left: 55px
+        }
     </style>
 </head>
 
@@ -125,10 +200,21 @@
             <!--图片轮播-->
             <div class="banner">
 
-                <a href="#">
-                    <img style="min-height: 188px" src="~/Content/Files/U享圈_files/5ce1701d8101e.jpg">
-                </a>
-
+                <div class="topmessage">
+                    <h4>申请必读</h4>
+                    <p>知道手机服务密码-----手机号码实名制半年以上</p>
+                    <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
+                    <p id="moreMessage">点击查看更多详情》</p>
+                </div>
+                <div class="bgMessage" style="display:none;">
+                    <div class="moresshow" style="">
+                        <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
+                        <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
+                        <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
+                        <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
+                        <p class="closeMessage">关闭详情</p>
+                    </div>
+                </div>
             </div>
             <!--滚动新闻-->
             <div class="index">
@@ -182,6 +268,7 @@
                     </a>
                 </ul>
             </div>
+            <div class="mui-table-view-cell " style="text-align:left;">信用查询</div>
             <!--通知公告-->
             <div class="card-bank">
                 <ul class="clearListStyle mui-clearfix  data">
@@ -193,10 +280,15 @@
             <hr />
             <!--根据类别加载产品-->
             <div class="card-bank">
-                <div class="mui-table-view-cell " style="text-align:left;">大额返佣</div>
+
+                <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
                 <ul class="clearListStyle mui-clearfix  data"></ul>
                 <hr />
+<<<<<<< HEAD
                 <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
+=======
+                <div class="mui-table-view-cell " style="text-align:left;">大额返佣</div>
+>>>>>>> 0bbe969bce970d67f6d98b45b1879be008a283d3
                 @*<ul class="clearListStyle mui-clearfix  data">
 
             </ul>*@
@@ -216,6 +308,12 @@
 
 
     <script type="text/javascript">
+        $("#moreMessage").on("click", function () {
+            $(".bgMessage").show();
+        })
+        $(".closeMessage").on("click", function () {
+            $(".bgMessage").hide();
+        })
         var banner_swiper = new Swiper('.banner .swiper-container', {
             pagination: '.banner .swiper-pagination',
             autoplay: 3000
