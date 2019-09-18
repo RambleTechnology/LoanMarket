@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.uxiangquan.cn/index/member/modify.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>分享赚钱</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/修改资料_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/修改资料_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/修改资料_files/style.css">
+    <script type="text/javascript" src="~/Content/Files/修改资料_files/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/修改资料_files/mui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/修改资料_files/jquery.func.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+    <script src="~/Scripts/Common/jquery.form.js"></script>
+    <style type="text/css">
+        body {
+        }
+
+        .bgimg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(/Content/Files/U享圈_files/sharemoney.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .top {
+            position: relative;
+            font-size: 30px;
+            top: 17%;
+        }
+
+        .one {
+            color: #333;
+            font-size: 30px;
+            padding-bottom: 15px;
+            margin-left: 22%;
+        }
+
+        .two {
+            color: #666;
+            font-size: 30px;
+            padding-bottom: 15px;
+            margin-left: 29%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            position: relative;
+            top: 30%;
+            line-height: 34px;
+            left: 7%;
+            font-size: 20px;
+            color: #666;
+        }
+
+        .QRcode {
+            width: 120px;
+            height: 120px;
+            background: pink;
+            position: relative;
+            left: 56%;
+            top: 8%;
+            display: block;
+        }
+    </style>
+</head>
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="bgimg">
+        <div class="top">
+            <p class="one">加入我们告别</p>
+            <p class="two">往外甩户的时代</p>
+        </div>
+        <ul>
+            <li>找口子</li>
+            <li>学技术</li>
+            <li style="color:#333;">分享·赚分润</li>
+            <li>每日实时更新</li>
+        </ul>
+        <input type="hidden" class="qrCodeImgUrl" value="@ViewBag.SpreadQrCodeUrl" />
+        <img class="QRcode qrCodeImg" src="" />
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            var qrCodeImgUrl = $(".qrCodeImgUrl").val();
+            $(".qrCodeImg").attr("src", spreadQrCodeRootPath + qrCodeImgUrl);
+        };
+    </script>
+
+
+</body>
+</html>

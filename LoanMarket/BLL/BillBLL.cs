@@ -48,16 +48,16 @@ namespace LoanMarket.BLL
             LoanMarketGroup toGroup = userGroup.GetUserGroup(Convert.ToInt32(model.ToUserNo));
             LoanMarketSpreadBill spreadBill = new LoanMarketSpreadBill()
             {
-                No=model.FromUserNo+"|"+model.ToUserNo+"|"+model.BillType.ToString()+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff"),
-                BillType=model.BillType,
+                No = model.FromUserNo + "|" + model.ToUserNo + "|" + model.BillType.ToString() + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff"),
+                BillType = model.BillType,
                 Amount = model.Amount,
                 Id = GuidTool.GenerateKey(),
                 FromUserNo = model.FromUserNo,
                 FromUserGroupNo = fromGroup.No.ToString(),
                 FromUserGroupName = fromGroup.Name,
                 ToUserNo = model.ToUserNo,
-                ToUserGroupNo = toGroup.No.ToString(),
-                ToUserGroupName = toGroup.Name,
+                ToUserGroupNo = toGroup == null ? "0" : toGroup.No.ToString(),
+                ToUserGroupName = toGroup == null ? "非会员，无用户组" : toGroup.Name,
                 CreateTime = DateTime.Now,
                 UpateTime = DateTime.Now
             };

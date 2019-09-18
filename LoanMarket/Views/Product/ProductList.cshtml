@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="~/Content/Files/最新口子_files/style.css">
     <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
     <link href="~/Content/Css/style.css" rel="stylesheet" />
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery.func.js"></script>
@@ -119,7 +115,7 @@
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">产品类别</div>
 
             <!--根据类别加载产品-->
-            <div class="card-bank"> 
+            <div class="card-bank">
                 <ul class="clearListStyle mui-clearfix  data">
                     <li>
                         <a onclick="getqrcode(&#39;2962&#39;)">
@@ -139,7 +135,7 @@
             <div class="mui-table-view detail">
                 <li class="mui-table-view-cell borderbutton" style="font-weight:bold;color:#1e5bca">
                     <span class="TypeAndName"> 精选单品-华山论借</span>
-                    <button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;" >
+                    <button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;">
                         <a href="/Product/Kefu">
                             失效反馈
                         </a>
@@ -166,11 +162,16 @@
                         </div>
                     </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
                         <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
-                                复制链接
-                            </button>
+                            复制链接
+                        </button>
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
                         </a>
+
+                        <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 saveImg   " style="box-shadow: 3px 2px 6px #dd524d;">
+                            保存图片
+                        </a>
+
                     </div>
                 </li>
             </div>
@@ -235,34 +236,7 @@
             });
         }
 
-        //获取详情
-        function getqrcode(id) {
-            $.ajax({
-                url: "/index/member/getqrcode.html",
-                data: { id: id },
-                type: 'post',
-                success: function (res) {
-                    if (res.code == 1) {
-                        $(".shadow-box").html(res.msg.html);
-                        copybtn = document.getElementById('copy');
-                        clipboard = new ClipboardJS(copybtn, {
-                            text: function () {
-                                return res.msg.url;
-                            }
-                        });
-                        $(".apply-shadow").show();
-                    } else {
-                        if (res.msg == 'noaccess') {
-                            location.href = "/index/Index/noaccess";
-                        } else if (res.msg == 'document') {
-                            location.href = "/index/Api/gatherpage?id=" + id;
-                        } else {
-                            alerterr(res.msg);
-                        }
-                    }
-                }
-            })
-        }
+
 
         //获取产品详情
         function GetDetail(no) {
@@ -271,15 +245,26 @@
                 data: { no: no },
                 type: 'Get',
                 success: function (data) {
-                    var type = $(".productTypeName").html();
-                    $(".detail .TypeAndName").html(type + data.Name);
-                    $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
-                    $(".detail .Icon").attr("src", data.Icon);
-                    $(".detail .Name").html(data.Name);
-                    $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
-                    $(".detail .Url").attr("data-url", data.Url);
-                    $(".detail .JumpUrl").attr("href", data.Url);
-                    $(".apply-shadow").show();
+                    if (data.ResponseStatus == "ok") {
+                        var type = $(".productTypeName").html();
+                        $(".detail .TypeAndName").html(type + data.Name);
+                        $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
+                        $(".detail .Icon").attr("src", data.Icon);
+                        $(".detail .Name").html(data.Name);
+                        $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
+                        $(".detail .Url").attr("data-url", data.Url);
+                        $(".detail .JumpUrl").attr("href", data.Url);
+                        debugger
+                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
+
+                        $(".apply-shadow").show();
+                    } else if (data.ResponseStatus == "不是会员") {
+                        window.location.href = "/Product/UpdateVip";
+                    } else if (data.ResponseStatus == "未登录") {
+                        window.location.href = "/Me/Login";
+                    } else {
+                        console.log("获取详情，后台返回的 ResponseStatus 字段的值未定义");
+                    }
                 },
                 error: function () {
                     console.log("服务器异常");
@@ -290,7 +275,7 @@
         //关闭详情
         $(".shadow-box").on('click', '.closebox', function () {
             $('.apply-shadow').hide();
-            //$(".shadow-box").html('');
+
         })
 
         //复制连接
@@ -305,6 +290,11 @@
             });
         }
 
+
+        //保存图片
+        function SameImg() {
+
+        }
 
     </script>
 

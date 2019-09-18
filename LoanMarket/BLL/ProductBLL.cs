@@ -61,7 +61,19 @@ namespace LoanMarket.BLL
             {
                 List<LoanMarketProduct> loanMarketProducts = product.FindProductList();
                 loanMarketProducts = loanMarketProducts.Where(a => a.TypeNo == typeId).ToList();
-                return new List<ProductApiModel>(loanMarketProducts.ConvertAll<ProductApiModel>(e => { return new ProductApiModel { Id = e.Id, No = e.No, Name = e.Name, Icon = e.Icon }; }));
+                return new List<ProductApiModel>(loanMarketProducts.ConvertAll<ProductApiModel>(e =>
+                {
+                    return new ProductApiModel
+                    {
+                        Id = e.Id,
+                        No = e.No,
+                        Name = e.Name,
+                        Icon = e.Icon
+,
+                        Describe5 = e.Describe5,
+                        Url = e.Url
+                    };
+                }));
             }
             catch (Exception e)
             {
@@ -77,21 +89,31 @@ namespace LoanMarket.BLL
         /// <returns></returns>
         public ProductApiModel GetProduct(int no)
         {
-            LoanMarketProduct marketProduct = product.GetProduct(no);
-            log.Info("产品详情,二维码"+JsonConvert.SerializeObject(marketProduct));
-            return new ProductApiModel()
+            ProductApiModel model = new ProductApiModel();
+            try
             {
-                No = marketProduct.No,
-                Name = marketProduct.Name,
-                Icon = marketProduct.Icon,
-                Describe1 = marketProduct.Describe1,
-                Describe2 = marketProduct.Describe2,
-                Describe3 = marketProduct.Describe3,
-                Describe4 = marketProduct.Describe4,
-                Describe5 = marketProduct.Describe5,
-                Url = marketProduct.Url,
-                QrCodeUrl = QrCode.CreateQrCode(marketProduct.Url)
-            };
+                LoanMarketProduct marketProduct = product.GetProduct(no);
+                log.Info("产品详情,二维码" + JsonConvert.SerializeObject(marketProduct));
+                model = new ProductApiModel()
+                {
+                    ResponseStatus = "ok",
+                    No = marketProduct.No,
+                    Name = marketProduct.Name,
+                    Icon = marketProduct.Icon,
+                    Describe1 = marketProduct.Describe1,
+                    Describe2 = marketProduct.Describe2,
+                    Describe3 = marketProduct.Describe3,
+                    Describe4 = marketProduct.Describe4,
+                    Describe5 = marketProduct.Describe5,
+                    Url = marketProduct.Url,
+                    QrCodeUrl = QrCode.CreateQrCode(marketProduct.Url)
+                };
+            }
+            catch (Exception e)
+            {
+                log.Info("获取产品详情报异常，异常信息为：" + e.Message);
+            }
+            return model;
         }
     }
 }

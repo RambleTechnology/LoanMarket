@@ -1,0 +1,185 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.uxiangquan.cn/index/index/market.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="~/Content/Files/产品超市_files/swiper.3.1.2.min.css">
+
+    <title>提额技巧</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/产品超市_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/产品超市_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/产品超市_files/style.css">
+    <link href="~/Content/Css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/Files/产品超市_files/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/产品超市_files/mui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/产品超市_files/jquery.func.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            width: 400px;
+            height: 600px;
+            display: inline-block;
+            border-radius: 10px;
+            float: left;
+        }
+
+            div p {
+                margin: 40px auto;
+                text-align: center;
+                letter-spacing: 6px;
+            }
+
+        ul {
+            margin: 0 20px;
+            padding: 0 0 0px 0;
+            list-style: none;
+            border-top: 2px solid #ccc;
+            border-left: 2px solid #ccc;
+            border-right: 2px solid #ccc;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .first_ul {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .last_ul {
+            border-radius: 0 0 8px 8px;
+        }
+
+        ul span {
+            width: 100%;
+            display: inline-block;
+            background-color: #a0beb0;
+            box-sizing: border-box;
+            cursor: pointer;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 10px;
+        }
+
+            ul span b {
+                float: right;
+                padding-right: 10px;
+            }
+
+        ul li {
+            display: none;
+            cursor: pointer;
+        }
+
+            ul li:hover {
+                background-color: #bbdbcd;
+            }
+
+        img {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div id="box2">
+        <ul class='first_ul'>
+            <span class="m">各大银行信用卡申请顺序 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list10.jpg" /></li>
+        </ul>
+        <ul>
+            <span class="m">逾期上报征信时常 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list9.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>POS机注意事项 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list8.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>境外消费前报备方法 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list7.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>精养卡中端 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list6.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>消费每笔金额大小模式 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list5.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>精养卡与提额 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list4.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>精养卡前端 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list3.jpg" /></li>
+
+        </ul>
+        <ul>
+            <span>3~6个月短信与电话提额方法 <b>>></b></span>
+            <li><img src="/Content/Images/Common/list2.jpg" /></li>
+
+        </ul>
+        <ul class='last_ul'>
+            <span>养卡技术分享（图文版） <b>>></b></span>
+            <li><img src="/Content/Images/Common/list1.jpg" /></li>
+
+        </ul>
+    </div>
+
+    <!--<div>
+
+
+        <img src="/Content/Images/Common/list8.jpg" style="display:none;" id="yuqiimg" />
+    </div>-->
+    <script>
+        $("#bank").on("click", function () {
+            $("#bankimg").toggle();
+        });
+        $("#yuqi").on("click", function () {
+            $("#yuqiimg").toggle();
+        })
+        $(function () {
+            $('#box2 span').click(function () {
+                var curLi = $(this).parent().find('li');              //获得当前点击的菜单的二级菜单
+                var restUl = $(this).parent().siblings('ul');         //获得没有点击的一级菜单
+                // 通过判断二级菜单是否收起，来进行判断是否展开，并更换"+ -"表示
+                if (curLi.css('display') == 'none') {
+                    curLi.slideDown();
+                    curLi.parent().find('b').text('-');
+                }
+                else {
+                    curLi.slideUp();
+                    curLi.parent().find('b').text('>>');
+                }
+                // 没有点击的二级菜单全部收起，并将标志全部改为"+"
+                restUl.find('li').slideUp();
+                restUl.find('b').text('>>');
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://www.uxiangquan.cn/index/login/register.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>提现密码</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/注册_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/注册_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/注册_files/style.css">
+   
+    <script type="text/javascript" src="~/Content/Files/注册_files/jquery-2.2.3.min.js"></script>
+     
+    <style>
+        input:-internal-autofill-selected {
+            background-color:#fff !important;
+        }
+    </style>
+</head>
+
+
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content">
+        <form >
+            <input type="hidden" id="gourl" value="/index/member/index.html">
+            <div class="mui-input-group mt10">
+                <div class="mui-input-row">
+                    <label>手机号码</label>
+                    <input type="tel" class="mui-input-clear" id="telephone" name="Mobile" placeholder="请输入手机号码" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    <input placeholder="ddd"/>
+                </div>
+
+                @*<div class="mui-input-row dxyzm">
+            <label>图形验证码</label>
+            <div class="box-flex-1" style="position: relative;">
+                <input type="number" name="verify" id="verify" class="mui-input-clear" placeholder="请输入图形验证码" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+            </div>
+            <div class="dxyzmbox">
+                <img id="vimg" width="120" height="38" title="看不清楚?换一张!" alt="" onclick="this.src=&#39;/captcha?random=&#39;+Math.random()" src="~/Content/Files/注册_files/captcha">
+            </div>
+        </div>*@
+                @*<div class="mui-input-row dxyzm">
+            <label>短信验证码</label>
+            <div class="box-flex-1" style="position: relative;">
+                <input type="number" id="smscode" name="smscode" class="mui-input-clear" placeholder="请输入短信验证码" data-input-clear="3"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+            </div>
+            <div class="dxyzmbox"><button type="button" id="btn-sms" class="mui-btn">获取验证码</button></div>
+        </div>*@
+                <div class="mui-input-row dxyzm">
+                    <label>短信验证码</label>
+                    <div class="box-flex-1" style="position: relative;">
+                        <input type="number" id="smscode" name="smscode" class="mui-input-clear" placeholder="请输入短信验证码" data-input-clear="3"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    </div>
+                    <div class="dxyzmbox"><button type="button" id="btn-sms" class="mui-btn">获取验证码</button></div>
+                </div> 
+
+                <div class="mui-input-row">
+                    <label>密码</label>
+                    <input style="padding: 10px 0px;" type="" class="mui-input-clear" placeholder="请输入密码" name="userpwd" id="userpwd" maxlength="20" data-input-clear="4">                                          
+                </div>
+                    <div class="mui-input-row">
+                        <label>确认密码</label>
+                        <input style="padding: 10px 0px;" type="" class="mui-input-clear" placeholder="请再次输入密码" name="Password" id="userpwd1" maxlength="20" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>                         
+                    </div>
+                </div>
+                <div class="mui-content-padded">
+                    <p><button type="submit" class="mui-btn mui-btn-primary mui-btn-block mui-btn-sm weui-btn_disabled" disabled="disabled">提交</button></p>
+                </div>
+</form>
+    </div>
+    <script>
+        
+    </script>
+
+</body>
+</html>

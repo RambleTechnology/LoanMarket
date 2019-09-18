@@ -33,6 +33,11 @@ namespace LoanMarket.BLL.ApiModel
 {
     public class ProductApiModel
     {
+        /// <summary>
+        /// 相应状态
+        /// </summary>
+        public string ResponseStatus { get; set; }
+
         public string Id { get; set; }
 
         public int No { get; set; }

@@ -210,10 +210,12 @@
     <Compile Include="Api\MeController.cs" />
     <Compile Include="Api\ParamModel\BindLeaderParamModel.cs" />
     <Compile Include="Api\ParamModel\CommentParamModel.cs" />
+    <Compile Include="Api\ParamModel\RegisterParamModel.cs" />
     <Compile Include="Api\ParamModel\UserParamModel.cs" />
     <Compile Include="Api\ProductController.cs" />
     <Compile Include="Api\ProductDetailController.cs" />
     <Compile Include="Api\ProductTypeController.cs" />
+    <Compile Include="Api\SpreadRegisterController.cs" />
     <Compile Include="Api\TypeViewGradeController.cs" />
     <Compile Include="Api\RegisterController.cs" />
     <Compile Include="Api\Test.cs" />
@@ -323,6 +325,7 @@
     <Content Include="Content\Files\U享圈_files\7.jpeg" />
     <Content Include="Content\Files\U享圈_files\8.jpeg" />
     <Content Include="Content\Files\U享圈_files\back.png" />
+    <Content Include="Content\Files\U享圈_files\bannerimgdetail2.jpg" />
     <Content Include="Content\Files\U享圈_files\iconfont.css" />
     <Content Include="Content\Files\U享圈_files\iconl.png" />
     <Content Include="Content\Files\U享圈_files\iconr.png" />
@@ -342,6 +345,7 @@
     <Content Include="Content\Files\U享圈_files\index_icon7.png" />
     <Content Include="Content\Files\U享圈_files\mui.min.css" />
     <Content Include="Content\Files\U享圈_files\qkda.jpg" />
+    <Content Include="Content\Files\U享圈_files\sharemoney.jpg" />
     <Content Include="Content\Files\U享圈_files\style.css" />
     <Content Include="Content\Files\U享圈_files\swiper.3.1.2.min.css" />
     <Content Include="Content\Files\个人中心_files\1.png" />
@@ -380,6 +384,8 @@
     <Content Include="Content\Files\交流专区_files\5d3167afde94b.jpg" />
     <Content Include="Content\Files\交流专区_files\5d31812970b46.jpg" />
     <Content Include="Content\Files\交流专区_files\5d31812ced0b5.jpg" />
+    <Content Include="Content\Files\交流专区_files\bannerimgdetail.jpg" />
+    <Content Include="Content\Files\交流专区_files\caijingbanner.jpg" />
     <Content Include="Content\Files\交流专区_files\iconfont.css" />
     <Content Include="Content\Files\交流专区_files\logo.png" />
     <Content Include="Content\Files\交流专区_files\style.css" />
@@ -518,10 +524,31 @@
     <Content Include="Content\Images\banner\3.jpg" />
     <Content Include="Content\Images\banner\4.jpg" />
     <Content Include="Content\Images\banner\5.jpg" />
-    <Content Include="Content\Images\Common\22.jpg" />
+    <Content Include="Content\Images\banner\fanyongbanner.jpg" />
+    <Content Include="Content\Images\banner\hotproject.jpg" />
+    <Content Include="Content\Images\banner\indexbanner5.jpg" />
+    <Content Include="Content\Images\banner\xiaoebanner.jpg" />
+    <Content Include="Content\Images\Common\kefu50.jpg" />
+    <Content Include="Content\Images\Common\kefu8.jpg" />
+    <Content Include="Content\Images\Common\kefu9.png" />
+    <Content Include="Content\Images\Common\list1.jpg" />
+    <Content Include="Content\Images\Common\list10.jpg" />
+    <Content Include="Content\Images\Common\list2.jpg" />
+    <Content Include="Content\Images\Common\list3.jpg" />
+    <Content Include="Content\Images\Common\list4.jpg" />
+    <Content Include="Content\Images\Common\list5.jpg" />
+    <Content Include="Content\Images\Common\list6.jpg" />
+    <Content Include="Content\Images\Common\list7.jpg" />
+    <Content Include="Content\Images\Common\list8.jpg" />
+    <Content Include="Content\Images\Common\list9.jpg" />
     <Content Include="Content\Images\Common\shenka.png" />
     <Content Include="Content\Images\Common\tie.jpg" />
     <Content Include="Content\Images\Common\tie1.jpg" />
+    <Content Include="Content\Images\Common\tie11.jpg" />
+    <Content Include="Content\Images\Common\tie2.jpg" />
+    <Content Include="Content\Images\Common\tie3.png" />
+    <Content Include="Content\Images\Common\tie4.jpg" />
+    <Content Include="Content\Images\Common\tie5.jpg" />
     <Content Include="Content\Images\Common\卡.png" />
     <Content Include="Content\Images\Common\书-浏览器.png" />
     <Content Include="Content\Images\Icon\1.png" />
@@ -546,6 +573,7 @@
     <Content Include="Content\Images\Icon\d.png" />
     <Content Include="Content\Images\Icon\download.png" />
     <Content Include="Content\Images\Icon\download2.png" />
+    <Content Include="Content\Images\Icon\login.jpg" />
     <Content Include="Content\Images\Icon\loginout.png" />
     <Content Include="Content\Images\Icon\share.png" />
     <Content Include="Content\Images\Icon\upvip.png" />
@@ -555,7 +583,12 @@
     <Content Include="Content\Images\Icon\我的分享.png" />
     <Content Include="Content\Images\Icon\联系客服.png" />
     <Content Include="Content\Images\Icon\退出登录.png" />
-    <Content Include="Content\Static\baitiaohuabei.png" />
+    <Content Include="Content\Images\SpreadQrCode\201909182021086875.png" />
+    <Content Include="Content\Images\SpreadQrCode\201909182022113641.png" />
+    <Content Include="Content\Images\SpreadQrCode\201909182023128771.png" />
+    <Content Include="Content\Images\SpreadQrCode\201909182029064572.png" />
+    <Content Include="Content\Images\SpreadQrCode\201909182029259321.png" />
+    <Content Include="Content\Static\baitiaohuabei01.png" />
     <Content Include="Content\Static\heikeji1.jpg" />
     <Content Include="Content\Static\heikeji2.jpg" />
     <Content Include="Content\Static\jingwai1.jpg" />
@@ -634,6 +667,7 @@
     <Content Include="Content\Files\U享圈_files\Index.cshtml" />
     <Content Include="Content\Files\bannerDetailimg\.DS_Store" />
     <Content Include="Content\Files\bannerDetailimg\._.DS_Store" />
+    <Content Include="Content\Files\U享圈_files\UpdateVip.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common\common.js" />
@@ -650,6 +684,14 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Product\Kefu.cshtml" />
     <Content Include="Views\Me\ZaixianKefu.cshtml" />
+    <Content Include="Views\Product\KefuEight.cshtml" />
+    <Content Include="Views\Product\KefuNine.cshtml" />
+    <Content Include="Views\News\HeikejiDetail.cshtml" />
+    <Content Include="Views\Card\YangkaTiejiqiao.cshtml" />
+    <Content Include="Views\Me\Cashpsd.cshtml" />
+    <Content Include="Views\Me\Sharemoney.cshtml" />
+    <Content Include="Views\Me\DownloadApp.cshtml" />
+    <Content Include="Views\Me\SpreadRegister.cshtml" />
     <None Include="Views\Product\UpdateVip.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -700,9 +742,11 @@
     <Content Include="Views\News\HeiKeji.cshtml" />
     <Content Include="Views\News\NewsDetails.cshtml" />
     <Content Include="Views\Product\ZuixinKouzi.cshtml" />
+    <Content Include="Views\Product\VipArgee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\ProductDetailQrCodeImg\" />
     <Folder Include="Content\Images\QrCode\" />
   </ItemGroup>
   <ItemGroup>

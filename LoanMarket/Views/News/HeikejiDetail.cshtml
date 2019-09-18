@@ -1,0 +1,120 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>黑科技详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <style>
+        .xinwenstyle1 {
+            padding: 10px 10px 10px 10px;
+        }
+
+            .xinwenstyle1 div {
+                float: left;
+                width: 70%;
+                color: #333;
+            }
+
+            .xinwenstyle1 span {
+                margin-left: 15px;
+            }
+
+            .xinwenstyle1 ul {
+                padding-bottom: 10px;
+                overflow: hidden;
+                clear: both;
+            }
+
+                .xinwenstyle1 ul li {
+                    width: 33%;
+                    float: left;
+                    list-style: none;
+                }
+
+        .data {
+            margin: 10px 15px;
+            overflow: hidden;
+        }
+
+        .lists {
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            padding: 0 0 10px 0;
+        }
+    </style>
+</head>
+
+
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content">
+        <div class="list">
+        </div>
+        <div class="data">
+           
+
+        </div>
+        <input type="hidden" class="newno" value="@Model" />
+
+    </div>
+    <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
+    <script>
+
+        init();
+
+        function init() {
+            var no = $(".newno").val();
+            //获取列表
+            $.ajax({
+                url: "/api/NewsDetails?no=" + no,
+                type: 'Get',
+                success: function (data) {
+                    debugger
+                    var html = "";
+                    if (data) {
+
+                            //CommentCount: 3
+                            //ContentBody: "<p>欢迎使用 wangEditor 富文本编辑器</p><p><img src="http://47.104.186.251:8001/Upload/News/1.jpg" style="max-width:100%;"><br></p>"
+                            //CreateTime: null
+                            //CreateUserIcon: null
+                            //CreateUserNickName: "dfhdf "
+                            //CreateUserNo: null
+                            //LikeCount: 3
+                            //No: 25
+                            //Title: "3         "
+                            //ViewCount: 3
+                            html += "<div class='lists xinwenstyle1'>";
+                            html += "<div>"+data.ContentBody+"<p style='padding - top: 10px; '>"+data.Title+"   <span>"+data.ViewCount+"阅读</span></p></div>";
+                          //  html += "  <div>淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style='padding-top:10px;'>卡农桃夭夭   <span>5344阅读</span></p></div>";
+                            html += "<img style='width:80px;height:50px;background:pink;' />";
+                            html += "</div>";
+
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

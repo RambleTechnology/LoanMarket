@@ -1,5 +1,8 @@
-﻿using System;
+﻿using LoanMarket.BLL;
+using LoanMarket.BLL.ApiModel;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -91,6 +94,7 @@ namespace LoanMarket.Controllers
         }
 
 
+
         /// <summary>
         /// 升级会员
         /// </summary>        
@@ -107,6 +111,7 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
+
 
         /// <summary>
         /// 白条花呗
@@ -128,9 +133,54 @@ namespace LoanMarket.Controllers
         {
             return View(typeId);
         }
+
+        /// <summary>
+        /// 首页客服
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Kefu()
         {
             return View();
+        }
+
+        /// <summary>
+        /// 客服8
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult KefuEight()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 客服9
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult KefuNine()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 保存产品详情图片
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+
+        public FileResult SaveImg(int no)
+        {
+            ProductBLL bll = new ProductBLL();
+            ProductApiModel model = bll.GetProduct(no);
+            if (model != null)
+            {
+                string imgPath = PublicClass.QrCode.CreateProductDetailQrCode(model.Url, model.Name);
+                return File(imgPath, "application/image/jpeg",model.No+".jpeg");
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
     }

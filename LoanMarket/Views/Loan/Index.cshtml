@@ -170,6 +170,7 @@
     </footer>
 
     <div class="mui-content">
+        <!--banner-->
         <div class="banner">
             <div class="swiper-container swiper-container-horizontal">
                 <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1500px, 0px, 0px);height:160px;">
@@ -195,7 +196,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-active" style="width: 375px;">
                         <a href="#">
-                            <img style="height:200px;" src="~/Content/Files/U享圈_files/indexbanner5.jpg">
+                            <img style="height:200px;" src="~/Content/Images/banner/indexbanner5.jpg">
                         </a>
                     </div>
                 </div>
@@ -203,7 +204,7 @@
             </div>
         </div>
 
-
+        <!--九宫格-->
         <div class="muilist">
             <ul class="mui-table-view mui-grid-view mui-grid-12 typeData">
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
@@ -256,12 +257,14 @@
                 </li>
             </ul>
         </div>
+
+        <!--滚动新闻-->
         <div class="index">
             <ul class="news">
                 <a href="javascript:void(0);">
                     <div class="newsWrapper NewsList" style="top: -250px;">
                         <li>
-                            <div class="news_icon" >
+                            <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
                             <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
@@ -293,6 +296,7 @@
             </ul>
         </div>
 
+        <!--新手指南-->
         <div class="muilist">
             <ul class="mui-table-view mui-grid-view mui-grid-12 typeData">
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
@@ -323,10 +327,10 @@
             </ul>
         </div>
 
-
+        <!--每日黑科技-->
         <div class="mui-table-view mt10">
             <div class="mui-table-view-cell pub-tit1">每日黑科技</div>
-            <div class="data">
+            <div class="HeikejiData"  style="padding:10px 0 10px 15px;">
                 <div class="lists">
                     <a href="/News/HeiKeJi" class="kejistyle1">
                         <div>淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style="padding-top:10px;">卡农桃夭夭   <span>5344阅读</span></p></div>
@@ -363,14 +367,18 @@
 
             </div>
         </div>
-
-        <div class="copy">©2019 漫步科技有限公司 <br><a href="http://www.beian.miit.gov.cn/"></a></div>
     </div>
 
 
 
 
     <script type="text/javascript">
+        init();
+
+        function init() {
+            FindHeikejiList();
+        }
+
         //initProductTypeList();
 
         //FindNewsList();
@@ -382,7 +390,7 @@
                 type: 'Get',
                 dataType: "json",
                 success: function (data) {
-                    debugger
+
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
@@ -414,20 +422,10 @@
                 data: { type: "滚动新闻" },
                 type: 'Get',
                 success: function (data) {
-                    debugger
+
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
-                            //CommentCount: 3
-                            //ContentBody: "<p>欢迎使用 wangEditor 富文本编辑器</p><p><img src="http://47.104.186.251:8001/Upload/News/1.jpg" style="max-width:100%;"><br></p>"
-                            //CreateTime: null
-                            //CreateUserIcon: null
-                            //CreateUserNickName: "dfhdf "
-                            //CreateUserNo: null
-                            //LikeCount: 3
-                            //No: 25
-                            //Title: "3         "
-                            //ViewCount: 3
                             html += " <li>";
                             html += "<div class='news_icon'>";
                             html += " <img src = '~/Content/Files/U享圈_files/indexmessage.png'  >";
@@ -435,7 +433,7 @@
                             html += "<div class='text'><a href='/News/NewsDetail?no=" + data[i].No + "'> " + data[i].Title + "</a></div>";
                             html += "<div class='back'><img src='~/Content/Files/U享圈_files/back.png'></div>";
                             html += " </li>";
-                            }
+                        }
                     } else {
                         html += "<li>";
                         html += "无数据";
@@ -449,6 +447,34 @@
                 }
             });
         }
+
+
+        //黑科技list
+        function FindHeikejiList() {
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "每日黑科技" },
+                type: 'Get',
+                success: function (data) {
+
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<p>  <a href='/News/HeikejiDetail?no=" + data[i].No + "'>" + data[i].Title + "   </a></p>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".HeikejiData").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+        }
+
 
         //产品列表
         function initProductList() {

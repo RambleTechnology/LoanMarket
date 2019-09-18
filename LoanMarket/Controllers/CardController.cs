@@ -17,5 +17,11 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
+
+        public ActionResult YangkaTiejiqiao()
+        {
+            return View();
+        }
+
     }
 }

@@ -72,11 +72,20 @@ namespace LoanMarket.Controllers
         /// 滚动新闻
         /// </summary>
         /// <returns></returns>
+
         public ActionResult NewsDetails(int no)
         {
             return View(no);
         }
 
-
+        /// <summary>
+        /// 黑科技详情
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public ActionResult HeikejiDetail(int no)
+        {
+            return View(no);
+        }
     }
 }

@@ -1,0 +1,402 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.uxiangquan.cn/index/index/product/day/2.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>返佣产品</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="~/Content/Files/最新口子_files/mui.min.css">
+    <link rel="stylesheet" href="~/Content/Files/最新口子_files/iconfont.css">
+    <link rel="stylesheet" href="~/Content/Files/最新口子_files/style.css">
+    <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
+    <link href="~/Content/Css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/最新口子_files/mui.min.js"></script>
+    <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery.func.js"></script>
+    <script src="~/Content/Files/最新口子_files/clipboard.min.js"></script>
+    <script src="~/Scripts/Common/common.js"></script>
+    <script src="~/Content/Files/U享圈_files/swiper.3.1.2.jquery.min.js"></script>
+    <style>
+        .notices .bg .cont {
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #f24a00;
+        }
+
+        .mui-table-view-cell:after {
+            right: 15px !important;
+        }
+
+        .card-bank li {
+            width: 33.333333%;
+            float: left;
+        }
+
+        .card-bank .txt {
+            width: 100% !important;
+            text-align: center;
+        }
+
+        .productlist:nth-child(odd) {
+            border-right: 1px solid #ddd;
+        }
+
+        .productlist .title {
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .productlist .des {
+            height: 17px;
+            overflow: hidden;
+            margin-top: 9px;
+        }
+
+        .mui-table-view-cell:after {
+            display: none
+        }
+
+        .uxin-1 .img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .mui-ios .mui-table-view-cell {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+    <style type="text/css">
+        button {
+            line-height: 1 !important;
+        }
+
+        .borderbutton {
+            border-bottom: 1px solid #666;
+        }
+
+        .closebox {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin-left: -20px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            border: 1px solid #eee;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .index .news img {
+            width: 80px;
+            height: 20px;
+        }
+        .banner {
+            width: 100%;
+            height: 122px;
+            position: relative;
+            background-image: url(/Content/Static/topmessagebg.png);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .topmessage {
+            position: absolute;
+            top: 3%;
+            line-height: 7px;
+            color: #333;
+            width: 57%;
+            margin: 0 11%;
+        }
+
+            .topmessage h4 {
+                padding-bottom: 10px;
+                text-align: center;
+                padding-left: 35px;
+                color: #f00;
+                font-size: 19px;
+            }
+
+            .topmessage p {
+                padding-left: 5px;
+                line-height: 16px;
+                color: #333;
+            }
+
+        .moresshow {
+            width: 80%;
+            margin: 10% 10% 0 10%; 
+            background: #fff;
+            line-height: 16px;
+            color: #333;
+            border-radius: 14px;
+        }
+
+        .moresshow p {
+            margin-top: 15px;
+            padding: 0 10px 0 10px;
+            line-height:18px;
+            color:#333;
+        }
+
+        .bgMessage {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+
+        .closeMessage {
+            float: right;
+            padding-right: 30px;
+            margin-bottom: 10px
+        }
+
+        #moreMessage {
+            color: #fff;
+            text-align: center;
+            padding-top: 4px;
+            position: absolute;
+            bottom: -9px;
+            left: 55px
+        }
+    </style>
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <footer class="mui-bar mui-bar-footer nav-bottom">
+        <ul class="clearListStyle mui-clearfix">
+            <li class="active"><a href="/Loan/Index"><span class="iconfont icon-shouye"></span>首页</a></li>
+            <li><a href="/Forum/Index"><span class="iconfont icon-icon_replieslist"></span>交流专区</a></li>
+            <li><a href="/News/Index"><span class="iconfont icon-weibiaoti35"></span>财经</a></li>
+            <li><a href="/Me/Index"><span class="iconfont icon-wode"></span>我的</a></li>
+        </ul>
+    </footer>
+    <div class="mui-content">
+        <div class="mui-table-view" style="margin-top: 0px">
+            <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">返佣产品</div>
+
+            <!--图片轮播-->
+            <div class="banner">
+
+                <div class="topmessage">
+                    <h4>申请必读</h4>
+                    <p>知道手机服务密码-----手机号码实名制半年以上</p>
+                    <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
+                    <p id="moreMessage">点击查看更多详情》</p>
+                </div>
+                <div class="bgMessage" style="display:none;">
+                    <div class="moresshow" style="">
+                        <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
+                        <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
+                        <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
+                        <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
+                        <p class="closeMessage">关闭详情</p>
+                    </div>
+                </div>
+            </div>
+            <!--滚动新闻-->
+            <div class="index">
+                <ul class="news">
+                    <a href="#">
+                        <div class="newsWrapper" style="top: -250px;">
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜张先生 135****0795拍拍贷下款20000</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜李先生 136****5432飞贷下款85000</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜刘女士 136****宜人贷下款40000</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜赵先生 151****7788推广团队达到50人升级为总监</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜孙女士 189****6932团队推广佣金200000，分红佣金10000</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+                            <li>
+                                <div class="news_icon">
+                                    <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
+                                </div>
+                                <div class="text">恭喜宁先生 157****3522推广光大信用卡一张，获取佣金100</div>
+                                <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
+                            </li>
+
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <!--信用查询-->
+            <div class="lists1">
+                <p>今日实战下款|会员曝光<span><a href="/Product/ProductList?typeId=35">更多</a> </span></p>
+
+            </div>
+            <!--加载实时更新存活产品|会员曝光类别下的产品-->
+            <div class="card-bank">
+                @*<div class="mui-table-view-cell " style="text-align:left;">今日实战下款（会员曝光）</div>*@
+                <ul class="clearListStyle mui-clearfix  data34"></ul>
+            </div>
+           
+            <hr />
+            <!--根据类别加载产品-->
+            <div class="card-bank">
+
+                <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
+                <ul class="clearListStyle mui-clearfix  data"></ul>
+                <hr />
+
+                <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
+
+                <div class="mui-table-view-cell " style="text-align:left;">大额返佣</div>
+
+                @*<ul class="clearListStyle mui-clearfix  data">
+
+            </ul>*@
+            </div>
+            <!--广告位置-->
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="apply-shadow 0" style="display: none;">
+        <div class="shadow-box">
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $("#moreMessage").on("click", function () {
+            $(".bgMessage").show();
+        })
+        $(".closeMessage").on("click", function () {
+            $(".bgMessage").hide();
+        })
+        var banner_swiper = new Swiper('.banner .swiper-container', {
+            pagination: '.banner .swiper-pagination',
+            autoplay: 3000
+        });
+
+        (() => {
+            var n = 1
+            setInterval(() => {
+                let topHeight = '-' + n * 50 + 'px'
+                $(".newsWrapper").animate({ top: topHeight }, 200)
+                n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
+            }, 3000)
+        })()
+        var copybtn = null;
+        var clipboard = null;
+        init();
+        function init() { 
+
+            //获取该类别的数据
+            $.ajax({
+                url: "/api/Product",
+                data: { typeId: 10 },
+                type: 'Get',
+                success: function (data) {
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取34类别下面的产品
+            $.ajax({
+                url: "/api/Product",
+                data: { typeId: 34 },
+                type: 'Get',
+                success: function (data) {
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data34").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+        }
+      
+
+        $(".shadow-box").on('click', '.closebox', function () {
+            $('.apply-shadow').hide();
+            $(".shadow-box").html('');
+        })
+
+       
+      
+    </script>
+
+
+
+
+</body>
+</html>

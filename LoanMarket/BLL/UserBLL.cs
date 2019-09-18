@@ -138,7 +138,70 @@ namespace LoanMarket.BLL
             loanMarketUser.Sex = "";
             var list = user.FindUser();
             loanMarketUser.No = list == null ? 1 : list.Count + 1;
+            loanMarketUser.IsPeculiarUser = 0;
             return user.CreateUser(loanMarketUser);
+        }
+
+        /// <summary>
+        /// 创建推广的用户
+        /// </summary>
+        /// <param name="userParamModel"></param>
+        /// <returns></returns>
+        public int CreateSpreadUser(RegisterParamModel userParamModel)
+        {
+            //判断手机号是否已经存在
+            if (user.GetUser(userParamModel.Mobile) != null)
+            {
+                return -1;
+            }
+            LoanMarketUser loanMarketUser = new LoanMarketUser() { Mobile = userParamModel.Mobile, Password = userParamModel.Password, NickName = userParamModel.NickName, RealName = userParamModel.RealName, Sex = userParamModel.Sex };
+            loanMarketUser.Id = GuidTool.GenerateKey();
+            loanMarketUser.Icon = "";
+            loanMarketUser.Sex = "";
+            var list = user.FindUser();
+            loanMarketUser.No = list == null ? 1 : list.Count + 1;
+            loanMarketUser.IsPeculiarUser = 0;
+            int userNo = user.CreateUser(loanMarketUser);
+            log.Info("创建推广的用户，创建用户成功，新创建的用户编号为：" + userNo);
+            if (userNo > 0)
+            {
+                SpreadBLL spreadBLL = new SpreadBLL();
+                if (spreadBLL.CreateSpread(userParamModel.FromUserNo, userNo) > 0)
+                {
+                    log.Info("创建推广的用户，创建用户成功，绑定上级成功。");
+                    return userNo;
+                }
+                else
+                {
+                    log.Info("创建推广的用户，创建用户成功，绑定上级失败。");
+                    return -2;
+                }
+            }
+            else
+            {
+                log.Info("创建推广的用户，创建用户失败。");
+                return 0;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 检查是否是会员
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public bool CheckIsPeculiar(int no)
+        {
+            LoanMarketUser loanMarketUser = user.GetUser(no);
+            if (loanMarketUser != null && loanMarketUser.IsPeculiarUser == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

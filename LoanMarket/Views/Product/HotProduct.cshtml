@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="~/Content/Files/最新口子_files/style.css">
     <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
     <link href="~/Content/Css/style.css" rel="stylesheet" />
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery.func.js"></script>
@@ -102,10 +98,12 @@
             border-radius: 50%;
             background: rgba(0, 0, 0, 0.3);
         }
+
         .index .news img {
             width: 80px;
             height: 20px;
         }
+
         .banner {
             width: 100%;
             height: 122px;
@@ -140,19 +138,19 @@
 
         .moresshow {
             width: 80%;
-            margin: 10% 10% 0 10%; 
+            margin: 10% 10% 0 10%;
             background: #fff;
             line-height: 16px;
             color: #333;
             border-radius: 14px;
         }
 
-        .moresshow p {
-            margin-top: 15px;
-            padding: 0 10px 0 10px;
-            line-height: 18px;
-            color: #333;
-        }
+            .moresshow p {
+                margin-top: 15px;
+                padding: 0 10px 0 10px;
+                line-height: 18px;
+                color: #333;
+            }
 
         .bgMessage {
             background: rgba(0, 0, 0, 0.5);
@@ -178,7 +176,7 @@
             text-align: center;
             padding-top: 4px;
             position: absolute;
-            bottom: -7px;
+            bottom: -9px;
             left: 55px
         }
     </style>
@@ -196,24 +194,9 @@
     <div class="mui-content">
         <div class="mui-table-view" style="margin-top: 0px">
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">热门产品</div>
-            <!--图片轮播-->
-            <div class="banner">
-
-                <div class="topmessage">
-                    <h4>申请必读</h4>
-                    <p>知道手机服务密码-----手机号码实名制半年以上</p>
-                    <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
-                    <p id="moreMessage">点击查看更多详情》</p>
-                </div>
-                <div class="bgMessage" style="display:none;">
-                    <div class="moresshow" style="">
-                        <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
-                        <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
-                        <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
-                        <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
-                        <p class="closeMessage">关闭详情</p>
-                    </div>
-                </div>
+            <!--图片轮播-->        
+            <div>
+                <a href="#"><img src="~/Content/Images/banner/hotproject.jpg" style="width:100%;"></a>
             </div>
             <!--滚动新闻-->
             <div class="index">
@@ -266,20 +249,20 @@
                         </div>
                     </a>
                 </ul>
-            </div>  
-        </div>
-            <!--根据类别加载产品-->
-            <div class="card-bank">
-                <ul class="clearListStyle mui-clearfix  data">
-                    <li>
-                        <a onclick="getqrcode(&#39;2962&#39;)">
-                            <img src="~/Content/Files/最新口子_files/5d2d32d6f1502.png">
-                            <span class="txt" style="width: 100px;">小火龙</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
+        <!--根据类别加载产品-->
+        <div class="card-bank">
+            <ul class="clearListStyle mui-clearfix  data">
+                <li>
+                    <a onclick="getqrcode(&#39;2962&#39;)">
+                        <img src="~/Content/Files/最新口子_files/5d2d32d6f1502.png">
+                        <span class="txt" style="width: 100px;">小火龙</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     </div>
 
 
@@ -289,7 +272,7 @@
                 <li class="mui-table-view-cell borderbutton" style="font-weight:bold;color:#1e5bca">
                     <span class="TypeAndName"> 精选单品-华山论借</span>
                     @*<button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;" onclick="feedback(&#39;3100&#39;,&#39;feedback3100&#39;)">
-                失效反馈</button>*@
+                        失效反馈</button>*@
                 </li>
                 <li class="mui-table-view-cell borderbutton">
                     <span class="Describe">1、20-40岁<br>2、有稳定工作收入<br>3、机审无回访<br></span>
@@ -312,8 +295,8 @@
                         </div>
                     </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
                         @*<button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
-                        复制链接
-                    </button>*@
+                                复制链接
+                            </button>*@
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
                         </a>
@@ -347,7 +330,7 @@
         var copybtn = null;
         var clipboard = null;
         init();
-        function init() {            
+        function init() {
 
             //设置title
             $.ajax({
@@ -391,15 +374,15 @@
                 }
             });
         }
-       
+
 
         $(".shadow-box").on('click', '.closebox', function () {
             $('.apply-shadow').hide();
             $(".shadow-box").html('');
         })
 
-      
-     
+
+
 
 
         //获取产品详情

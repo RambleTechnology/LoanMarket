@@ -37,7 +37,7 @@ namespace LoanMarket.PublicClass
     public class QrCode
     {
         /// <summary>
-        /// 生成二维码
+        /// 生成二维码 - 产品详情
         /// </summary>
         /// <param name="content">二维码内容</param>
         /// <returns>二维码名称</returns>
@@ -77,5 +77,92 @@ namespace LoanMarket.PublicClass
             image.Save(fullPath);
             return imgName;
         }
+
+        /// <summary>
+        /// 生成产品二维码图片
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static string CreateProductDetailQrCode(string content , string title)
+        {
+            //创建BarcodeSettings对象
+            BarcodeSettings settings = new BarcodeSettings();
+            //设置条码类型为二维码
+            settings.Type = BarCodeType.QRCode;
+
+            //设置二维码数据
+            settings.Data = content;
+
+            //设置显示文本
+            settings.Data2D = title;
+
+            //设置数据类型为数字
+            settings.QRCodeDataMode = QRCodeDataMode.Numeric;
+
+            //设置二维码错误修正级别
+            settings.QRCodeECL = QRCodeECL.H;
+
+            //设置宽度
+            settings.X = 2.0f;
+
+            //初始化BarCodeGenerator对象
+            BarCodeGenerator generator = new BarCodeGenerator(settings);
+
+            //创建图片并保存为PNG格式
+            Image image = generator.GenerateImage();
+            string rootPath = HttpContext.Current.Server.MapPath("~");
+            string imgName = DateTime.Now.ToString("yyyMMddHHmmssffff") + ".jpeg";
+            string fullPath = rootPath + "Content\\Images\\ProductDetailQrCodeImg\\" + imgName;
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+            image.Save(fullPath);
+            return fullPath;
+        }
+
+        /// <summary>
+        /// 生成用户推广二维码
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public static string CreateSpreadQrCode(string content,string userNickName)
+        {
+            //创建BarcodeSettings对象
+            BarcodeSettings settings = new BarcodeSettings();
+            //设置条码类型为二维码
+            settings.Type = BarCodeType.QRCode;
+
+            //设置二维码数据
+            settings.Data = content;
+
+            //设置显示文本
+            settings.Data2D = userNickName;
+
+            //设置数据类型为数字
+            settings.QRCodeDataMode = QRCodeDataMode.Numeric;
+
+            //设置二维码错误修正级别
+            settings.QRCodeECL = QRCodeECL.H;
+
+            //设置宽度
+            settings.X = 2.0f;
+
+            //初始化BarCodeGenerator对象
+            BarCodeGenerator generator = new BarCodeGenerator(settings);
+
+            //创建图片并保存为PNG格式
+            Image image = generator.GenerateImage();
+            string rootPath = HttpContext.Current.Server.MapPath("~");
+            string imgName = DateTime.Now.ToString("yyyMMddHHmmssffff") + ".png";
+            string fullPath = rootPath + "Content\\Images\\SpreadQrCode\\" + imgName;
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+            image.Save(fullPath);
+            return imgName;
+        }
+
     }
 }

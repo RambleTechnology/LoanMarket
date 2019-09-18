@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="~/Content/Files/最新口子_files/style.css">
     <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
     <link href="~/Content/Css/style.css" rel="stylesheet" />
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery.func.js"></script>
@@ -102,10 +98,30 @@
             border-radius: 50%;
             background: rgba(0, 0, 0, 0.3);
         }
+
         .index .news img {
             width: 80px;
             height: 20px;
         }
+
+        .lists1 {
+            border-bottom: 1px solid #eee;
+            margin-top: 16px;
+            padding-bottom: 5px;
+        }
+
+            .lists1 p {
+                color: #333;
+                padding-left: 20px;
+                font-size: 16px;
+            }
+
+                .lists1 p span {
+                    float: right;
+                    padding-right: 15px;
+                    font-size: 15px;
+                }
+
         .banner {
             width: 100%;
             height: 122px;
@@ -140,19 +156,19 @@
 
         .moresshow {
             width: 80%;
-            margin: 10% 10% 0 10%; 
+            margin: 10% 10% 0 10%;
             background: #fff;
             line-height: 16px;
             color: #333;
             border-radius: 14px;
         }
 
-        .moresshow p {
-            margin-top: 15px;
-            padding: 0 10px 0 10px;
-            line-height:18px;
-            color:#333;
-        }
+            .moresshow p {
+                margin-top: 15px;
+                padding: 0 10px 0 10px;
+                line-height: 18px;
+                color: #333;
+            }
 
         .bgMessage {
             background: rgba(0, 0, 0, 0.5);
@@ -178,7 +194,7 @@
             text-align: center;
             padding-top: 4px;
             position: absolute;
-            bottom: -7px;
+            bottom: -9px;
             left: 55px
         }
     </style>
@@ -196,24 +212,27 @@
     <div class="mui-content">
         <div class="mui-table-view" style="margin-top: 0px">
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">返佣产品</div>
-
             <!--图片轮播-->
             <div class="banner">
 
-                <div class="topmessage">
-                    <h4>申请必读</h4>
-                    <p>知道手机服务密码-----手机号码实名制半年以上</p>
-                    <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
-                    <p id="moreMessage">点击查看更多详情》</p>
-                </div>
-                <div class="bgMessage" style="display:none;">
-                    <div class="moresshow" style="">
-                        <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
-                        <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
-                        <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
-                        <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
-                        <p class="closeMessage">关闭详情</p>
+                @*<div class="topmessage">
+                        <h4>申请必读</h4>
+                        <p>知道手机服务密码-----手机号码实名制半年以上</p>
+                        <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
+                        <p id="moreMessage">点击查看更多详情》</p>
                     </div>
+                    <div class="bgMessage" style="display:none;">
+                        <div class="moresshow" style="">
+                            <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
+                            <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
+                            <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
+                            <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
+                            <p class="closeMessage">关闭详情</p>
+                        </div>
+                    </div>*@
+
+                <div>
+                    <a href="#"><img src="~/Content/Images/banner/fanyongbanner.jpg" style="width:100%;"></a>                    
                 </div>
             </div>
             <!--滚动新闻-->
@@ -268,44 +287,96 @@
                     </a>
                 </ul>
             </div>
-            <div class="mui-table-view-cell " style="text-align:left;">信用查询</div>
-            <!--通知公告-->
+
+            <!--信用查询-->
+            <div class="lists1">
+                <p>信用查询<span> </span></p>
+            </div>
             <div class="card-bank">
-                <ul class="clearListStyle mui-clearfix  data">
-                    <li>
-                        <p>公告内容</p>
-                    </li>
-                </ul>
+                <ul class="clearListStyle mui-clearfix  data34"></ul>
             </div>
-            <hr />
-            <!--根据类别加载产品-->
+
+            <!--返佣-信用卡-->
+            <div class="lists1">
+                <p>
+                    信用卡
+                    <span>
+                    </span>
+                </p>
+
+            </div>
             <div class="card-bank">
-
-                <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
-                <ul class="clearListStyle mui-clearfix  data"></ul>
-                <hr />
-<<<<<<< HEAD
-                <div class="mui-table-view-cell " style="text-align:left;">信用卡</div>
-=======
-                <div class="mui-table-view-cell " style="text-align:left;">大额返佣</div>
->>>>>>> 0bbe969bce970d67f6d98b45b1879be008a283d3
-                @*<ul class="clearListStyle mui-clearfix  data">
-
-            </ul>*@
+                <ul class="clearListStyle mui-clearfix  data35"></ul>
             </div>
-            <!--广告位置-->
-            <div>
 
+            <!---返佣-大额返佣-->
+            <div class="lists1">
+                <p>
+                    大额返佣
+                </p>
             </div>
+            <div class="card-bank">
+                <ul class="clearListStyle mui-clearfix  data36"></ul>
+            </div>
+
+            <!---返佣-小额返佣-->
+            <div class="lists1">
+                <p>
+                    小额返佣
+                </p>
+            </div>
+            <div class="card-bank">
+                <ul class="clearListStyle mui-clearfix  data42"></ul>
+            </div>
+
         </div>
     </div>
 
 
-    <div class="apply-shadow 0" style="display: none;">
+    <!--详情-->
+    <div class="apply-shadow 0" style="display:none">
         <div class="shadow-box">
+            <div class="mui-table-view detail">
+                <li class="mui-table-view-cell borderbutton" style="font-weight:bold;color:#1e5bca">
+                    <span class="TypeAndName"> 精选单品-华山论借</span>
+                    <button class="mui-btn feedback3100" style="padding:0 5px;font-weight:bold;color:red;font-size: 13px;">
+                        <a href="/Product/Kefu">
+                            失效反馈
+                        </a>
+                    </button>
+                </li>
+                <li class="mui-table-view-cell borderbutton">
+                    <span class="Describe">1、20-40岁<br>2、有稳定工作收入<br>3、机审无回访<br></span>
+                    <font style="color:red;"></font>
+                </li>
+                <li class="mui-table-view-cell" style="line-height: 30px">
+                    <div class="mui-pull-left">
+                        <img style="width: 30px;" class="Icon" src="">
+                        <span class="Name">华山论借</span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <div class="mui-pull-left mui-col-xs-6">
+                        @*<img style="width:100%;height:100%;position:absolute;opacity:0;" src="http://www.uxiangquan.cn/static/qrcode/gather/qrcode/krqw.jpg">*@
+                        <div style="min-height:100px;">
+                            <img class="QrCode" style="width: 100%;margin-top:-10px;margin-left:-5px;" src="">
+                        </div>
+                        <div style="text-align:center;">
+                            扫码立即申请
+                        </div>
+                    </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
+                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
+                            复制链接
+                        </button>
+                        <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
+                            立即申请
+                        </a>
+                    </div>
+                </li>
+            </div>
+            <div class="closebox"><i class="iconfont icon-guanbi"></i></div>
         </div>
     </div>
-
 
     <script type="text/javascript">
         $("#moreMessage").on("click", function () {
@@ -318,15 +389,26 @@
             pagination: '.banner .swiper-pagination',
             autoplay: 3000
         });
+
+        (() => {
+            var n = 1
+            setInterval(() => {
+                let topHeight = '-' + n * 50 + 'px'
+                $(".newsWrapper").animate({ top: topHeight }, 200)
+                n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
+            }, 3000)
+        })()
         var copybtn = null;
         var clipboard = null;
-        init();
-        function init() { 
 
-            //获取该类别的数据
+        init();
+        function init() {
+
+
+            //获取39类别下面的产品
             $.ajax({
                 url: "/api/Product",
-                data: { typeId: 10 },
+                data: { typeId: 39 },
                 type: 'Get',
                 success: function (data) {
                     var html = "";
@@ -334,7 +416,7 @@
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
                             html += "<a onclick='GetDetail(" + data[i].No + ")'>";
-                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span><span style='color:red'>" + data[i].Describe5 + "</span>";
                             html += "</a>";
                             html += "</li>";
                         }
@@ -343,22 +425,129 @@
                         html += "无数据";
                         html += "</li>";
                     }
-                    $(".data").html(html);
+                    $(".data34").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取40类别下面的产品
+            $.ajax({
+                url: "/api/Product",
+                data: { typeId: 40 },
+                type: 'Get',
+                success: function (data) {
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span><span style='color:red'>" + data[i].Describe5 + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data35").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取41类别下面的产品
+            $.ajax({
+                url: "/api/Product",
+                data: { typeId: 41 },
+                type: 'Get',
+                success: function (data) {
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span><span style='color:red'>" + data[i].Describe5 + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data36").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取42类别下面的产品
+            $.ajax({
+                url: "/api/Product",
+                data: { typeId: 42 },
+                type: 'Get',
+                success: function (data) {
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span><span style='color:red'>" + data[i].Describe5 + "</span>";
+                            html += "</a>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".data36").html(html);
                 },
                 error: function (e) {
                     console.error("服务器异常" + e);
                 }
             });
         }
-      
+
 
         $(".shadow-box").on('click', '.closebox', function () {
             $('.apply-shadow').hide();
-            $(".shadow-box").html('');
+
         })
 
-       
-      
+
+
+
+        //获取产品详情
+        function GetDetail(no) {
+            $.ajax({
+                url: "/api/ProductDetail",
+                data: { no: no },
+                type: 'Get',
+                success: function (data) {
+                    var type = $(".productTypeName").html();
+                    $(".detail .TypeAndName").html(type + data.Name);
+                    $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
+                    $(".detail .Icon").attr("src", data.Icon);
+                    $(".detail .Name").html(data.Name);
+                    $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
+                    $(".detail .Url").attr("data-url", data.Url);
+                    $(".detail .JumpUrl").attr("href", data.Url);
+                    $(".apply-shadow").show();
+                },
+                error: function () {
+                    console.log("服务器异常");
+                }
+            });
+        }
+
+
+
     </script>
 
 
