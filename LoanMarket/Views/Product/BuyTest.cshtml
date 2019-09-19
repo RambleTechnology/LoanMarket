@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>支付</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+
+
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content">
+        <form action="/Pay/SubmitAlipay" method="post">
+            <span>订单名称</span>
+            <input name="subject" />
+            <br />
+            <span>订单描述</span>
+            <input name="body" />
+            <br />
+            <span>订单金额</span>
+            <input name="total_fee" value="0.1" />
+            <br />
+            <input type="submit" value="提交" />
+        </form>
+
+    </div>
+
+
+</body>
+</html>

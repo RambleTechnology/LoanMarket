@@ -174,13 +174,22 @@ namespace LoanMarket.Controllers
             if (model != null)
             {
                 string imgPath = PublicClass.QrCode.CreateProductDetailQrCode(model.Url, model.Name);
-                return File(imgPath, "application/image/jpeg",model.No+".jpeg");
+                return File(imgPath, "application/image/jpeg", model.No + ".jpeg");
             }
             else
             {
                 return null;
             }
 
+        }
+
+        /// <summary>
+        /// 支付测试
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult BuyTest()
+        {
+            return View();
         }
 
     }

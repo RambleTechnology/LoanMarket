@@ -197,6 +197,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AliPay\AlipayConfig.cs" />
+    <Compile Include="AliPay\AlipayCore.cs" />
+    <Compile Include="AliPay\AlipayNotify.cs" />
+    <Compile Include="AliPay\AlipaySubmit.cs" />
+    <Compile Include="AliPay\MD5.cs" />
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\BindLeaderController.cs" />
     <Compile Include="Api\CommentController.cs" />
@@ -249,6 +254,7 @@
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DLL\BaseDLL.cs" />
     <Compile Include="DLL\BillDLL.cs" />
@@ -573,6 +579,14 @@
     <Content Include="Content\Images\Icon\d.png" />
     <Content Include="Content\Images\Icon\download.png" />
     <Content Include="Content\Images\Icon\download2.png" />
+    <Content Include="Content\Images\Icon\icon1.jpg" />
+    <Content Include="Content\Images\Icon\icon2.jpg" />
+    <Content Include="Content\Images\Icon\icon3.jpg" />
+    <Content Include="Content\Images\Icon\icon4.jpg" />
+    <Content Include="Content\Images\Icon\icon5.jpg" />
+    <Content Include="Content\Images\Icon\icon6.jpg" />
+    <Content Include="Content\Images\Icon\icon7.jpg" />
+    <Content Include="Content\Images\Icon\icon8.jpg" />
     <Content Include="Content\Images\Icon\login.jpg" />
     <Content Include="Content\Images\Icon\loginout.png" />
     <Content Include="Content\Images\Icon\share.png" />
@@ -692,6 +706,7 @@
     <Content Include="Views\Me\Sharemoney.cshtml" />
     <Content Include="Views\Me\DownloadApp.cshtml" />
     <Content Include="Views\Me\SpreadRegister.cshtml" />
+    <Content Include="Views\Product\BuyTest.cshtml" />
     <None Include="Views\Product\UpdateVip.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -748,6 +763,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\ProductDetailQrCodeImg\" />
     <Folder Include="Content\Images\QrCode\" />
+    <Folder Include="Views\Pay\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

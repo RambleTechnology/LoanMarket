@@ -28,10 +28,10 @@
       <publishTime>03/29/2018 14:51:46</publishTime>
     </File>
     <File Include="bin/LoanMarket.dll">
-      <publishTime>09/18/2019 21:03:17</publishTime>
+      <publishTime>09/19/2019 18:06:57</publishTime>
     </File>
     <File Include="bin/LoanMarket.pdb">
-      <publishTime>09/18/2019 21:03:17</publishTime>
+      <publishTime>09/19/2019 18:06:57</publishTime>
     </File>
     <File Include="bin/log4net.config">
       <publishTime>07/24/2019 18:44:39</publishTime>
@@ -1269,11 +1269,35 @@
     <File Include="Content/Images/Icon/download2.png">
       <publishTime>09/11/2019 21:18:12</publishTime>
     </File>
+    <File Include="Content/Images/Icon/icon1.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon2.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon3.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon4.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon5.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon6.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon7.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
+    <File Include="Content/Images/Icon/icon8.jpg">
+      <publishTime>09/19/2019 16:19:21</publishTime>
+    </File>
     <File Include="Content/Images/Icon/login.jpg">
       <publishTime>09/18/2019 13:46:27</publishTime>
     </File>
     <File Include="Content/Images/Icon/loginout.png">
-      <publishTime>09/11/2019 21:18:12</publishTime>
+      <publishTime>09/19/2019 16:19:24</publishTime>
     </File>
     <File Include="Content/Images/Icon/share.png">
       <publishTime>09/11/2019 21:18:12</publishTime>
@@ -1438,7 +1462,7 @@
       <publishTime>09/05/2019 23:01:04</publishTime>
     </File>
     <File Include="Views/Card/Index.cshtml">
-      <publishTime>09/17/2019 17:00:15</publishTime>
+      <publishTime>09/19/2019 16:16:10</publishTime>
     </File>
     <File Include="Views/Card/YangkaTiejiqiao.cshtml">
       <publishTime>09/18/2019 14:10:10</publishTime>
@@ -1462,7 +1486,7 @@
       <publishTime>07/20/2019 10:19:52</publishTime>
     </File>
     <File Include="Views/Loan/Index.cshtml">
-      <publishTime>09/18/2019 14:44:04</publishTime>
+      <publishTime>09/19/2019 16:14:26</publishTime>
     </File>
     <File Include="Views/Me/BindLeader.cshtml">
       <publishTime>09/01/2019 15:19:07</publishTime>
@@ -1483,7 +1507,7 @@
       <publishTime>09/15/2019 16:56:35</publishTime>
     </File>
     <File Include="Views/Me/Index.cshtml">
-      <publishTime>09/18/2019 15:18:25</publishTime>
+      <publishTime>09/19/2019 16:21:28</publishTime>
     </File>
     <File Include="Views/Me/Login.cshtml">
       <publishTime>09/18/2019 15:16:41</publishTime>
@@ -1526,6 +1550,9 @@
     </File>
     <File Include="Views/Product/BaitiaoHuabei.cshtml">
       <publishTime>09/15/2019 16:07:09</publishTime>
+    </File>
+    <File Include="Views/Product/BuyTest.cshtml">
+      <publishTime>09/19/2019 18:04:27</publishTime>
     </File>
     <File Include="Views/Product/DaePipei.cshtml">
       <publishTime>09/18/2019 13:42:13</publishTime>

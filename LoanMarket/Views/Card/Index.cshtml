@@ -296,6 +296,9 @@
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
                         </a>
+                        <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 saveImg   " style="box-shadow: 3px 2px 6px #dd524d;">
+                            保存图片
+                        </a>
                     </div>
                 </li>
             </div>
@@ -408,6 +411,7 @@
                     $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
                     $(".detail .Url").attr("data-url", data.Url);
                     $(".detail .JumpUrl").attr("href", data.Url);
+                    $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
                     $(".apply-shadow").show();
                 },
                 error: function () {
