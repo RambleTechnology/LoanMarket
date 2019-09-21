@@ -5,6 +5,7 @@ using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Xml;
+using log4net;
 
 namespace Com.Alipay
 {
@@ -20,9 +21,11 @@ namespace Com.Alipay
     /// </summary>
     public class Submit
     {
+
         #region 字段
         //支付宝网关地址（新）
-        private static string GATEWAY_NEW = "https://mapi.alipay.com/gateway.do?";
+        //private static string GATEWAY_NEW = "https://mapi.alipay.com/gateway.do?";
+        private static string GATEWAY_NEW = "https://openapi.alipay.com/gateway.do?";
         //商户的私钥
         private static string _key = "";
         //编码格式
@@ -131,8 +134,7 @@ namespace Com.Alipay
             //submit按钮控件请不要含有name属性
             sbHtml.Append("<input type='submit' value='" + strButtonValue + "' style='display:none;'></form>");
 
-            sbHtml.Append("<script>document.forms['alipaysubmit'].submit();</script>");
-
+            sbHtml.Append("<script>document.forms['alipaysubmit'].submit();</script>");            
             return sbHtml.ToString();
         }
 
@@ -147,7 +149,7 @@ namespace Com.Alipay
             Encoding code = Encoding.GetEncoding(_input_charset);
 
             //待请求参数数组字符串
-            string strRequestData = BuildRequestParaToString(sParaTemp,code);
+            string strRequestData = BuildRequestParaToString(sParaTemp, code);
 
             //把数组转换成流中所需字节数组类型
             byte[] bytesRequestData = code.GetBytes(strRequestData);
@@ -190,7 +192,7 @@ namespace Com.Alipay
             }
             catch (Exception exp)
             {
-                strResult = "报错："+exp.Message;
+                strResult = "报错：" + exp.Message;
             }
 
             return strResult;

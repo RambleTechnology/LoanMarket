@@ -62,6 +62,12 @@ namespace LoanMarket.DLL
             }
         }
 
+        public List<LoanMarketSpread> FindSpreadUser(int no)
+        {
+            return db.LoanMarketSpread.Where(a => a.FromUserNo == no).ToList();
+        }
+
+
         /// <summary>
         /// 查找用户上级代理
         /// </summary>

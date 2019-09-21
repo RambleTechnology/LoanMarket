@@ -45,6 +45,8 @@ namespace LoanMarket.Api
         protected CommentBLL comment = new CommentBLL();
         protected SpreadBLL spread = new SpreadBLL();
 
+        protected UserGroupBLL userGroup = new UserGroupBLL();
+
 
     }
 }

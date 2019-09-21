@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+@using LoanMarket.BLL.ApiModel
+
+
+@model List<SpreadUserApiModel>
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.uxiangquan.cn/index/index/product/day/2.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的分享</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+
+
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content">
+        @if (Model != null)
+        {
+            foreach (SpreadUserApiModel item in Model)
+            {
+                <p>
+                    <span>昵称：@item.Mobile</span>
+                    <span>手机号码：@item.Mobile</span>
+                    <br />
+                    @if (item.IsPeculiarUser)
+                    {
+                        <span>
+                            是否是会员：是
+                        </span>
+                        <span>
+                            会员等级：@item.UserGroupName
+                        </span>
+                    }
+                    else
+                    {
+                        <span>
+                            是否是会员：否
+                        </span>
+
+                    }
+                </p>
+            }
+        }
+
+    </div>
+
+
+</body>
+</html>

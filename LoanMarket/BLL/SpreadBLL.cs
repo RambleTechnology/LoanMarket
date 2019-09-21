@@ -157,6 +157,38 @@ namespace LoanMarket.BLL
             return spread.GetSpreadCount(userNo);
         }
 
+
+        /// <summary>
+        /// 查询已推广的用户
+        /// </summary>
+        /// <param name="userNo"></param>
+        /// <returns></returns>
+        public List<SpreadUserApiModel> FindSpreadUser(int userNo)
+        {
+            List<LoanMarketSpread> list = spread.FindSpreadUser(userNo);
+            List<SpreadUserApiModel> data = new List<SpreadUserApiModel>();
+            if (list != null && list.Count > 0)
+            {
+                foreach (LoanMarketSpread item in list)
+                {
+                    SpreadUserApiModel spreadUserApiModel = new SpreadUserApiModel();
+                    spreadUserApiModel.ToUserNo = item.ToUserNo;
+                    spreadUserApiModel.CreateTime = (DateTime)item.CreateTime;
+                    LoanMarketUser loanMarketUser = user.GetUser(item.ToUserNo);
+                    spreadUserApiModel.Mobile = loanMarketUser.Mobile;
+                    spreadUserApiModel.NickName = loanMarketUser.NickName;
+                    spreadUserApiModel.IsPeculiarUser = loanMarketUser.IsPeculiarUser > 0 ? true : false;
+                    LoanMarketGroup leaderUserGroup = userGroup.GetUserGroup(item.ToUserNo);
+                    if (leaderUserGroup != null)
+                    {
+                        spreadUserApiModel.UserGroupName = leaderUserGroup.Name;
+                    }
+                    data.Add(spreadUserApiModel);
+                }
+            }
+            return data;
+        }
+
         /// <summary>
         /// 查找用户上级代理
         /// </summary>

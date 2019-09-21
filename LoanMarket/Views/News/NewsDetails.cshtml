@@ -20,7 +20,7 @@
 
             .xinwenstyle1 div {
                 float: left;
-                width: 70%;
+                width: 100%;
                 color: #333;
             }
 
@@ -60,26 +60,7 @@
         <div class="list">
         </div>
         <div class="data">
-            <div class="lists xinwenstyle1">
 
-                <div>淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style="padding-top:10px;">卡农桃夭夭   <span>5344阅读</span></p></div>
-                <img style="width:80px;height:50px;background:pink;" />
-            </div>
-            <div class="lists xinwenstyle1">
-
-                <div style="width:100%;">淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style="padding-top:10px;">卡农桃夭夭   <span>5344阅读</span></p></div>
-
-            </div>
-            <div class="lists xinwenstyle1">
-
-                <div style="width:100%;padding-bottom:10px;">淘宝用户专享口子，恢复正常放款，件均万元起批，最高...</div>
-                <ul>
-                    <li><img style="width:80px;height:50px;background:pink;" /></li>
-                    <li><img style="width:80px;height:50px;background:pink;" /></li>
-                    <li><img style="width:80px;height:50px;background:pink;" /></li>
-                </ul>
-                <p>卡农桃夭夭   <span style="padding-left:15px;">5344阅读</span></p>
-            </div>
 
         </div>
         <input type="hidden" class="newno" value="@Model" />
@@ -100,23 +81,16 @@
                     debugger
                     var html = "";
                     if (data) {
-                        
-                            //CommentCount: 3
-                            //ContentBody: "<p>欢迎使用 wangEditor 富文本编辑器</p><p><img src="http://47.104.186.251:8001/Upload/News/1.jpg" style="max-width:100%;"><br></p>"
-                            //CreateTime: null
-                            //CreateUserIcon: null
-                            //CreateUserNickName: "dfhdf "
-                            //CreateUserNo: null
-                            //LikeCount: 3
-                            //No: 25
-                            //Title: "3         "
-                            //ViewCount: 3
-                            html += "<div class='lists xinwenstyle1'>";
-                            html += "<div>"+data.ContentBody+"<p style='padding - top: 10px; '>"+data.Title+"   <span>"+data.ViewCount+"阅读</span></p></div>";
-                          //  html += "  <div>淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style='padding-top:10px;'>卡农桃夭夭   <span>5344阅读</span></p></div>";
-                            html += "<img style='width:80px;height:50px;background:pink;' />";
-                            html += "</div>";
-                        
+                        html += "<div class='lists xinwenstyle1'>";
+                        html += "<p style='padding - top: 10px; '>" + data.Title + "</p>";
+                        html += "<br/>";
+                        html += "<span> 波波 作者</span>";
+
+                        html += "<span>" + data.ViewCount + "阅读</span>";
+                        html += "<hr/>";
+                        html += "<div>" + data.ContentBody + "</div>";
+                        html += "</div>";
+
                     } else {
                         html += "<li>";
                         html += "无数据";

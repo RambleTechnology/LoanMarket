@@ -68,9 +68,10 @@
         <div class="user-header" style="padding-top: 20px;">
             <div class="user-head">
                 <a href="#">
-                    <img src="~/Content/Files/个人中心_files/132.png" style=" float:left; margin-right:15px;">
+                    <img src="~/Content/Images/Icon/login.jpg" style=" float:left; margin-right:15px;">
+                 
                 </a>
-                <div class="fz16" style="margin-top:6px;"><span>昵称：</span><span class="nickName"> 周末愉快</span></div>
+                <div class="fz16" style="margin-top:6px;"><span>昵称：</span><span class="nickName"> </span><span class="userGroup"></span></div>
                 <div class="id"><span>真实名称：</span><span class="realName">  杰克</span></div>
                 <div class="mui-pull-right22"><span>编号：</span><span class="no">11059</span></div>
             </div>
@@ -109,13 +110,13 @@
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
-                    <a href="#">
+                    <a href="/Me/MyShare">
                         <img src="~/Content/Images/Icon/icon2.jpg" />
                         <div class="mui-media-body">我的分享</div>
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
-                    <a href="/Me/BuyPeculiarUser?userNo=@Model">
+                    <a href="/Product/UpdateVip">
                         <img src="~/Content/Images/Icon/upvip.png">
                         <div class="mui-media-body">升级会员</div>
                     </a>
@@ -217,8 +218,33 @@
                 error: function () {
                     console.error("服务器异常");
                 }
-            })
+            });
+
+
+            //获取用户所属组
+            $.ajax({
+                url: "/Api/UserGroup",
+                data: { no: userNo },
+                type: 'Get',
+                success: function (data) {
+                 
+                    if (data) {
+                        $(".userGroup").html("(" + data.Name + ")");
+                    } 
+                },
+                error: function () {
+                    console.error("服务器异常");
+                }
+            });
+
+
+
+
         }
+
+
+
+
         //注销登录
         function Loginout() {
             var userNo = $(".userNo").val();

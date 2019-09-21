@@ -18,6 +18,7 @@
     <script type="text/javascript" src="~/Content/Files/修改资料_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/修改资料_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/修改资料_files/jquery.func.js"></script>
+    <script src="~/Content/Files/最新口子_files/clipboard.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <script src="~/Scripts/Common/jquery.form.js"></script>
     <style type="text/css">
@@ -79,6 +80,9 @@
 </head>
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
     <div class="bgimg">
+        <button type="button" data-url="" class="CopyUrl" data-clipboard-text="@ViewBag.SpreadUrl "  onclick="CopyUrl()">
+            复制链接
+        </button>
         <div class="top">
             <p class="one">加入我们告别</p>
             <p class="two">往外甩户的时代</p>
@@ -99,6 +103,12 @@
             var qrCodeImgUrl = $(".qrCodeImgUrl").val();
             $(".qrCodeImg").attr("src", spreadQrCodeRootPath + qrCodeImgUrl);
         };
+
+
+        //复制连接
+        function CopyUrl(obj) {
+            var clipboard = new ClipboardJS('.CopyUrl');
+        }
     </script>
 
 

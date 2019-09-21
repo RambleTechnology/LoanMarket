@@ -201,6 +201,7 @@
     <Compile Include="AliPay\AlipayCore.cs" />
     <Compile Include="AliPay\AlipayNotify.cs" />
     <Compile Include="AliPay\AlipaySubmit.cs" />
+    <Compile Include="AliPay\config.cs" />
     <Compile Include="AliPay\MD5.cs" />
     <Compile Include="Api\BaseApiController.cs" />
     <Compile Include="Api\BindLeaderController.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Api\TypeViewGradeController.cs" />
     <Compile Include="Api\RegisterController.cs" />
     <Compile Include="Api\Test.cs" />
+    <Compile Include="Api\UserGroupController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -234,6 +236,7 @@
     <Compile Include="BLL\ApiModel\ForumListApiModel.cs" />
     <Compile Include="BLL\ApiModel\ProductApiModel.cs" />
     <Compile Include="BLL\ApiModel\ProductTypeApiModel.cs" />
+    <Compile Include="BLL\ApiModel\SpreadUserApiModel.cs" />
     <Compile Include="BLL\ApiModel\UserApiModel.cs" />
     <Compile Include="BLL\BaseBLL.cs" />
     <Compile Include="BLL\BillBLL.cs" />
@@ -535,7 +538,9 @@
     <Content Include="Content\Images\banner\indexbanner5.jpg" />
     <Content Include="Content\Images\banner\xiaoebanner.jpg" />
     <Content Include="Content\Images\Common\kefu50.jpg" />
+    <Content Include="Content\Images\Common\kefu50.png" />
     <Content Include="Content\Images\Common\kefu8.jpg" />
+    <Content Include="Content\Images\Common\kefu9.jpg" />
     <Content Include="Content\Images\Common\kefu9.png" />
     <Content Include="Content\Images\Common\list1.jpg" />
     <Content Include="Content\Images\Common\list10.jpg" />
@@ -603,6 +608,7 @@
     <Content Include="Content\Images\SpreadQrCode\201909182029064572.png" />
     <Content Include="Content\Images\SpreadQrCode\201909182029259321.png" />
     <Content Include="Content\Static\baitiaohuabei01.png" />
+    <Content Include="Content\Static\caijingtop.jpg" />
     <Content Include="Content\Static\heikeji1.jpg" />
     <Content Include="Content\Static\heikeji2.jpg" />
     <Content Include="Content\Static\jingwai1.jpg" />
@@ -612,10 +618,13 @@
     <Content Include="Content\Static\jingwai5.png" />
     <Content Include="Content\Static\jingwaitie.jpg" />
     <Content Include="Content\Static\vipup1.jpg" />
+    <Content Include="Content\Static\vipup1.png" />
     <Content Include="Content\Static\vipup2.jpg" />
     <Content Include="Content\Static\WechatIMG1.jpeg" />
     <Content Include="Content\Static\xinshou.mp4" />
     <Content Include="Content\Static\境外提额.jpg" />
+    <Content Include="Content\Static\shenkajiqiao01.jpg" />
+    <Content Include="Content\Static\shenkajiqiao02.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -682,7 +691,10 @@
     <Content Include="Content\Files\bannerDetailimg\.DS_Store" />
     <Content Include="Content\Files\bannerDetailimg\._.DS_Store" />
     <Content Include="Content\Files\U享圈_files\UpdateVip.cshtml" />
+    <Content Include="DowmloadApp\loanmarket.apk" />
+    <Content Include="DowmloadApp\loanmarket.ipa" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\jquery.form.js" />
@@ -707,7 +719,7 @@
     <Content Include="Views\Me\DownloadApp.cshtml" />
     <Content Include="Views\Me\SpreadRegister.cshtml" />
     <Content Include="Views\Product\BuyTest.cshtml" />
-    <None Include="Views\Product\UpdateVip.cshtml" />
+    <Content Include="Views\Product\UpdateVip.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -758,12 +770,14 @@
     <Content Include="Views\News\NewsDetails.cshtml" />
     <Content Include="Views\Product\ZuixinKouzi.cshtml" />
     <Content Include="Views\Product\VipArgee.cshtml" />
+    <Content Include="Views\Pay\PayBreakOff.cshtml" />
+    <Content Include="Views\Me\MyShare.cshtml" />
+    <Content Include="Views\Card\ShenkaJiqiao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\ProductDetailQrCodeImg\" />
     <Folder Include="Content\Images\QrCode\" />
-    <Folder Include="Views\Pay\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -780,6 +794,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\alipay-sdk-NET20170615110549\AopSdk.csproj">
+      <Project>{9c11cae5-5188-4e71-825b-68fc3135728a}</Project>
+      <Name>AopSdk</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

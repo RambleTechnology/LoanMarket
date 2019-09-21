@@ -12,13 +12,23 @@ namespace LoanMarket.Controllers
     /// <returns></returns>
     public class CardController : Controller
     {
-   
+
         public ActionResult Index()
         {
             return View();
         }
 
         public ActionResult YangkaTiejiqiao()
+        {
+            return View();
+        }
+
+
+        /// <summary>
+        /// 申卡技巧
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ShenkaJiqiao()
         {
             return View();
         }

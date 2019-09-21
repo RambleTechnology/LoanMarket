@@ -125,13 +125,13 @@
                 }
 
         .pub-tit1 {
-            font-size: 15px;
+            font-size: 16px;
             padding-left: 38px;
             position: relative;
             font-weight: bold;
             border-bottom: 1px solid #999;
-            margin-left: 15px;
             padding: 10px 0 10px;
+            padding-left:15px;
         }
 
         .kejistyle1 ul {
@@ -155,6 +155,10 @@
             overflow: hidden;
             border-bottom: 1px solid #eee;
             padding: 0 0 10px 0;
+            font-size:15px;
+        }
+        .HeikejiData p {
+            font-size:15px !important;
         }
     </style>
 </head>
@@ -267,30 +271,24 @@
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
+                            <div class="text"><a href="/News/NewsDetails?no=1">鑫融汇使用简略！</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                         <li>
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
+                            <div class="text"><a href="/News/NewsDetails?no=2"> 会员与普通用户权限区分</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
                         <li>
                             <div class="news_icon">
                                 <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
                             </div>
-                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
+                            <div class="text"><a href="/News/NewsDetails?no=3"> 最新“合伙人”模式上线，点击查看详情</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
-                        <li>
-                            <div class="news_icon">
-                                <img src="~/Content/Files/U享圈_files/indexmessage.png" alt="">
-                            </div>
-                            <div class="text"><a href="/News/NewsDetails?no=24"> U享新版使用简略！</a></div>
-                            <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
-                        </li>
+                       
                     </div>
                 </a>
             </ul>
@@ -419,7 +417,7 @@
             //获取列表
             $.ajax({
                 url: "/api/HeiKeji",
-                data: { type: "滚动新闻" },
+                data: { type: "小鑫快报" },
                 type: 'Get',
                 success: function (data) {
 
@@ -432,6 +430,7 @@
                             html += "</div>";
                             html += "<div class='text'><a href='/News/NewsDetail?no=" + data[i].No + "'> " + data[i].Title + "</a></div>";
                             html += "<div class='back'><img src='~/Content/Files/U享圈_files/back.png'></div>";
+                            
                             html += " </li>";
                         }
                     } else {
@@ -461,6 +460,7 @@
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
                             html += "<p>  <a href='/News/HeikejiDetail?no=" + data[i].No + "'>" + data[i].Title + "   </a></p>";
+                            html += "<hr>";
                         }
                     } else {
                         html += "<li>";

@@ -1,4 +1,5 @@
-﻿using LoanMarket.PublicClass;
+﻿using LoanMarket.BLL;
+using LoanMarket.PublicClass;
 using LoanMarket.PublicModels;
 using log4net;
 using System;
@@ -112,6 +113,7 @@ namespace LoanMarket.Controllers
             string spreadUrl = "http://www.jiaodai.online/Me/SpreadRegister?fromUserNo=" + userInfo.No;
             string spreadQrCodeUrl = QrCode.CreateSpreadQrCode(spreadUrl, userInfo.NickName);
             ViewBag.SpreadQrCodeUrl = spreadQrCodeUrl;
+            ViewBag.SpreadUrl = spreadUrl;
             return View();
         }
 
@@ -157,6 +159,18 @@ namespace LoanMarket.Controllers
             return View(fromUserNo);
         }
 
+        /// <summary>
+        /// 我的分享
+        /// </summary>
+        /// <returns></returns>
+        [IsLogin]
+        public ActionResult MyShare()
+        {
+            User userInfo = SessionTool.Get<User>("user");
+            SpreadBLL bll = new SpreadBLL();
+            var model = bll.FindSpreadUser((int)userInfo.No);
+            return View(model);
+        }
 
 
     }

@@ -114,6 +114,8 @@
         <div class="mui-table-view" style="margin-top: 0px">
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">产品类别</div>
 
+
+
             <!--根据类别加载产品-->
             <div class="card-bank">
                 <ul class="clearListStyle mui-clearfix  data">
@@ -161,7 +163,7 @@
                             扫码立即申请
                         </div>
                     </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
-                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
+                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" data-clipboard-text="999" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="CopyUrl()">
                             复制链接
                         </button>
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
@@ -178,6 +180,8 @@
             <div class="closebox"><i class="iconfont icon-guanbi"></i></div>
         </div>
     </div>
+
+
 
     <input type="hidden" value="@Model" class="typeId" />
 
@@ -251,12 +255,19 @@
                         $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
                         $(".detail .Icon").attr("src", data.Icon);
                         $(".detail .Name").html(data.Name);
-                        $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
+                        $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);                        
                         $(".detail .Url").attr("data-url", data.Url);
-                        $(".detail .JumpUrl").attr("href", data.Url);
-                        debugger
-                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
 
+                        $(".detail .Url").attr("data-clipboard-text", data.Url);
+
+                        $(".detail .JumpUrl").attr("href", data.Url);
+                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
+                        copybtn = document.getElementById('copy');
+                        clipboard = new ClipboardJS(copybtn, {
+                            text: function () {
+                                return data.Ur;
+                            }
+                        });
                         $(".apply-shadow").show();
                     } else if (data.ResponseStatus == "不是会员") {
                         window.location.href = "/Product/UpdateVip";
@@ -279,15 +290,8 @@
         })
 
         //复制连接
-        function copy(url) {
-            debugger
-            clipboard.on('success', function (e) {
-                mui('#browser').popover('hide');
-                alertok('复制成功');
-            });
-            clipboard.on('error', function (e) {
-                alerterr('复制失败');
-            });
+        function CopyUrl(obj) {
+            var clipboard = new ClipboardJS('.CopyUrl');
         }
 
 
@@ -295,6 +299,11 @@
         function SameImg() {
 
         }
+
+
+       
+
+
 
     </script>
 

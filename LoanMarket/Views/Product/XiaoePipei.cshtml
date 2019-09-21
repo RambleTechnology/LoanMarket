@@ -214,7 +214,7 @@
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">小额匹配</div>
             <!--图片轮播-->
             <div>
-                <a href="#"><img src="~/Content/Images/banner/xiaoebanner.jpg" style="width:100%;"></a>                
+                <a href="#"><img src="~/Content/Images/banner/xiaoebanner.jpg" style="width:100%;"></a>
             </div>
             <!--滚动新闻-->
             <div class="index">
@@ -323,7 +323,6 @@
 
             <!--加载系列大全类别下的产品-->
             <div class="card-bank">
-                @*<div class="mui-table-view-cell " style="text-align:left;">今日实战下款（会员曝光）</div>*@
                 <ul class="clearListStyle mui-clearfix  data36"></ul>
 
             </div>
@@ -369,6 +368,10 @@
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
                         </a>
+
+                        <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 saveImg   " style="box-shadow: 3px 2px 6px #dd524d;">
+                            保存图片
+                        </a>
                     </div>
                 </li>
             </div>
@@ -377,6 +380,10 @@
     </div>
 
     <script type="text/javascript">
+
+        var copybtn = null;
+        var clipboard = null;
+
         $("#moreMessage").on("click", function () {
             $(".bgMessage").show();
         })
@@ -428,8 +435,8 @@
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
                             // --误删--
-                            //html += "<a onclick='GetDetail(" + data[i].No + ")'>";
-                            html += "<a href='" + data[i].Url + "'>";
+                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            //html += "<a href='" + data[i].Url + "'>";
                             html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
                             html += "</a>";
                             html += "</li>";
@@ -475,19 +482,17 @@
                 }
             });
 
-            //获取36类别下面的产品
+            //获取36类别下面的子类别
             $.ajax({
-                url: "/api/Product",
-                data: { typeId: 36 },
+                url: "/api/TypeViewGrade",
+                data: { id: 36 },
                 type: 'Get',
                 success: function (data) {
                     var html = "";
-                    if (data) {
+                    if (data) {                        
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
-                            // --误删--
-                            //html += "<a onclick='GetDetail(" + data[i].No + ")'>";
-                            html += "<a href='" + data[i].Url + "'>";
+                            html += "<a href='/Product/ProductList?typeId=" + data[i].No + "'>";
                             html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
                             html += "</a>";
                             html += "</li>";
@@ -557,6 +562,15 @@
                     $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
                     $(".detail .Url").attr("data-url", data.Url);
                     $(".detail .JumpUrl").attr("href", data.Url);
+
+                    $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
+                    copybtn = document.getElementById('copy');
+                    debugger
+                    clipboard = new ClipboardJS(copybtn, {
+                        text: function () {
+                            return data.Url;
+                        }
+                    });
                     $(".apply-shadow").show();
                 },
                 error: function () {
@@ -565,6 +579,16 @@
             });
         }
 
+        //复制链接
+        function copy(url) {
+            clipboard.on('success', function (e) {
+                mui('#browser').popover('hide');
+                alertok('复制成功');
+            });
+            clipboard.on('error', function (e) {
+                alerterr('复制失败');
+            });
+        }
 
 
     </script>
