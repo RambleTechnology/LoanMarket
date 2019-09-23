@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*主色*/
 /*配色*/
 /*红色*/
@@ -613,3 +613,38 @@ hr { width: 100%; border: none; border-bottom: 1px solid #DDD; margin: 10px auto
 .index .recommend .title img{width:.33rem;height:.45rem;margin-right:.1rem}
 .index .recommend .title h3{font-size:14px}
 .index .recommend .cont{padding:.3rem .3rem;height:4rem;font-size:12px}
+
+
+
+.xuanfuleft {
+    width: 90px;
+    height: 80px;
+    background: red;
+    position: fixed;
+    animation: mymove 15s infinite;
+    -webkit-animation: mymove 15s infinite;
+    z-index: 666;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+}
+
+@keyframes mymove {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 500px;
+    }
+}
+
+
+@-webkit-keyframes mymove {
+    from {
+        bottom: 0px;
+    }
+
+    to {
+        bottom: 500px;
+    }
+}

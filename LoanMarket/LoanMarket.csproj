@@ -596,6 +596,7 @@
     <Content Include="Content\Images\Icon\loginout.png" />
     <Content Include="Content\Images\Icon\share.png" />
     <Content Include="Content\Images\Icon\upvip.png" />
+    <Content Include="Content\Images\Icon\xuanfu1.jpg" />
     <Content Include="Content\Images\Icon\下载app.png" />
     <Content Include="Content\Images\Icon\修改资料.png" />
     <Content Include="Content\Images\Icon\分享赚钱.png" />
@@ -693,6 +694,9 @@
     <Content Include="Content\Files\U享圈_files\UpdateVip.cshtml" />
     <Content Include="DowmloadApp\loanmarket.apk" />
     <Content Include="DowmloadApp\loanmarket.ipa" />
+    <Content Include="html\XiaoXuanfuDetailLeft.cshtml" />
+    <Content Include="html\XuanfuDetailLeft.cshtml" />
+    <Content Include="html\XuanfuDetailRight.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -773,6 +777,8 @@
     <Content Include="Views\Pay\PayBreakOff.cshtml" />
     <Content Include="Views\Me\MyShare.cshtml" />
     <Content Include="Views\Card\ShenkaJiqiao.cshtml" />
+    <Content Include="Views\Product\XiaoXuanfuDetailLeft.cshtml" />
+    <Content Include="Views\Product\XuanfuDetailLeft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

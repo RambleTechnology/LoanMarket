@@ -201,6 +201,7 @@
 </head>
 
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="xuanfuleft"><a href="/Product/XiaoXuanfuDetailLeft"><img src="~/Content/Images/Icon/xuanfu1.jpg" style="width:90px;" /></a></div>
     <footer class="mui-bar mui-bar-footer nav-bottom">
         <ul class="clearListStyle mui-clearfix">
             <li class="active"><a href="/Loan/Index"><span class="iconfont icon-shouye"></span>首页</a></li>
@@ -489,7 +490,7 @@
                 type: 'Get',
                 success: function (data) {
                     var html = "";
-                    if (data) {                        
+                    if (data) {
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
                             html += "<a href='/Product/ProductList?typeId=" + data[i].No + "'>";

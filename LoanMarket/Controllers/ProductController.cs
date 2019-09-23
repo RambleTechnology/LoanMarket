@@ -192,5 +192,23 @@ namespace LoanMarket.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 小额悬浮框详情
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult XiaoXuanfuDetailLeft()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 大额悬浮框详情
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult XuanfuDetailLeft()
+        {
+            return View();
+        }
+
     }
 }
