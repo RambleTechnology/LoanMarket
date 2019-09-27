@@ -34,7 +34,18 @@ namespace LoanMarket.Api.ParamModel
     public class UserParamModel
     {
         public string Mobile { get; set; }
+
+
+        /// <summary>
+        /// 第一次输入的密码
+        /// </summary>
+        public string userpwd { get; set; }
+
+        /// <summary>
+        /// 第二次输入的密码
+        /// </summary>
         public string Password { get; set; }
+
 
         public string NickName { get; set; }
         public string RealName { get; set; }

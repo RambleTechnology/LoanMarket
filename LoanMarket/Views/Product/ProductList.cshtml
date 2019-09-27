@@ -23,6 +23,7 @@
     <script src="~/Content/Files/最新口子_files/clipboard.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <script src="~/Content/Files/U享圈_files/swiper.3.1.2.jquery.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
     <style>
         .notices .bg .cont {
             height: 30px;
@@ -259,13 +260,7 @@
                         $(".detail .Url").attr("data-clipboard-text", data.Url);
 
                         $(".detail .JumpUrl").attr("href", data.Url);
-                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
-                        copybtn = document.getElementById('copy');
-                        clipboard = new ClipboardJS(copybtn, {
-                            text: function () {
-                                return data.Ur;
-                            }
-                        });
+                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);                       
                         $(".apply-shadow").show();
                     } else if (data.ResponseStatus == "不是会员") {
                         window.location.href = "/Product/UpdateVip";

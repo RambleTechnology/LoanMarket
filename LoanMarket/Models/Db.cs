@@ -22,6 +22,8 @@ namespace LoanMarket.Models
         public virtual DbSet<LoanMarketUser> LoanMarketUser { get; set; }
         public virtual DbSet<LoanMarketUserGroup> LoanMarketUserGroup { get; set; }
         public virtual DbSet<LoanMarketUserInfo> LoanMarketUserInfo { get; set; }
+        public virtual DbSet<LoanMarketUserWithdraw> LoanMarketUserWithdraw { get; set; }
+        public virtual DbSet<LoanMarketWithdrawApply> LoanMarketWithdrawApply { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

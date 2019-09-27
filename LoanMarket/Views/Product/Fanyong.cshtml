@@ -23,6 +23,7 @@
     <script src="~/Content/Files/最新口子_files/clipboard.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <script src="~/Content/Files/U享圈_files/swiper.3.1.2.jquery.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
     <style>
         .notices .bg .cont {
             height: 30px;
@@ -214,25 +215,8 @@
             <div class="mui-table-view-cell pub-tit productTypeName " style="text-align:center;padding-left:0px;">返佣产品</div>
             <!--图片轮播-->
             <div class="banner">
-
-                @*<div class="topmessage">
-                        <h4>申请必读</h4>
-                        <p>知道手机服务密码-----手机号码实名制半年以上</p>
-                        <p style="margin-top:-8px;">删除短号，未接电话-----美化通讯录</p>
-                        <p id="moreMessage">点击查看更多详情》</p>
-                    </div>
-                    <div class="bgMessage" style="display:none;">
-                        <div class="moresshow" style="">
-                            <p>弄清楚手机服务密码-----手机号码实名制半年以上</p>
-                            <p>删除短号，未接电话-----美化通讯录（有关贷款且人数60人以上）</p>
-                            <p>赌博有关信用卡之类的人名单改名-----删除垃圾短信（贷款被拒逾期内短信）</p>
-                            <p>紧急联系人不能填写黑户-----修改淘宝，支付宝收获地址（淘宝和支付宝收货地址统一且留一个且同一手机号）支付宝里的授权管理美化删除</p>
-                            <p class="closeMessage">关闭详情</p>
-                        </div>
-                    </div>*@
-
                 <div>
-                    <a href="#"><img src="~/Content/Images/banner/fanyongbanner.jpg" style="width:100%;"></a>                    
+                    <a href="#"><img src="~/Content/Images/banner/fanyongbanner.jpg" style="width:100%;"></a>
                 </div>
             </div>
             <!--滚动新闻-->
@@ -365,11 +349,14 @@
                             扫码立即申请
                         </div>
                     </div><div class="mui-pull-left mui-col-xs-6" style="padding-left: 10%;margin-top:-4px;">
-                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="copy(&#39;http://ortg.xyz/krqw&#39;)">
+                        <button type="button" data-url="" class="mui-btn mui-btn-primary mui-btn-outlined   Url  CopyUrl" data-clipboard-text="999" style="box-shadow: 3px 2px 6px #3975e2;" id="copy" onclick="CopyUrl()">
                             复制链接
                         </button>
                         <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 Url  JumpUrl " style="box-shadow: 3px 2px 6px #dd524d;">
                             立即申请
+                        </a>
+                        <a href="" data-url="" class="mui-btn mui-btn-danger mui-btn-outlined mt10 saveImg   " style="box-shadow: 3px 2px 6px #dd524d;">
+                            保存图片
                         </a>
                     </div>
                 </li>
@@ -506,7 +493,7 @@
                         html += "无数据";
                         html += "</li>";
                     }
-                    $(".data36").html(html);
+                    $(".data42").html(html);
                 },
                 error: function (e) {
                     console.error("服务器异常" + e);
@@ -530,15 +517,27 @@
                 data: { no: no },
                 type: 'Get',
                 success: function (data) {
-                    var type = $(".productTypeName").html();
-                    $(".detail .TypeAndName").html(type + data.Name);
-                    $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
-                    $(".detail .Icon").attr("src", data.Icon);
-                    $(".detail .Name").html(data.Name);
-                    $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
-                    $(".detail .Url").attr("data-url", data.Url);
-                    $(".detail .JumpUrl").attr("href", data.Url);
-                    $(".apply-shadow").show();
+                    if (data.ResponseStatus == "ok") {
+                        var type = $(".productTypeName").html();
+                        $(".detail .TypeAndName").html(type + data.Name);
+                        $(" .detail  .Describe").html(data.Describe1 + "</br>" + data.Describe2 + "</br>" + data.Describe3 + "</br>" + data.Describe4 + "</br>" + data.Describe5 + "</br>");
+                        $(".detail .Icon").attr("src", data.Icon);
+                        $(".detail .Name").html(data.Name);
+                        $(".detail  .QrCode").attr("src", qrCodeRootPath + data.QrCodeUrl);
+                        $(".detail .Url").attr("data-url", data.Url);
+
+                        $(".detail .Url").attr("data-clipboard-text", data.Url);
+
+                        $(".detail .JumpUrl").attr("href", data.Url);
+                        $(".detail .saveImg").attr("href", "/Product/SaveImg?no=" + data.No);
+                        $(".apply-shadow").show();
+                    } else if (data.ResponseStatus == "不是会员") {
+                        window.location.href = "/Product/UpdateVip";
+                    } else if (data.ResponseStatus == "未登录") {
+                        window.location.href = "/Me/Login";
+                    } else {
+                        console.log("获取详情，后台返回的 ResponseStatus 字段的值未定义");
+                    }
                 },
                 error: function () {
                     console.log("服务器异常");
@@ -546,7 +545,10 @@
             });
         }
 
-
+        //复制连接
+        function CopyUrl(obj) {
+            var clipboard = new ClipboardJS('.CopyUrl');
+        }
 
     </script>
 

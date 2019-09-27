@@ -91,6 +91,17 @@ namespace LoanMarket.DLL
         }
 
         /// <summary>
+        /// 减少佣金
+        /// </summary>
+        /// <param name="user"></param>
+        public int UpdateWithdrawAmount(LoanMarketUser user)
+        {
+            LoanMarketUser oldUser = db.LoanMarketUser.Where(a => a.No == user.No).FirstOrDefault();
+            oldUser.WithdrawAmount = user.WithdrawAmount;
+            return db.SaveChanges();
+        }
+
+        /// <summary>
         /// 创建用户
         /// </summary>
         /// <param name="loanMarketUser"></param>
@@ -100,6 +111,20 @@ namespace LoanMarket.DLL
             db.LoanMarketUser.Add(loanMarketUser);
             db.SaveChanges();
             return (int)loanMarketUser.No;
+        }
+
+
+        /// <summary>
+        /// 增加用户佣金
+        /// </summary>
+        /// <param name="userNo"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public int UpdateUserWithdrawAmount(int userNo, decimal amount)
+        {
+            LoanMarketUser loanMarketUser = db.LoanMarketUser.Where(a => a.No == userNo).FirstOrDefault();
+            loanMarketUser.WithdrawAmount = loanMarketUser.WithdrawAmount + amount;
+            return db.SaveChanges();
         }
 
     }

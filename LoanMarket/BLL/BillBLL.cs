@@ -61,7 +61,16 @@ namespace LoanMarket.BLL
                 CreateTime = DateTime.Now,
                 UpateTime = DateTime.Now
             };
-            return bill.CreateBill(spreadBill);
+            string res = bill.CreateBill(spreadBill);
+            //增加用户推广佣金
+            if (user.UpdateUserWithdrawAmount(Convert.ToInt32(model.FromUserNo), model.Amount) > 0)
+            {
+                return res;
+            }
+            else
+            {
+                return string.Empty;
+            }
 
         }
     }

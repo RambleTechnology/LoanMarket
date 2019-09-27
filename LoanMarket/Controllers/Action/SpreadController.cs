@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LoanMarket.BLL;
+using LoanMarket.BLL.ApiModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,7 +23,9 @@ namespace LoanMarket.Controllers.Action
             {
                 return "0";
             }
-            decimal amount = spread.GetMySpreadMoney(no);
+            UserBLL userBLL = new UserBLL();
+            UserApiModel userInfo = userBLL.GetUserInfo(Convert.ToInt32(no));
+            decimal amount = userInfo.WithdrawAmount;
             return Math.Round(amount, 2).ToString();
         }
 

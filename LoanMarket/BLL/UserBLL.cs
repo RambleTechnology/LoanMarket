@@ -54,6 +54,7 @@ namespace LoanMarket.BLL
                 apiModel.No = loanMarketUser.No;
                 apiModel.RealName = loanMarketUser.RealName;
                 apiModel.Sex = loanMarketUser.Sex;
+                apiModel.WithdrawAmount = loanMarketUser.WithdrawAmount;
             }
             return apiModel;
         }
@@ -147,6 +148,24 @@ namespace LoanMarket.BLL
         }
 
         /// <summary>
+        /// 减少佣金
+        /// </summary>
+        /// <param name="apiModel"></param>
+        /// <returns></returns>
+        public int UpdateWithdrawAmount(UserApiModel apiModel)
+        {
+            LoanMarketUser loanMarketUser = new LoanMarketUser();
+            if (apiModel != null && apiModel.No > 0)
+            {              
+                loanMarketUser.No = apiModel.No;
+                loanMarketUser.WithdrawAmount = apiModel.WithdrawAmount;             
+            }
+            return user.UpdateWithdrawAmount(loanMarketUser);
+        }
+
+
+
+        /// <summary>
         /// 创建用户
         /// </summary>
         /// <param name="userParamModel"></param>
@@ -228,6 +247,18 @@ namespace LoanMarket.BLL
             {
                 return false;
             }
+        }
+
+
+        /// <summary>
+        /// 更新用户佣金
+        /// </summary>
+        /// <param name="userNo"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public int UpdateUserWithdrawAmount(int userNo, decimal amount)
+        {
+            return user.UpdateUserWithdrawAmount(userNo, amount);
         }
 
     }

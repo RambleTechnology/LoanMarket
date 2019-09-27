@@ -301,35 +301,43 @@
                 <li>专栏</li>
             </ul>
             <!--热门-->
-            <div>
-                <ul style="padding-inline-start: 0px;" class="dataul1">
-                    <li>
-                    </li>
-                </ul>
+            <div class="">
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul1">
+                        <li>
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!--最新-->
-            <div class="hide">
-                <ul style="padding-inline-start: 0px;" class="dataul2">
-                    <li class="list2">
-                    </li>
-                </ul>
+            <div class="hide ">
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul2">
+                        <li class="list2">
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!--动态-->
-            <div class="hide">
-                <ul style="padding-inline-start: 0px;" class="dataul3">
-                    <li class="list3">
-                    </li>
-                </ul>
+            <div class="hide ">
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul3">
+                        <li class="list3">
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!--专栏-->
-            <div class="hide">
-                <ul style="padding-inline-start: 0px;" class="dataul4">
-                    <li class="list4">
-                    </li>
-                </ul>
+            <div class="hide ">
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul4">
+                        <li class="list4">
+                        </li>
+                    </ul>
+                </section>
             </div>
 
         </div>
@@ -428,7 +436,7 @@
                 data: { type: "最新" },
                 type: 'Get',
                 success: function (data) {
-                    
+
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {

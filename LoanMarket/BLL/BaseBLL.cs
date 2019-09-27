@@ -52,6 +52,10 @@ namespace LoanMarket.BLL
 
         protected BillDLL bill = new BillDLL();
 
+        protected WithdrawDLL withdraw = new WithdrawDLL();
+
+        protected WithdrawApplyDLL withdrawApply = new WithdrawApplyDLL();
+
 
 
 

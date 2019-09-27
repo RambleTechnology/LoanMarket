@@ -66,9 +66,9 @@
 
     <div class="mui-content">
         <div class="user-header" style="padding-top: 20px;    background: #00B8;">
-            <div class="user-head">
+            <div class="user-head" style="height:99px">
                 <a href="#">
-                    <img src="~/Content/Images/logo/logo.png" style=" float:left; margin-right:15px;">                    
+                    <img src="~/Content/Images/logo/logo.png" style=" float:left; margin-right:15px;">
                 </a>
                 <div class="fz16" style="margin-top:6px;"><span>昵称：</span><span class="nickName"> </span><span class="userGroup"></span></div>
                 <div class="id"><span>真实名称：</span><span class="realName">  杰克</span></div>
@@ -78,8 +78,9 @@
                     &nbsp;
                     <span>可提现:</span>
                     <span class="amount"></span>
-                    &nbsp;
-                    @*<input  type="button" value="提现" onclick="Withdraw()" class="withdraw"  />*@
+                </div>
+                <div class="mui-pull-right22">
+                    <input type="button" value="提现" onclick="Withdraw()" class="withdraw" />
                 </div>
             </div>
 
@@ -295,7 +296,10 @@
             })
         }
 
-        
+        //提现
+        function Withdraw() {
+            window.open("/Me/Withdraw");
+        }
 
     </script>
 

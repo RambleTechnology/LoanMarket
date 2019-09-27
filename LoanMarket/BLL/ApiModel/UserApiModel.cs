@@ -32,15 +32,15 @@ using System.Web;
 namespace LoanMarket.BLL.ApiModel
 {
     public class UserApiModel
-    {        
+    {
 
-       
+
         public string NickName { get; set; }
 
-     
+
         public string RealName { get; set; }
 
-     
+
         public string Mobile { get; set; }
 
         public string Sex { get; set; }
@@ -48,5 +48,7 @@ namespace LoanMarket.BLL.ApiModel
         public string Icon { get; set; }
 
         public int? No { get; set; }
+
+        public decimal WithdrawAmount { get; set; }
     }
 }

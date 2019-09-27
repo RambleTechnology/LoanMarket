@@ -17,5 +17,7 @@ namespace LoanMarket.Controllers.Action
         protected ForumBLL forum = new ForumBLL();
         protected SpreadBLL spread = new SpreadBLL();
         protected UserBLL user = new UserBLL();
+        protected WithdrawBLL withdraw = new WithdrawBLL();
+        protected WithdrawApplyBLL withdrawApply = new WithdrawApplyBLL();
     }
 }

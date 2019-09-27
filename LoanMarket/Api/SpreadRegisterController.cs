@@ -34,9 +34,17 @@ namespace LoanMarket.Api
             {
                 return "真实姓名不可为空";
             }
+            if (string.IsNullOrEmpty(userParamModel.userpwd))
+            {
+                return "密码不可为空";
+            }
             if (string.IsNullOrEmpty(userParamModel.Password))
             {
                 return "密码不可为空";
+            }
+            if (userParamModel.userpwd != userParamModel.Password)
+            {
+                return "两次密码不一致";
             }
             if (string.IsNullOrEmpty(userParamModel.smscode))
             {

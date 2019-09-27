@@ -23,6 +23,7 @@
     <script src="~/Content/Files/最新口子_files/clipboard.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <script src="~/Content/Files/U享圈_files/swiper.3.1.2.jquery.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
     <style>
         .notices .bg .cont {
             height: 30px;
@@ -281,11 +282,9 @@
             </form>
             <div class="lists1">
                 <p>今日实战下款|会员曝光<span><a href="/Product/ProductList?typeId=35">更多</a> </span></p>
-
             </div>
             <!--加载实时更新存活产品|会员曝光类别下的产品-->
-            <div class="card-bank">
-                @*<div class="mui-table-view-cell " style="text-align:left;">今日实战下款（会员曝光）</div>*@
+            <div class="card-bank">                
                 <ul class="clearListStyle mui-clearfix  data34"></ul>
             </div>
 
@@ -311,15 +310,12 @@
                         </a>
                     </li>
                 </ul>
-
             </div>
 
             <div class="lists1">
                 <p>
                     系列大全
-
                 </p>
-
             </div>
 
             <!--加载系列大全类别下的产品-->
@@ -436,8 +432,8 @@
                         for (var i = 0; i < data.length; i++) {
                             html += "<li>";
                             // --误删--
-                            html += "<a onclick='GetDetail(" + data[i].No + ")'>";
-                            //html += "<a href='" + data[i].Url + "'>";
+                            //html += "<a onclick='GetDetail(" + data[i].No + ")'>";
+                            html += "<a href='" + data[i].Url + "'>";
                             html += "<img src='" + data[i].Icon + "'><span class='txt' style='width: 100px;'>" + data[i].Name + "</span>";
                             html += "</a>";
                             html += "</li>";

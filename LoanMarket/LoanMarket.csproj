@@ -241,6 +241,7 @@
     <Compile Include="BLL\ApiModel\ProductTypeApiModel.cs" />
     <Compile Include="BLL\ApiModel\SpreadUserApiModel.cs" />
     <Compile Include="BLL\ApiModel\UserApiModel.cs" />
+    <Compile Include="BLL\ApiModel\WithdrawApplyApiModel.cs" />
     <Compile Include="BLL\BaseBLL.cs" />
     <Compile Include="BLL\BillBLL.cs" />
     <Compile Include="BLL\BillTypeEnum.cs" />
@@ -253,9 +254,12 @@
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="BLL\UserGroupBLL.cs" />
     <Compile Include="BLL\UserInfoBLL.cs" />
+    <Compile Include="BLL\WithdrawApplyBLL.cs" />
+    <Compile Include="BLL\WithdrawBLL.cs" />
     <Compile Include="Controllers\Action\AccountController.cs" />
     <Compile Include="Controllers\Action\BaseActionController.cs" />
     <Compile Include="Controllers\Action\CarjingController.cs" />
+    <Compile Include="Controllers\Action\Param\CreateWithdrawApplyParam.cs" />
     <Compile Include="Controllers\Action\SpreadController.cs" />
     <Compile Include="Controllers\BannerDetail.cs" />
     <Compile Include="Controllers\CardController.cs" />
@@ -275,6 +279,8 @@
     <Compile Include="DLL\ProductDLL.cs" />
     <Compile Include="DLL\SpreadDLL.cs" />
     <Compile Include="DLL\UserDLL.cs" />
+    <Compile Include="DLL\WithdrawApplyDLL.cs" />
+    <Compile Include="DLL\WithdrawDLL.cs" />
     <Compile Include="DLL\UserGroupDLL.cs" />
     <Compile Include="DLL\UserInfoDLL.cs" />
     <Compile Include="Global.asax.cs">
@@ -288,6 +294,8 @@
     <Compile Include="Models\LoanMarketProductType.cs" />
     <Compile Include="Models\LoanMarketSpread.cs" />
     <Compile Include="Models\LoanMarketSpreadBill.cs" />
+    <Compile Include="Models\LoanMarketWithdrawApply.cs" />
+    <Compile Include="Models\LoanMarketUserWithdraw.cs" />
     <Compile Include="Models\LoanMarketUser.cs" />
     <Compile Include="Models\LoanMarketUserGroup.cs" />
     <Compile Include="Models\LoanMarketUserInfo.cs" />
@@ -537,6 +545,7 @@
     <Content Include="Content\Files\详情_files\style.css" />
     <Content Include="Content\Files\详情_files\swiper.min.css" />
     <Content Include="Content\Files\详情_files\weui.min.css" />
+    <Content Include="Content\Images\account\zhifubao.jpg" />
     <Content Include="Content\Images\background\downloadbg.jpg" />
     <Content Include="Content\Images\banner\1.jpg" />
     <Content Include="Content\Images\banner\2.jpg" />
@@ -808,6 +817,7 @@
     <Content Include="Views\News\SearchCaijing.cshtml" />
     <Content Include="Views\Forum\Search.cshtml" />
     <Content Include="Views\Me\SmsLogin.cshtml" />
+    <Content Include="Views\Me\Withdraw.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

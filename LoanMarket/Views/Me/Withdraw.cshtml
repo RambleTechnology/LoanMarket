@@ -1,0 +1,217 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://47.104.186.251/News/JingwaiTie -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>提现</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
+    <script src="~/Scripts/Common/jquery.form.js"></script>
+
+
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #eee;
+            height: 100%;
+        }
+
+        .cashcont {
+            padding: 15px 15px 10px 15px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+        .jine, .password {
+            position: relative;
+        }
+
+        .cash {
+            color: #d2562f;
+            font-size: 18px;
+        }
+
+        input {
+            border: none;
+            font-size: 15px;
+        }
+
+        .rightbtn {
+            position: absolute;
+            color: blue;
+            top: 0;
+            right: 10px;
+            font-size: 14px;
+        }
+
+        .zhanghao {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            padding: 20px;
+            min-height: 68vh;
+        }
+
+            .zhanghao label {
+                float: left;
+                background-color: #fff;
+                margin-top: 37px;
+                margin-right: 5px;
+            }
+
+        .zhifubao {
+            float: left;
+            border: 1px solid #eee;
+            padding: 20px 20px 40px 30px;
+            width: 75%;
+            font-size: 15px;
+        }
+
+            .zhifubao img {
+                width: 30px;
+                float: left;
+                position: relative;
+                left: -5px;
+            }
+
+            .zhifubao p {
+                margin: 0 !important;
+            }
+
+                .zhifubao p:first-child {
+                    padding-bottom: 5px;
+                }
+
+        .jiantou {
+            position: absolute;
+            right: 12%;
+            top: 48px;
+            font-size: 22px;
+            color: #999;
+        }
+
+        .addnew {
+            text-align: center;
+            position: relative;
+            top: 10px;
+            color: #999;
+        }
+
+        .tixianbtn {
+            position: relative;
+            left: 20%;
+            display: inline-block;
+            text-align: center;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background: #d2562f;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <form action="/Account/CreateWithdrawApply" method="post" class="applyForm">
+        <div class="cashcont">
+            <p>账户可提现金额： <span class="￥"></span><span class="cash amount">0.00</span></p>
+            <div class="jine">
+                <p>
+                    提现金额：
+                    <input type="number" name="ApplyWithwrawAmount" class="ApplyWithwrawAmount" placeholder="提现金额" />
+                </p>
+                <span class="rightbtn" onclick="ApplyAll()">全部提现</span>
+            </div>
+            <div class="password">
+                <p>
+                    提现密码：
+                    <input type="password" name="WithdrawPassword" placeholder="请输入提现密码" />
+                </p>
+                <span class="rightbtn"><a href="/Me/Cashpsd">更改密码</a> </span>
+
+                <p>
+                    支付宝：
+                    <input type="text" name="ZFBAccount" placeholder="请输入支付宝账号" />
+                </p>
+                <p>
+                    备注：
+                    <input type="text" name="SpareField1" placeholder="备注..." />
+                </p>
+            </div>
+        </div>
+        <div class="zhanghao">
+            @*<div style="overflow: hidden">
+                    <label><input type="checkbox" value="" /></label>
+                    <div class="zhifubao">
+                        <img src="~/Content/Images/account/zhifubao.jpg" />
+                        <p>13813668876</p>
+                        <p>支付宝收款账号</p>
+                        <span class="jiantou">></span>
+                    </div>
+                </div>*@
+            @*<p class="addnew">+ 添加支付宝账号</p>*@
+            <button class="tixianbtn" type="submit">立即提现</button>
+        </div>
+    </form>
+    <input type="hidden" class="userNo" value="@ViewBag.UserNo " />
+    <script>
+        $(function () {
+            var userNo = $(".userNo").val();
+            //获取用户可提现金额
+            $.ajax({
+                url: "/Spread/GetMySpreadMoney",
+                data: { no: userNo },
+                type: 'Post',
+                success: function (data) {
+                    if (data) {
+                        $(".amount").html(data);
+                    }
+                },
+                error: function () {
+                    console.log("服务器异常");
+                }
+            });
+
+            //回调
+            $('.applyForm').ajaxForm(function (data) {
+                debugger
+                if (data) {
+                    if (data == "成功") {
+                        window.location.href = "/Me/Index";
+                    } else {
+                        alert(data);
+                    }
+                } else {
+                    alert("失败！");
+                }
+            });
+
+        })
+
+        //全部提现
+        function ApplyAll() {
+            debugger
+            var all = $(".amount").html().trim();
+            $(".ApplyWithwrawAmount").val(all);
+        }
+    </script>
+</body>
+</html>

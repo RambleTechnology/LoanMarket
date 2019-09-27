@@ -22,6 +22,7 @@
     <script type="text/javascript" src="~/Content/Files/交流专区_files/jquery.func.js"></script>
     <link rel="stylesheet" type="text/css" href="~/Content/Files/交流专区_files/swiper.min.css">
     <script type="text/javascript" src="~/Content/Files/交流专区_files/swiper.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
     <script src="~/Scripts/Common/common.js"></script>
     <style type="text/css">
         .mui-bar {
@@ -386,27 +387,33 @@
             </ul>
 
             <!--热门口子-->
-            <div >
-                <ul style="padding-inline-start: 0px;" class="dataul1">
-                    <li class="list2">
-                    </li>
-                </ul>
+            <div>
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul1">
+                        <li class="list2">
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!--信用卡科技-->
             <div class="hide">
-                <ul style="padding-inline-start: 0px;"class="dataul1">
-                    <li class="list3">
-                    </li>
-                </ul>
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul2">
+                        <li class="list3">
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!--视频技术-->
             <div class="hide">
-                <ul style="padding-inline-start: 0px;"class="dataul1">
-                    <li class="list4">
-                    </li>
-                </ul>
+                <section class="listdetail">
+                    <ul style="padding-inline-start: 0px;" class="dataul3">
+                        <li class="list4">
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
@@ -424,7 +431,7 @@
 
         // tab 切换
         window.onload = function () {
-            
+
             var oUl1 = document.getElementById("ul1");
             var aLi = oUl1.getElementsByTagName("li");
             var oDiv = document.getElementById("tab-list");

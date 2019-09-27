@@ -35,5 +35,9 @@ namespace LoanMarket.Models
         public string Password { get; set; }
 
         public int? IsPeculiarUser { get; set; }
+        /// <summary>
+        /// 可提现金额
+        /// </summary>
+        public decimal WithdrawAmount { get; set; }
     }
 }

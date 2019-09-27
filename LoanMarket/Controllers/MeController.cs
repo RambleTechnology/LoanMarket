@@ -102,6 +102,7 @@ namespace LoanMarket.Controllers
         /// 在线客服
         /// </summary>
         /// <returns></returns>
+        [IsLogin]
         public ActionResult ZaixianKefu()
         {
             return View();
@@ -114,6 +115,7 @@ namespace LoanMarket.Controllers
         /// 提现密码
         /// </summary>
         /// <returns></returns>
+        [IsLogin]
         public ActionResult Cashpsd()
         {
             return View();
@@ -138,6 +140,7 @@ namespace LoanMarket.Controllers
         /// 下载 app      
         /// </summary>
         /// <returns></returns>
+        [IsLogin]
         public ActionResult DownloadApp()
         {
             return View();
@@ -147,6 +150,7 @@ namespace LoanMarket.Controllers
         /// 下载安卓安装包
         /// </summary>
         /// <returns></returns>
+        [IsLogin]
         public FileResult DownloadAndroid()
         {
             string rootPath = Server.MapPath("~");
@@ -159,6 +163,7 @@ namespace LoanMarket.Controllers
         /// 下载ios安装包
         /// </summary>
         /// <returns></returns>
+        [IsLogin]
         public FileResult DownloadIos()
         {
             string rootPath = Server.MapPath("~");
@@ -202,7 +207,7 @@ namespace LoanMarket.Controllers
         /// <summary>
         /// 生成一个验证码
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>        
         public FileResult CreateVerifyCode()
         {
             VerifyCode vc = new VerifyCode();
@@ -355,6 +360,18 @@ namespace LoanMarket.Controllers
                 json.Data = new { Code = "NO", Message = "验证码发送失败，ClientException异常。" };
             }
             return json;
+        }
+
+        /// <summary>
+        /// 提现
+        /// </summary>
+        /// <returns></returns>        
+        [IsLogin]
+        public ActionResult Withdraw()
+        {
+            User userInfo = SessionTool.Get<User>("user");
+            ViewBag.UserNo = userInfo.No;
+            return View();
         }
 
 

@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="mui-content-padded">
-                <p><button type="submit" style=" background: #d2562f;border: none;"  class="mui-btn mui-btn-primary mui-btn-block mui-btn-sm weui-btn_disabled" disabled="disabled">提交</button></p>
+                <p><button type="submit" style=" background: #d2562f;border: none;" class="mui-btn mui-btn-primary mui-btn-block mui-btn-sm weui-btn_disabled" disabled="disabled">提交</button></p>
             </div>
         </form>
     </div>
@@ -149,16 +149,12 @@
             //表单校验
             $("#telephone,#smscode,#userpwd,#userpwd1").keyup(function () {
                 var $v1 = $.trim($("#telephone").val());
-                // var $v2=$.trim($("#verify").val());
+                var $v2 = $.trim($("#verify").val());
                 var $v3 = $.trim($("#userpwd").val());
                 var $v4 = $.trim($("#userpwd1").val());
-                //var $v5 = $.trim($("#smscode").val());
-                if ($v1 && $v3 && $v4) {
-                    if ($v3 == $v4) {
-                        $("button[type='submit']").attr('disabled', false).removeClass('weui-btn_disabled');
-                    } else {
-                        alert("两次密码不一致");
-                    }
+                var $v5 = $.trim($("#smscode").val());
+                if ($v1 && $v2 && $v3 && $v4 && $v5) {
+                    $("button[type='submit']").attr('disabled', false).removeClass('weui-btn_disabled');
                 } else {
                     $("button[type='submit']").attr('disabled', true).addClass('weui-btn_disabled');
                 }
@@ -181,7 +177,7 @@
             });
         });
 
-     
+
 
     </script>
 
