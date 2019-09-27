@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="aliyun-net-sdk-core, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\aliyun-net-sdk-core.1.5.3\lib\net45\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -250,6 +253,10 @@
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="BLL\UserGroupBLL.cs" />
     <Compile Include="BLL\UserInfoBLL.cs" />
+    <Compile Include="Controllers\Action\AccountController.cs" />
+    <Compile Include="Controllers\Action\BaseActionController.cs" />
+    <Compile Include="Controllers\Action\CarjingController.cs" />
+    <Compile Include="Controllers\Action\SpreadController.cs" />
     <Compile Include="Controllers\BannerDetail.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
@@ -292,6 +299,8 @@
     <Compile Include="PublicClass\ICache.cs" />
     <Compile Include="PublicClass\QrCode.cs" />
     <Compile Include="PublicClass\SessionTool.cs" />
+    <Compile Include="PublicClass\VerifyCode.cs" />
+    <Compile Include="PublicModels\SmsResponseModel.cs" />
     <Compile Include="PublicModels\User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -528,6 +537,7 @@
     <Content Include="Content\Files\详情_files\style.css" />
     <Content Include="Content\Files\详情_files\swiper.min.css" />
     <Content Include="Content\Files\详情_files\weui.min.css" />
+    <Content Include="Content\Images\background\downloadbg.jpg" />
     <Content Include="Content\Images\banner\1.jpg" />
     <Content Include="Content\Images\banner\2.jpg" />
     <Content Include="Content\Images\banner\3.jpg" />
@@ -537,6 +547,12 @@
     <Content Include="Content\Images\banner\hotproject.jpg" />
     <Content Include="Content\Images\banner\indexbanner5.jpg" />
     <Content Include="Content\Images\banner\xiaoebanner.jpg" />
+    <Content Include="Content\Images\caijing\caijingtop.jpg" />
+    <Content Include="Content\Images\caijing\caijingtop2.jpg" />
+    <Content Include="Content\Images\caijing\caijingtop3.jpg" />
+    <Content Include="Content\Images\luntan\luntantop1.jpg" />
+    <Content Include="Content\Images\luntan\luntantop2.jpg" />
+    <Content Include="Content\Images\luntan\luntantop3.jpg" />
     <Content Include="Content\Images\Common\kefu50.jpg" />
     <Content Include="Content\Images\Common\kefu50.png" />
     <Content Include="Content\Images\Common\kefu8.jpg" />
@@ -580,6 +596,7 @@
     <Content Include="Content\Images\Icon\9.png" />
     <Content Include="Content\Images\Icon\a.png" />
     <Content Include="Content\Images\Icon\b.png" />
+    <Content Include="Content\Images\Icon\bk.png" />
     <Content Include="Content\Images\Icon\c.png" />
     <Content Include="Content\Images\Icon\d.png" />
     <Content Include="Content\Images\Icon\download.png" />
@@ -594,6 +611,14 @@
     <Content Include="Content\Images\Icon\icon8.jpg" />
     <Content Include="Content\Images\Icon\login.jpg" />
     <Content Include="Content\Images\Icon\loginout.png" />
+    <Content Include="Content\Images\Icon\me\bk.png" />
+    <Content Include="Content\Images\Icon\me\download.png" />
+    <Content Include="Content\Images\Icon\me\icon1.jpg" />
+    <Content Include="Content\Images\Icon\me\icon2.jpg" />
+    <Content Include="Content\Images\Icon\me\icon7.jpg" />
+    <Content Include="Content\Images\Icon\me\loginout.png" />
+    <Content Include="Content\Images\Icon\me\upvip.png" />
+    <Content Include="Content\Images\Icon\me\分享赚钱.png" />
     <Content Include="Content\Images\Icon\share.png" />
     <Content Include="Content\Images\Icon\upvip.png" />
     <Content Include="Content\Images\Icon\xuanfu1.jpg" />
@@ -603,6 +628,8 @@
     <Content Include="Content\Images\Icon\我的分享.png" />
     <Content Include="Content\Images\Icon\联系客服.png" />
     <Content Include="Content\Images\Icon\退出登录.png" />
+    <Content Include="Content\Images\logo\logo.png" />
+    <Content Include="Content\Images\myshare\myshare.jpg" />
     <Content Include="Content\Images\SpreadQrCode\201909182021086875.png" />
     <Content Include="Content\Images\SpreadQrCode\201909182022113641.png" />
     <Content Include="Content\Images\SpreadQrCode\201909182023128771.png" />
@@ -692,8 +719,6 @@
     <Content Include="Content\Files\bannerDetailimg\.DS_Store" />
     <Content Include="Content\Files\bannerDetailimg\._.DS_Store" />
     <Content Include="Content\Files\U享圈_files\UpdateVip.cshtml" />
-    <Content Include="DowmloadApp\loanmarket.apk" />
-    <Content Include="DowmloadApp\loanmarket.ipa" />
     <Content Include="html\XiaoXuanfuDetailLeft.cshtml" />
     <Content Include="html\XuanfuDetailLeft.cshtml" />
     <Content Include="html\XuanfuDetailRight.cshtml" />
@@ -702,6 +727,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\jquery.form.js" />
+    <Content Include="Scripts\Common\mui.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -779,11 +805,19 @@
     <Content Include="Views\Card\ShenkaJiqiao.cshtml" />
     <Content Include="Views\Product\XiaoXuanfuDetailLeft.cshtml" />
     <Content Include="Views\Product\XuanfuDetailLeft.cshtml" />
+    <Content Include="Views\News\SearchCaijing.cshtml" />
+    <Content Include="Views\Forum\Search.cshtml" />
+    <Content Include="Views\Me\SmsLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\ProductDetailQrCodeImg\" />
     <Folder Include="Content\Images\QrCode\" />
+    <Folder Include="DowmloadApp\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\BaseAction\" />
+    <Folder Include="Views\Carjing\" />
+    <Folder Include="Views\Spread\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

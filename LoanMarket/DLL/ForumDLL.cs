@@ -47,6 +47,17 @@ namespace LoanMarket.DLL
         }
 
         /// <summary>
+        /// 搜索帖子
+        /// </summary>
+        /// <returns></returns>
+        public List<LoanMarketForum> FindForumByKeyword(string keyword)
+        {
+            return db.LoanMarketForum
+                .Where(a => a.Title.Contains(keyword))
+                .OrderByDescending(a => a.CreateTime).ToList();
+        }
+
+        /// <summary>
         /// 查找帖子详情
         /// </summary>
         /// <param name="no"></param>

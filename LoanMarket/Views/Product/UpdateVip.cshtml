@@ -11,6 +11,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Common/mui.min.js"></script>
+
     <style>
 
         .vipbanner img {
@@ -106,7 +110,7 @@
             footer p span {
                 color: #333;
                 margin-left: 20px;
-                font-size:15px;
+                font-size: 15px;
             }
 
         .vipmes {
@@ -114,7 +118,7 @@
             position: relative;
             top: -12px;
             left: 20px;
-            font-size:15px;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -222,9 +226,14 @@
             </div>
         </div>
         <footer>
-            <p>￥98 <span><input type="checkbox" name="NAME" value="VALUE1">我已阅读并同意协议</span></p>
+            <p>
+                ￥98 <span>
+                    <input type="checkbox" class="checkboxok" value="">
+                    我已阅读并同意协议
+                </span>
+            </p>
             <a href="/Product/VipArgee" class="vipmes">《会员协议》</a>
-            <a href="/Pay/UpgradePeculiarUser" class="buyNow">立即购买</a>
+            <a href="#" onclick="Buy(this)" class="buyNow">立即购买</a>
         </footer>
     </div>
 
@@ -247,6 +256,16 @@
                     }
                     aDiv[this.index].className = "show";
                 }
+            }
+        }
+
+        function Buy(obj) {
+            var check = document.getElementsByTagName('input')[0];
+            debugger
+            if (check.checked == false) {
+                alert("请同意会员协议");
+            } else {
+                $(obj).attr("href", "/Pay/UpgradePeculiarUser");
             }
         }
     </script>

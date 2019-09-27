@@ -51,5 +51,10 @@ namespace LoanMarket.Api.ParamModel
         /// </summary>
         public string FromUserMobile { get; set; }
 
+        /// <summary>
+        /// 短信验证码
+        /// </summary>
+        public string smscode { get; set; }
+
     }
 }

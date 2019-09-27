@@ -84,7 +84,6 @@
             -webkit-tap-highlight-color: transparent;
         }
     </style>
-
     <style type="text/css">
         button {
             line-height: 1 !important;
@@ -110,14 +109,138 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
-        .list {
-            padding-left: 12px;
+        #tab-list {
+            padding-bottom: 60px;
         }
 
-            .list p {
-                border-bottom: 1px solid #ddd;
-                padding: 10px 0 10px 0;
+        #ul1 {
+            border-bottom: 2px solid #8B4513;
+            padding-left: 8px;
+            margin: 0;
+        }
+
+            #ul1 li {
+                display: inline-block;
+                width: 22%;
+                line-height: 30px;
+                text-align: center;
+                border: 1px solid #999;
+                border-bottom: none;
+                margin-left: 5px;
             }
+
+                #ul1 li:hover {
+                    cursor: pointer;
+                }
+
+                #ul1 li.active {
+                    border-top: 2px solid #8B4513;
+                    border-bottom: 2px solid #FFFFFF;
+                }
+
+        #tab-list div {
+            border-top: none;
+        }
+
+            #tab-list div li {
+                line-height: 30px;
+                list-style: none;
+                position: relative;
+                overflow: hidden;
+                border-bottom: 1px solid #ddd;
+            }
+
+                #tab-list div li p {
+                    padding: 0px 0 0px 15px;
+                    padding-right: 15px;
+                }
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .searchinput {
+            width: 70% !important;
+            background: #fff !important;
+            margin: 10px 0 0 10px !important;
+            text-align: left !important;
+            font-size: 14px !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px !important;
+            border-radius: 8px !important;
+        }
+
+        .listdetail {
+            background: #fff;
+        }
+
+            .listdetail ul {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+                .listdetail ul li {
+                    padding-top: 10px;
+                }
+
+            .listdetail ul {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+                .listdetail ul li {
+                    padding-top: 10px;
+                }
+
+        .liulanliang, .zuozhe, .liulanliangone, .zuozheone {
+            float: left;
+            width: 50%;
+        }
+
+
+        .liulanliangone {
+            position: relative;
+            right: -84px;
+        }
+
+        .listdetail p span {
+            padding-left: 7px;
+        }
+
+            .listdetail p span:first-child {
+                padding-left: 0;
+            }
+
+        .list1 {
+            position: relative;
+        }
+
+        .photoone {
+            position: absolute;
+            top: 14px;
+        }
+
+            .photoone img {
+                width: 70px;
+                height: 70px;
+                border-radius: 7px;
+            }
+
+        .newsListone {
+            padding-left: 100px !important;
+            line-height: 22px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
     </style>
 </head>
 
@@ -133,46 +256,313 @@
 
 
     <div class="mui-content">
-        <img src="~/Content/Static/caijingtop.jpg" style="width: 100%" />
-        <p>
-            财经新闻版块:列表
-        </p>
-        <div class="list"></div>
+
+        <!--banner-->
+        <div class="banner">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);height:160px;">
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px;height:160px;" src="~/Content/Images/caijing/caijingtop.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px;height:160px;" src="~/Content/Images/caijing/caijingtop2.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide" style="width: 375px;">
+                        <a href="#">
+                            <img style="min-height: 188px;height:160px;" src="~/Content/Images/caijing/caijingtop3.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active">
+                    </span>
+                    <span class="swiper-pagination-bullet">
+                    </span>
+                    <span class="swiper-pagination-bullet "></span>
+                </div>
+            </div>
+        </div>
+
+        <!--搜索-->
+        <div>
+            <input type="search" class="searchinput  keyword" placeholder="请输入文章标题关键字">
+            <button style="line-height: 1.42 !important;margin: 10px 0 10px 10px;width:21%;" type="button" onclick="Search()">搜索</button>
+        </div>
+
+        <div id="tab-list">
+            <ul id="ul1">
+                <li class="active">热门</li>
+                <li>最新</li>
+                <li>动态</li>
+                <li>专栏</li>
+            </ul>
+            <!--热门-->
+            <div>
+                <ul style="padding-inline-start: 0px;" class="dataul1">
+                    <li>
+                    </li>
+                </ul>
+            </div>
+
+            <!--最新-->
+            <div class="hide">
+                <ul style="padding-inline-start: 0px;" class="dataul2">
+                    <li class="list2">
+                    </li>
+                </ul>
+            </div>
+
+            <!--动态-->
+            <div class="hide">
+                <ul style="padding-inline-start: 0px;" class="dataul3">
+                    <li class="list3">
+                    </li>
+                </ul>
+            </div>
+
+            <!--专栏-->
+            <div class="hide">
+                <ul style="padding-inline-start: 0px;" class="dataul4">
+                    <li class="list4">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 
 
     <script type="text/javascript" src="~/Content/Files/最新口子_files/jquery-2.2.3.min.js"></script>
+    <script src="~/Content/Files/U享圈_files/swiper.3.1.2.jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Content/Files/U享圈_files/swiper.3.1.2.min.css">
 
     <script>
+
+        window.onload = function () {
+            var oUl1 = document.getElementById("ul1");
+            var aLi = oUl1.getElementsByTagName("li");
+            var oDiv = document.getElementById("tab-list");
+            var aDiv = oDiv.getElementsByTagName("div");
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].onmouseover = function () {
+                    for (var i = 0; i < aLi.length; i++) {
+                        aLi[i].className = "";
+                    }
+                    this.className = "active";
+                    for (var j = 0; j < aDiv.length; j++) {
+                        aDiv[j].className = "hide";
+                    }
+                    aDiv[this.index].className = "show";
+                }
+            }
+
+            var banner_swiper = new Swiper('.banner .swiper-container', {
+                pagination: '.banner .swiper-pagination',
+                autoplay: 3000
+            });
+        }
+    </script>
+    <script>
+
+        //轮播
+        var banner_swiper = new Swiper('.banner .swiper-container', {
+            pagination: '.banner .swiper-pagination',
+            autoplay: 3000
+        });
 
         init();
 
         function init() {
-            //获取列表
+            //获取列表 - list1
             $.ajax({
                 url: "/api/HeiKeji",
-                data: { type: "财经" },
+                data: { type: "热门" },
                 type: 'Get',
                 success: function (data) {
-                    debugger
+
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
+                            html += "<li class='list1'>";
+                            html += "<p class='newsListone'>";
+                            html += "<a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "  </s>  ";
+                            html += " </p>";
 
-                            html += "<p>  <a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "  </s>   </p>";
+                            html += "<p class='photoone'>";
+                            html += "<a><img class='CarryImg'  src='" + data[i].CarryImg1 + "' title='附图1'  /></a>";
+                            html += "</p>";
 
+                            html += "<p class='liulanliangone'>";
+                            html += "<a>";
+                            html += "<span>浏览量</span><span>" + data[i].ViewCount + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+
+                            html += "<p class='zuozheone'>";
+                            html += "<a>";
+                            html += "<span>作者</span><span>" + data[i].CreateUserNickName + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+                            html += "</li>";
                         }
                     } else {
                         html += "<li>";
                         html += "无数据";
                         html += "</li>";
                     }
-                    $(".list").html(html);
+                    $(".dataul1").html(html);
                 },
                 error: function (e) {
                     console.error("服务器异常" + e);
                 }
             });
+
+            //获取列表 - list2
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "最新" },
+                type: 'Get',
+                success: function (data) {
+                    
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li class='list1'>";
+                            html += "<p class='newsListone'>";
+                            html += "<a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "  </s>  ";
+                            html += " </p>";
+
+                            html += "<p class='photoone'>";
+                            html += "<a><img class='CarryImg'  src='" + data[i].CarryImg1 + "' title='附图1'  /></a>";
+                            html += "</p>";
+
+                            html += "<p class='liulanliangone'>";
+                            html += "<a>";
+                            html += "<span>浏览量</span><span>" + data[i].ViewCount + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+
+                            html += "<p class='zuozheone'>";
+                            html += "<a>";
+                            html += "<span>作者</span><span>" + data[i].CreateUserNickName + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".dataul2").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取列表 - list3
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "动态" },
+                type: 'Get',
+                success: function (data) {
+
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li class='list1'>";
+                            html += "<p class='newsListone'>";
+                            html += "<a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "  </s>  ";
+                            html += " </p>";
+
+                            html += "<p class='photoone'>";
+                            html += "<a><img class='CarryImg'  src='" + data[i].CarryImg1 + "' title='附图1'  /></a>";
+                            html += "</p>";
+
+                            html += "<p class='liulanliangone'>";
+                            html += "<a>";
+                            html += "<span>浏览量</span><span>" + data[i].ViewCount + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+
+                            html += "<p class='zuozheone'>";
+                            html += "<a>";
+                            html += "<span>作者</span><span>" + data[i].CreateUserNickName + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".dataul3").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+
+            //获取列表 - list4
+            $.ajax({
+                url: "/api/HeiKeji",
+                data: { type: "专栏" },
+                type: 'Get',
+                success: function (data) {
+
+                    var html = "";
+                    if (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            html += "<li class='list1'>";
+                            html += "<p class='newsListone'>";
+                            html += "<a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "  </s>  ";
+                            html += " </p>";
+
+                            html += "<p class='photoone'>";
+                            html += "<a><img class='CarryImg'  src='" + data[i].CarryImg1 + "' title='附图1'  /></a>";
+                            html += "</p>";
+
+                            html += "<p class='liulanliangone'>";
+                            html += "<a>";
+                            html += "<span>浏览量</span><span>" + data[i].ViewCount + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+
+                            html += "<p class='zuozheone'>";
+                            html += "<a>";
+                            html += "<span>作者</span><span>" + data[i].CreateUserNickName + "</span>";
+                            html += "</a>";
+                            html += "</p>";
+                            html += "</li>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".dataul4").html(html);
+                },
+                error: function (e) {
+                    console.error("服务器异常" + e);
+                }
+            });
+        }
+
+        //搜索
+        function Search() {
+            var str = $(".keyword").val();
+            if (!str || str.length == 0 || str == "") {
+                alert("请输入查询关键字");
+                return;
+            }
+            window.location.href = "/News/SearchCaijing?keyword=" + str;
         }
 
     </script>

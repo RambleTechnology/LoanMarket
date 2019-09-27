@@ -32,5 +32,25 @@ namespace LoanMarket.Models
         public int? LikeCount { get; set; }
 
         public DateTime? UpdateTime { get; set; }
+
+        /// <summary>
+        /// 状态：0：未审核；1：可用
+        /// </summary>
+        public String Status { get; set; }
+
+        /// <summary>
+        /// 创建人名称
+        /// </summary>
+        public String CreateUserName { get; set; }
+
+        /// <summary>
+        /// 附图1
+        /// </summary>
+        public String CarryImg1 { get; set; }
+
+        /// <summary>
+        /// 附图2
+        /// </summary>
+        public String CarryImg2 { get; set; }
     }
 }

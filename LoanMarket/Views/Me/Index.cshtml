@@ -68,12 +68,19 @@
         <div class="user-header" style="padding-top: 20px;    background: #00B8;">
             <div class="user-head">
                 <a href="#">
-                    <img src="~/Content/Images/Icon/login.jpg" style=" float:left; margin-right:15px;">
-                 
+                    <img src="~/Content/Images/logo/logo.png" style=" float:left; margin-right:15px;">                    
                 </a>
                 <div class="fz16" style="margin-top:6px;"><span>昵称：</span><span class="nickName"> </span><span class="userGroup"></span></div>
                 <div class="id"><span>真实名称：</span><span class="realName">  杰克</span></div>
-                <div class="mui-pull-right22"><span>编号：</span><span class="no">11059</span></div>
+                <div class="mui-pull-right22">
+                    <span>编号：</span><span class="no">11059</span>
+                    &nbsp;
+                    &nbsp;
+                    <span>可提现:</span>
+                    <span class="amount"></span>
+                    &nbsp;
+                    @*<input  type="button" value="提现" onclick="Withdraw()" class="withdraw"  />*@
+                </div>
             </div>
 
             @*<div class="cont">
@@ -101,23 +108,30 @@
                 </div>*@
         </div>
 
+        <div style="color:aliceblue;">
+
+        </div>
+
         <div class="muilist">
             <ul class="mui-table-view mui-grid-view mui-grid-12">
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/Edit?userId=@Model">
-                        <img src="~/Content/Images/Icon/icon1.jpg" />
+                        @*<img src="~/Content/Images/Icon/icon1.jpg" />*@
+                        <img src="~/Content/Images/Icon/me/icon1.jpg" />
                         <div class="mui-media-body">修改资料</div>
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/MyShare">
-                        <img src="~/Content/Images/Icon/icon2.jpg" />
+                        @*<img src="~/Content/Images/Icon/icon2.jpg" />*@
+                        <img src="~/Content/Images/Icon/me/icon2.jpg" />
                         <div class="mui-media-body">我的分享</div>
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Product/UpdateVip">
-                        <img src="~/Content/Images/Icon/upvip.png">
+                        @*<img src="~/Content/Images/Icon/upvip.png">*@
+                        <img src="~/Content/Images/Icon/me/upvip.png" />
                         <div class="mui-media-body">升级会员</div>
                     </a>
                 </li>
@@ -141,7 +155,8 @@
                     </li>*@
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/Sharemoney">
-                        <img src="~/Content/Images/Icon/分享赚钱.png" />
+                        @*<img src="~/Content/Images/Icon/分享赚钱.png" />*@
+                        <img src="~/Content/Images/Icon/me/分享赚钱.png" />
                         <div class="mui-media-body">分享赚钱</div>
                     </a>
                 </li>
@@ -153,7 +168,8 @@
                     </li>*@
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/DownloadApp">
-                        <img src="~/Content/Images/Icon/download.png" />
+                        @*<img src="~/Content/Images/Icon/download.png" />*@
+                        <img src="~/Content/Images/Icon/me/download.png" />
                         <div class="mui-media-body">下载app</div>
                     </a>
                 </li>
@@ -171,7 +187,8 @@
                     </li>*@
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/ZaixianKefu">
-                        <img src="~/Content/Images/Icon/icon7.jpg" />
+                        @*<img src="~/Content/Images/Icon/icon7.jpg" />*@
+                        <img src="~/Content/Images/Icon/me/icon7.jpg" />
                         <div class="mui-media-body">联系客服</div>
                     </a>
                 </li>
@@ -184,13 +201,15 @@
 
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="/Me/Cashpsd">
-                        <img src="~/Content/Files/个人中心_files/bk.png">
+                        @*<img src="~/Content/Files/个人中心_files/bk.png">*@
+                        <img src="~/Content/Images/Icon/me/bk.png" />
                         <div class="mui-media-body">提现密码</div>
                     </a>
                 </li>
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
                     <a href="#" onclick="Loginout()">
-                        <img src="~/Content/Images/Icon/loginout.png" />
+                        @*<img src="~/Content/Images/Icon/loginout.png" />*@
+                        <img src="~/Content/Images/Icon/me/loginout.png" />
                         <div class="mui-media-body">退出登录</div>
                     </a>
                 </li>
@@ -227,13 +246,28 @@
                 data: { no: userNo },
                 type: 'Get',
                 success: function (data) {
-                 
+
                     if (data) {
                         $(".userGroup").html("(" + data.Name + ")");
-                    } 
+                    }
                 },
                 error: function () {
                     console.error("服务器异常");
+                }
+            });
+
+            //获取用户可提现金额
+            $.ajax({
+                url: "/Spread/GetMySpreadMoney",
+                data: { no: userNo },
+                type: 'Post',
+                success: function (data) {
+                    if (data) {
+                        $(".amount").html(data);
+                    }
+                },
+                error: function () {
+                    console.log("服务器异常");
                 }
             });
 
@@ -260,6 +294,9 @@
                 }
             })
         }
+
+        
+
     </script>
 
 </body>

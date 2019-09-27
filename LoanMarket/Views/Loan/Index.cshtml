@@ -131,7 +131,7 @@
             font-weight: bold;
             border-bottom: 1px solid #999;
             padding: 10px 0 10px;
-            padding-left:15px;
+            padding-left: 15px;
         }
 
         .kejistyle1 ul {
@@ -155,10 +155,72 @@
             overflow: hidden;
             border-bottom: 1px solid #eee;
             padding: 0 0 10px 0;
-            font-size:15px;
+            font-size: 15px;
         }
+
         .HeikejiData p {
-            font-size:15px !important;
+            font-size: 15px !important;
+        }
+
+
+        .listdetail {
+            position: relative;
+            overflow: hidden;
+            padding: 15px 15px 15px 15px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .liulanliang, .zuozhe, .liulanliangone, .zuozheone {
+            float: left;
+            width: 50%;
+            padding-top: 3px;
+        }
+
+
+        .liulanliangone {
+            position: relative;
+            right: -84px;
+        }
+
+        .zuozheone {
+            padding-left: 20px;
+        }
+
+        .listdetail p span {
+            padding-left: 7px;
+        }
+
+            .listdetail p span:first-child {
+                padding-left: 0;
+            }
+
+        .list1 {
+            position: relative;
+        }
+
+        .photoone {
+            position: absolute;
+            top: 14px;
+        }
+
+            .photoone img {
+                width: 70px;
+                height: 70px;
+                border-radius: 7px;
+            }
+
+        .newsListone {
+            position: relative;
+            top: -4px;
+            padding-left: 85px !important;
+            line-height: 22px;
+            height: 47px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     </style>
 </head>
@@ -195,12 +257,12 @@
                     </div>
                     <div class="swiper-slide swiper-slide-prev" style="width: 375px;">
                         <a href="/Me/Sharemoney">
-                            <img style="min-height: 188px;height:160px;" src="~/Content/Files/U享圈_files/indexbanner4.jpg">
+                            <img style="min-height: 160px;height:160px;" src="~/Content/Files/U享圈_files/indexbanner4.jpg">
                         </a>
                     </div>
                     <div class="swiper-slide swiper-slide-active" style="width: 375px;">
                         <a href="#">
-                            <img style="height:200px;" src="~/Content/Images/banner/indexbanner5.jpg">
+                            <img style="height:160px;" src="~/Content/Images/banner/indexbanner5.jpg">
                         </a>
                     </div>
                 </div>
@@ -288,7 +350,7 @@
                             <div class="text"><a href="/News/NewsDetails?no=3"> 最新“合伙人”模式上线，点击查看详情</a></div>
                             <div class="back"><img src="~/Content/Files/U享圈_files/back.png"></div>
                         </li>
-                       
+
                     </div>
                 </a>
             </ul>
@@ -298,7 +360,8 @@
         <div class="muilist">
             <ul class="mui-table-view mui-grid-view mui-grid-12 typeData">
                 <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
-                    <a href="/News/XinshouZhinan">
+                    @*<a href="/News/XinshouZhinan" >*@
+                    <a href="#" onclick="GoXinshouzhinan()">
                         <img style="width:45px;height:45px;" src="/Content/Files/U享圈_files/indexbtmicon2.jpeg">
                         <div class="mui-media-body dial-txt" style="font-size:13px;">新手指南</div>
                     </a>
@@ -328,40 +391,7 @@
         <!--每日黑科技-->
         <div class="mui-table-view mt10">
             <div class="mui-table-view-cell pub-tit1">每日黑科技</div>
-            <div class="HeikejiData"  style="padding:10px 0 10px 15px;">
-                <div class="lists">
-                    <a href="/News/HeiKeJi" class="kejistyle1">
-                        <div>淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style="padding-top:10px;">卡农桃夭夭   <span>5344阅读</span></p></div>
-                        <img style="width:80px;height:50px;background:pink;" />
-                    </a>
-                </div>
-                <div class="lists">
-                    <a href="#" class="kejistyle1">
-                        <div style="width:100%;">淘宝用户专享口子，恢复正常放款，件均万元起批，最高...<p style="padding-top:10px;">卡农桃夭夭   <span>5344阅读</span></p></div>
-                    </a>
-                </div>
-                <div class="lists">
-                    <a href="#" class="kejistyle1">
-                        <div style="width:100%;padding-bottom:10px;">淘宝用户专享口子，恢复正常放款，件均万元起批，最高...</div>
-                        <ul>
-                            <li><img style="width:80px;height:50px;background:pink;" /></li>
-                            <li><img style="width:80px;height:50px;background:pink;" /></li>
-                            <li><img style="width:80px;height:50px;background:pink;" /></li>
-                        </ul>
-                        <p>卡农桃夭夭   <span style="padding-left:15px;">5344阅读</span></p>
-                    </a>
-                </div>
-                @*<a onclick="getqrcode(&#39;411&#39;)" class="mui-pull-left mui-col-xs-6 mui-table-view-cell uxin-1 productlist">
-                        <div class="display-box">
-                            <div class="img"><img src="~/Content/Files/U享圈_files/5cf90c52159ae.png"></div>
-                            <div class="box-flex-1">
-                                <div class="title">发财钱包</div>
-                                <div class="des fz12"><font class="text-red">5914</font>人已放款</div>
-                            </div>
-                        </div>
-                        <div style="margin-top: 10px;color: #666;font-size: 13px;">机审无回访</div>
-                        <div class="label">hot</div>
-                    </a>*@
+            <div class="HeikejiData">
 
             </div>
         </div>
@@ -430,7 +460,7 @@
                             html += "</div>";
                             html += "<div class='text'><a href='/News/NewsDetail?no=" + data[i].No + "'> " + data[i].Title + "</a></div>";
                             html += "<div class='back'><img src='~/Content/Files/U享圈_files/back.png'></div>";
-                            
+
                             html += " </li>";
                         }
                     } else {
@@ -459,8 +489,26 @@
                     var html = "";
                     if (data) {
                         for (var i = 0; i < data.length; i++) {
-                            html += "<p>  <a href='/News/HeikejiDetail?no=" + data[i].No + "'>" + data[i].Title + "   </a></p>";
-                            html += "<hr>";
+                            html += "<section class='listdetail'>";
+
+                            html += "<p class='newsListone'>";
+                            html += "<a href='/News/NewsDetails?no=" + data[i].No + "'>  " + data[i].Title + "    ";
+                            html += "</a>";
+                            html += " </p>";
+
+                            html += "<p class='photoone'>";
+                            html += "<a> <img class='CarryImg'  src='" + data[i].CarryImg1 + "' title='附图1'  /></a>";
+                            html += "</p>";
+
+                            html += "<p class='liulanliangone'>";
+                            html += "<a> <span>浏览量</span><span>" + data[i].ViewCount + "</span></a>";
+                            html += "</p>";
+
+                            html += "<p class='zuozheone'>";
+                            html += "<a><span>作者</span><span>" + data[i].CreateUserNickName + "</span></a>";
+                            html += "</p>";
+
+                            html += " </section>";
                         }
                     } else {
                         html += "<li>";
@@ -582,6 +630,12 @@
                 $(".newsWrapper").animate({ top: topHeight }, 200)
                 n === $('.newsWrapper').children('li').length - 1 ? n = 0 : n++
             }, 3000)
+        }
+
+    </script>
+    <script>
+        function GoXinshouzhinan() {
+            window.open("/News/XinshouZhinan");
         }
 
     </script>

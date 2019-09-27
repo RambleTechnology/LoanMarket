@@ -76,11 +76,18 @@
             top: 8%;
             display: block;
         }
+
+        .copylink {
+            position: absolute;
+            top: 37%;
+            right: 22%;
+            z-index: 22;
+        }
     </style>
 </head>
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
     <div class="bgimg">
-        <button type="button" data-url="" class="CopyUrl" data-clipboard-text="@ViewBag.SpreadUrl "  onclick="CopyUrl()">
+        <button type="button" data-url="" class="CopyUrl  copylink" data-clipboard-text="@ViewBag.SpreadUrl " onclick="CopyUrl()">
             复制链接
         </button>
         <div class="top">

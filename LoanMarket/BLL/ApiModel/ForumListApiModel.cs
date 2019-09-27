@@ -60,5 +60,16 @@ namespace LoanMarket.BLL.ApiModel
         /// </summary>
         public string CreateUserNickName { get; set; }
 
+        /// <summary>
+        /// 附图1
+        /// </summary>
+        public string CarryImg1 { get; set; }
+
+
+        /// <summary>
+        /// 附图2
+        /// </summary>
+        public string CarryImg2 { get; set; }
+
     }
 }

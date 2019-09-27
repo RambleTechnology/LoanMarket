@@ -75,6 +75,32 @@ namespace LoanMarket.BLL
         }
 
         /// <summary>
+        /// 查找用户 - 通过手机号
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
+        public User GetUserInfoByMobile(string mobile)
+        {
+            LoanMarketUser loanMarketUser = user.GetUser(mobile);
+            if (loanMarketUser != null && loanMarketUser.No > 0)
+            {
+                return new User()
+                {
+                    No = loanMarketUser.No,
+                    Icon = loanMarketUser.Icon,
+                    Mobile = loanMarketUser.Mobile,
+                    NickName = loanMarketUser.NickName,
+                    RealName = loanMarketUser.RealName,
+                    Sex = loanMarketUser.Sex
+                };
+            }
+            else
+            {
+                return new User();
+            }
+        }
+
+        /// <summary>
         /// 查找用户 - 根据手机号和密码
         /// </summary>
         /// <param name="mobile"></param>

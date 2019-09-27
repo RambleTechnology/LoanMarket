@@ -17,78 +17,81 @@
     <link rel="stylesheet" href="~/Content/Files/注册_files/mui.min.css">
     <link rel="stylesheet" href="~/Content/Files/注册_files/iconfont.css">
     <link rel="stylesheet" href="~/Content/Files/注册_files/style.css">
-    <script>
-
-        var APP_PATH = "/index", CONST_PUBLIC = "/static", API_URL = "/Api", GUID = "";
-    </script>
     <script type="text/javascript" src="~/Content/Files/注册_files/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/注册_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/注册_files/jquery.func.js"></script>
     <script type="text/javascript" src="~/Content/Files/注册_files/jquery.form.js"></script>
 
-    @*<script language="javascript">
-            //验证手机号
-            function is_mobile(mobile) {
-                if (mobile == "") {
+    <script language="javascript">
+        //验证手机号
+        function is_mobile(mobile) {
+            if (mobile == "") {
+                return false;
+            } else {
+                if (! /^0{0,1}(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9])[0-9]{8}$/.test(mobile)) {
                     return false;
-                } else {
-                    if (! /^0{0,1}(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9])[0-9]{8}$/.test(mobile)) {
-                        return false;
-                    }
-                    return true;
                 }
+                return true;
+            }
+        }
+
+        $(function () {
+            //倒计时
+            $.countDown = function () {
+                var text, text1 = "SECOND秒后重发";
+                var i = 60;
+                var intval = setInterval(function () {
+                    text = text1.replace("SECOND", i);
+                    $("#btn-sms").text(text).addClass("disabled").attr("disabled", true);
+                    i--;
+                    if (i < 0) {
+                        clearInterval(intval);
+                        $("#btn-sms").text("点击发送").removeClass("disabled").attr("disabled", false);
+                    }
+                }, 1000);
             }
 
-            $(function () {
-                //倒计时
-                $.countDown = function () {
-                    var text, text1 = "SECOND秒后重发";
-                    var i = 60;
-                    var intval = setInterval(function () {
-                        text = text1.replace("SECOND", i);
-                        $("#btn-sms").text(text).addClass("disabled").attr("disabled", true);
-                        i--;
-                        if (i < 0) {
-                            clearInterval(intval);
-                            $("#btn-sms").text("点击发送").removeClass("disabled").attr("disabled", false);
-                        }
-                    }, 1000);
-                }
-
-                $("#btn-sms").click(function () {
-                    var $id = "telephone";
-                    var url = "/index/login/smscode.html";
-                    var v = $("#" + $id).val();
-                    if (!is_mobile(v)) {
-                        alerterr("请正确输入您的手机号");
-                        $("#" + $id).focus();
-                        return false;
-                    } else {
-                        var verify = $("#verify").val();
-                        if (!verify) {
-                            alerterr("请输入图形验证码");
-                        }
-                        $("#btn-sms").text('发送中...').attr("disabled", true);
-                        var data = { "type": 1, "check": 2, "telephone": v, "verify": verify };
-                        $.ajax({
-                            url: url,
-                            data: data,
-                            success: function (data) {
-                                if (data.code == "1") {
-                                    alertok('短信已发送');
-                                    $.countDown();
-                                    $("#btn-submit").attr("disabled", false);
-                                } else {
-                                    $("#btn-sms").text('获取验证码').attr("disabled", false);
-                                    alerterr(data.msg);
-                                    $("#btn-submit").attr("disabled", true);
-                                }
-                            }
-                        });
+            //点击发送手机验证码
+            $("#btn-sms").click(function () {
+                var $id = "telephone";
+                var v = $("#" + $id).val();
+                if (!is_mobile(v)) {
+                    alerterr("请正确输入您的手机号");
+                    $("#" + $id).focus();
+                    return false;
+                } else {
+                    var verify = $("#verify").val();
+                    if (!verify) {
+                        alerterr("请输入图形验证码");
                     }
-                });
+                    $("#btn-sms").text('发送中...').attr("disabled", true);
+                    var data = { "mobile": v, "verifyCode": verify };
+                    $.ajax({
+                        url: "/Me/SendSms",
+                        data: data,
+                        type: "Post",
+                        dataType: "Json",
+                        success: function (data) {
+                            debugger
+                            if (data.Code == "OK") {
+                                alertok('短信已发送');
+                                $.countDown();
+                                $("#btn-submit").attr("disabled", false);
+                                $("button[type='submit']").attr('disabled', false).removeClass('weui-btn_disabled');
+                            } else {
+                                $("#btn-sms").text('获取验证码').attr("disabled", false);
+                                alerterr(data.Message);
+                                $("#btn-submit").attr("disabled", true);
+                            }
+                        },
+                        error: function (e) {
+                            console.log("发送手机验证码报异常。");
+                        }
+                    });
+                }
             });
-        </script>*@
+        });
+    </script>
 </head>
 
 
@@ -104,28 +107,28 @@
                 </div>
                 <div class="mui-input-row">
                     <label>昵  称</label>
-                    <input type="tel" class="mui-input-clear" id="telephone" name="NickName" placeholder="请输入昵称" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    <input type="text" class="mui-input-clear" id="telephone" name="NickName" placeholder="请输入昵称" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
                 </div>
                 <div class="mui-input-row">
                     <label>真实名称</label>
-                    <input type="tel" class="mui-input-clear" id="telephone" name="RealName" placeholder="请输入真实名称" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    <input type="text" class="mui-input-clear" id="telephone" name="RealName" placeholder="请输入真实名称" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
                 </div>
-                @*<div class="mui-input-row dxyzm">
-                        <label>图形验证码</label>
-                        <div class="box-flex-1" style="position: relative;">
-                            <input type="number" name="verify" id="verify" class="mui-input-clear" placeholder="请输入图形验证码" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
-                        </div>
-                        <div class="dxyzmbox">
-                            <img id="vimg" width="120" height="38" title="看不清楚?换一张!" alt="" onclick="this.src=&#39;/captcha?random=&#39;+Math.random()" src="~/Content/Files/注册_files/captcha">
-                        </div>
-                    </div>*@
-                @*<div class="mui-input-row dxyzm">
-                        <label>短信验证码</label>
-                        <div class="box-flex-1" style="position: relative;">
-                            <input type="number" id="smscode" name="smscode" class="mui-input-clear" placeholder="请输入短信验证码" data-input-clear="3"><span class="mui-icon mui-icon-clear mui-hidden"></span>
-                        </div>
-                        <div class="dxyzmbox"><button type="button" id="btn-sms" class="mui-btn">获取验证码</button></div>
-                    </div>*@
+                <div class="mui-input-row dxyzm">
+                    <label>图形验证码</label>
+                    <div class="box-flex-1" style="position: relative;">
+                        <input type="text" name="verify" id="verify" class="mui-input-clear" placeholder="请输入图形验证码" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    </div>
+                    <div class="dxyzmbox">
+                        <img id="vimg" width="120" height="38" title="看不清楚?换一张!" alt="" onclick="this.src = this.src + '?'" src="/Me/CreateVerifyCode/">
+                    </div>
+                </div>
+                <div class="mui-input-row dxyzm">
+                    <label>短信验证码</label>
+                    <div class="box-flex-1" style="position: relative;">
+                        <input type="number" id="smscode" name="smscode" class="mui-input-clear" placeholder="请输入短信验证码" data-input-clear="3"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    </div>
+                    <div class="dxyzmbox"><button type="button" id="btn-sms" class="mui-btn">获取验证码</button></div>
+                </div>
                 <div class="mui-input-row">
                     <label>密码</label>
                     <input type="password" class="mui-input-clear" placeholder="请输入密码" name="userpwd" id="userpwd" maxlength="20" data-input-clear="4"><span class="mui-icon mui-icon-clear mui-hidden"></span>
@@ -136,7 +139,7 @@
                 </div>
             </div>
             <div class="mui-content-padded">
-                <p><button type="submit" class="mui-btn mui-btn-primary mui-btn-block mui-btn-sm weui-btn_disabled" disabled="disabled">提交</button></p>
+                <p><button type="submit" style=" background: #d2562f;border: none;"  class="mui-btn mui-btn-primary mui-btn-block mui-btn-sm weui-btn_disabled" disabled="disabled">提交</button></p>
             </div>
         </form>
     </div>
@@ -144,22 +147,24 @@
         $(document).ready(function () {
 
             //表单校验
-            //$("#telephone,#smscode,#userpwd,#userpwd1").keyup(function () {
-            //    var $v1 = $.trim($("#telephone").val());
-            //    // var $v2=$.trim($("#verify").val());
-            //    var $v3 = $.trim($("#userpwd").val());
-            //    var $v4 = $.trim($("#userpwd1").val());
-            //    //var $v5 = $.trim($("#smscode").val());
-            //    if ($v1 && $v3 && $v4) {
-            //        if ($v3 == $v4) {
-            //            $("button[type='submit']").attr('disabled', false).removeClass('weui-btn_disabled');
-            //        } else {
-            //            alert("两次密码不一致");
-            //        }
-            //    } else {
-            //        $("button[type='submit']").attr('disabled', true).addClass('weui-btn_disabled');
-            //    }
-            //}).keyup();
+            $("#telephone,#smscode,#userpwd,#userpwd1").keyup(function () {
+                var $v1 = $.trim($("#telephone").val());
+                // var $v2=$.trim($("#verify").val());
+                var $v3 = $.trim($("#userpwd").val());
+                var $v4 = $.trim($("#userpwd1").val());
+                //var $v5 = $.trim($("#smscode").val());
+                if ($v1 && $v3 && $v4) {
+                    if ($v3 == $v4) {
+                        $("button[type='submit']").attr('disabled', false).removeClass('weui-btn_disabled');
+                    } else {
+                        alert("两次密码不一致");
+                    }
+                } else {
+                    $("button[type='submit']").attr('disabled', true).addClass('weui-btn_disabled');
+                }
+            }).keyup();
+
+
 
             //提交注册
             $('#registerForm').ajaxForm(function (data) {
@@ -175,6 +180,9 @@
                 }
             });
         });
+
+     
+
     </script>
 
 </body>

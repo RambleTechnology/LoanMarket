@@ -37,6 +37,8 @@ namespace LoanMarket.BLL.ApiModel
 
         public string Title { get; set; }
 
+        public string Type { get; set; }
+
         public string ContentBody { get; set; }
 
         public DateTime? CreateTime { get; set; }
@@ -51,6 +53,12 @@ namespace LoanMarket.BLL.ApiModel
 
         public DateTime? UpdateTime { get; set; }
 
+
+        /// <summary>
+        /// 状态：0：未审核；1：可用
+        /// </summary>
+        public String Status { get; set; }
+
         /// <summary>
         /// 创建者用户图像
         /// </summary>
@@ -60,5 +68,16 @@ namespace LoanMarket.BLL.ApiModel
         /// 创建者用户昵称
         /// </summary>
         public string CreateUserNickName { get; set; }
+
+        /// <summary>
+        /// 附图1
+        /// </summary>
+        public string CarryImg1 { get; set; }
+
+
+        /// <summary>
+        /// 附图2
+        /// </summary>
+        public string CarryImg2 { get; set; }
     }
 }

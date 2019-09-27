@@ -87,5 +87,17 @@ namespace LoanMarket.Controllers
         {
             return View(no);
         }
+
+        /// <summary>
+        /// 财经模块   搜索
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <returns></returns>
+        public ActionResult SearchCaijing(string keyword)
+        {
+            ViewBag.Keyword = keyword;
+            return View();
+        }
+
     }
 }

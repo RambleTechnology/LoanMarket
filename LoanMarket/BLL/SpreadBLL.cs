@@ -190,6 +190,16 @@ namespace LoanMarket.BLL
         }
 
         /// <summary>
+        /// 查找我的推广金额
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public decimal GetMySpreadMoney(string no)
+        {
+            return spread.GetMySpreadMoney(no);
+        }
+
+        /// <summary>
         /// 查找用户上级代理
         /// </summary>
         /// <param name="userNo"></param>

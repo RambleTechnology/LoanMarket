@@ -70,7 +70,35 @@ namespace LoanMarket.BLL
         /// <returns></returns>
         public List<ForumListApiModel> FindForumList(string type)
         {
-            List<LoanMarketForum> list = forum.FindForumList().Where(a => a.Type == type).ToList();
+            List<LoanMarketForum> list = forum.FindForumList().Where(a => a.Type == type && a.Status == "1").ToList();
+            List<ForumListApiModel> data = new List<ForumListApiModel>(list.ConvertAll<ForumListApiModel>(e =>
+            {
+                return new ForumListApiModel
+                {
+                    No = e.No,
+                    CommentCount = e.CommentCount,
+                    ContentBody = e.ContentBody,
+                    CreateTime = e.CreateTime,
+                    CreateUserNo = e.CreateUserNo,
+                    LikeCount = e.LikeCount,
+                    ViewCount = e.ViewCount,
+                    Title = e.Title,
+                    CarryImg1 = e.CarryImg1,
+                    CarryImg2 = e.CarryImg2,
+                    CreateUserNickName = e.CreateUserName
+                };
+            }));
+            return data;
+        }
+
+        /// <summary>
+        /// 搜索帖子
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <returns></returns>
+        public List<ForumListApiModel> SearchForumList(string keyword, List<string> types)
+        {
+            List<LoanMarketForum> list = forum.FindForumByKeyword(keyword);
             List<ForumListApiModel> data = new List<ForumListApiModel>(list.ConvertAll<ForumListApiModel>(e =>
             {
                 return new ForumListApiModel
@@ -97,8 +125,21 @@ namespace LoanMarket.BLL
         public ForumDetailApiModel GetForumDetail(int no)
         {
             LoanMarketForum e = forum.GetForumDetail(no);
-            ForumDetailApiModel data = new ForumDetailApiModel() { No = e.No, CommentCount = e.CommentCount, ContentBody = e.ContentBody, CreateTime = e.CreateTime, CreateUserNo = e.CreateUserNo, LikeCount = e.LikeCount, ViewCount = e.ViewCount, Title = e.Title };
-            data.CreateUserNickName = e.CreateUserNo > 0 ? user.GetUser((int)e.CreateUserNo).NickName : user.GetUser(1).NickName;
+            ForumDetailApiModel data = new ForumDetailApiModel()
+            {
+                No = e.No,
+                CommentCount = e.CommentCount,
+                ContentBody = e.ContentBody,
+                CreateTime = e.CreateTime,
+                CreateUserNo = e.CreateUserNo,
+                LikeCount = e.LikeCount,
+                ViewCount = e.ViewCount,
+                Title = e.Title,
+                Status = e.Status,
+                CreateUserNickName = e.CreateUserName,
+                CarryImg1 = e.CarryImg1,
+                CarryImg2 = e.CarryImg2
+            };
             return data;
         }
 
@@ -108,7 +149,20 @@ namespace LoanMarket.BLL
         public void CreateForum(ForumDetailApiModel detail)
         {
             detail.No = forum.FindForumList().Count + 1;
-            LoanMarketForum loanMarketForum = new LoanMarketForum() { ContentBody = detail.ContentBody, CreateTime = DateTime.Now, CreateUserNo = detail.CreateUserNo, Id = GuidTool.GenerateKey(), Title = detail.Title, No = detail.No, UpdateTime = DateTime.Now, ViewCount = 0, CommentCount = 0, LikeCount = 0 };
+            LoanMarketForum loanMarketForum = new LoanMarketForum()
+            {
+                ContentBody = detail.ContentBody,
+                CreateTime = DateTime.Now,
+                CreateUserNo = detail.CreateUserNo,
+                Id = GuidTool.GenerateKey(),
+                Title = detail.Title,
+                Type = detail.Type,
+                No = detail.No,
+                UpdateTime = DateTime.Now,
+                ViewCount = 0,
+                CommentCount = 0,
+                LikeCount = 0
+            };
             forum.CreateForum(loanMarketForum);
         }
 

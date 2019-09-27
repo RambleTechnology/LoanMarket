@@ -1,4 +1,5 @@
 ﻿using LoanMarket.Api.ParamModel;
+using LoanMarket.PublicClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,14 @@ namespace LoanMarket.Api
             if (string.IsNullOrEmpty(userParamModel.Password))
             {
                 return "密码不可为空";
+            }
+            if (string.IsNullOrEmpty(userParamModel.smscode))
+            {
+                return "短信验证码不可为空";
+            }
+            if (SessionTool.Get<string>("SmsCode") != userParamModel.smscode)
+            {
+                return "短信验证码错误";
             }
             if (userParamModel.FromUserNo == 0)
             {

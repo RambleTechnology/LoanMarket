@@ -37,9 +37,10 @@ namespace LoanMarket.Api
         /// 新增帖子
         /// </summary>
         /// <param name="value"></param>
-        public void Post([FromBody]ForumDetailApiModel detail)
+        public int Post([FromBody]ForumDetailApiModel detail)
         {
             forum.CreateForum(detail);
+            return 1;
         }
 
         /// <summary>

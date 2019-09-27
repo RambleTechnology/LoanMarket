@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.uxiangquan.cn/index/index/product/day/2.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>论坛 - 搜索</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body class="mui-ios mui-ios-11 mui-ios-11-0">
+    <div class="mui-content">
+        <p>搜索结果</p>
+        <div class="list">
+
+        </div>
+
+        <input type="hidden" value="@ViewBag.Keyword" class="keyword" />
+    </div>
+
+    <script>
+
+        init();
+
+        function init() {
+            var keyword = $(".keyword").val();
+            debugger
+            $.ajax({
+                url: "/Carjing/SearchArticle",
+                data: { keyword: keyword, type: "forum" },
+                type: 'Post',
+                success: function (data) {
+                    debugger
+                    var html = "";
+                    if (data && data.Data) {
+                        var list = JSON.parse(data.Data);
+                        for (var i = 0; i < list.length; i++) {
+                            html += "<p>  <a href='/News/NewsDetails?no=" + list[i].No + "'>  " + list[i].Title + "  </s>   </p>";
+                        }
+                    } else {
+                        html += "<li>";
+                        html += "无数据";
+                        html += "</li>";
+                    }
+                    $(".list").html(html);
+                },
+                error: function (e) {
+                    console.log("服务器异常");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

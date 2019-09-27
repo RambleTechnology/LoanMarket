@@ -78,5 +78,15 @@ namespace LoanMarket.DLL
             return db.LoanMarketSpread.Where(a => a.ToUserNo == userNo).ToList();
         }
 
+        /// <summary>
+        /// 查询用户推广金
+        /// </summary>
+        /// <param name="no"></param>
+        /// <returns></returns>
+        public decimal GetMySpreadMoney(string no)
+        {
+            return db.LoanMarketSpreadBill.Where(a => a.FromUserNo == no).Sum(a => a.Amount);
+        }
+
     }
 }

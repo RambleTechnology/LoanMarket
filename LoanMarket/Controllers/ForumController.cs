@@ -38,7 +38,19 @@ namespace LoanMarket.Controllers
         {
             return View();
         }
-        
+
+        /// <summary>
+        /// 搜索帖子
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <returns></returns>
+        public ActionResult Search(string keyword)
+        {
+            ViewBag.Keyword = keyword;
+            return View();
+        }
+
+
 
     }
 }

@@ -11,18 +11,56 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
+    <script src="~/Scripts/Common/mui.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
 
+        .mui-content {
+            text-align: center;
+            position: absolute;
+            background-image: url('../../Content/Images/background/downloadbg.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+        }
+
+        .android {
+            background: #0978f1;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .ios {
+            background: #FF4E22;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
 
 </head>
 
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
     <div class="mui-content">
-        <p>
-            <a href="/Me/DownloadAndroid">下载安卓版本</a>
+        <p style="padding-top: 67%;">
+            <a href="/Me/DownloadAndroid" class="android">下载安卓版本</a>
         </p>
 
         <p>
-            <a href="/Me/DownloadIos">下载IOS版本</a>
+            <a href="/Me/DownloadIos" class="ios">下载IOS版本</a>
         </p>
     </div>
 

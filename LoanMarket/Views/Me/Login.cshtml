@@ -20,33 +20,100 @@
     <script type="text/javascript" src="~/Content/Files/登录_files/mui.min.js"></script>
     <script type="text/javascript" src="~/Content/Files/登录_files/jquery.func.js"></script>
     <script type="text/javascript" src="~/Content/Files/登录_files/jquery.form.js"></script>
+
+    <style>
+        .loginbg .loginbox .mui-input-row {
+            line-height: 50px;
+            height: 45px;
+            position: relative;
+            margin-bottom: 20px;
+            text-indent: 10px;
+            box-shadow: 0 0 4px #999;
+        }
+
+        .mui-input-group .mui-input-row:after {
+            height: 0;
+        }
+
+        .loginbg .forget {
+            float: right;
+            padding-right: 52px;
+            margin-top: 0;
+        }
+
+        .sendbutton {
+            position: absolute;
+            background: #eee;
+            border-radius: 0;
+            border: none;
+            height: 32px;
+            margin-top: 7px;
+            right: 10px;
+            width: 80px;
+            color: #666;
+        }
+
+        input::placeholder {
+            color: #666 !important;
+            font-size: 16px;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #666 !important;
+            font-size: 16px;
+        }
+
+        .loginbg .loginbox .mui-input-row input {
+            width: calc(100% - 15px);
+        }
+
+        .loginbg .forget a {
+            color: #d2562f;
+        }
+    </style>
 </head>
 <body class="mui-ios mui-ios-11 mui-ios-11-0">
     <div class="mui-content loginbg">
         <div class="logo">
-            <img src="~/Content/Images/Icon/login.jpg" />           
+            <img src="~/Content/Images/logo/logo.png" />
         </div>
         <form action="/Api/Login" method="post" id="loginForm" class="loginbox ">
             <input type="hidden" id="gourl" value="/index/member/index.html">
-            <div class="mui-input-group">
+            <div class="mui-input-group pwdinput">
                 <div class="mui-input-row">
-                    <label>账号</label>
+                    <label></label>
                     <input type="tel" class="mui-input-clear Mobile" placeholder="请输入手机号码" name="Mobile" id="telephone" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
                 </div>
                 <div class="mui-input-row">
-                    <label>密码</label>
+                    <label></label>
                     <input type="password" class="mui-input-clear Password" placeholder="请输入登录密码" name="Password" id="userpwd" maxlength="50" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
                 </div>
             </div>
-            <a href="#" class="wjmm">忘记密码</a>
+            <div class="mui-input-group checkinput" style="display: none;">
+                <div class="mui-input-row">
+                    <label> </label>
+                    <input type="tel" class="mui-input-clear Mobile" placeholder="请输入手机号码" name="Mobile" id="telephone" maxlength="11" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+                <div class="mui-input-row">
+                    <label> </label>
+                    <input type="password" class="mui-input-clear Password" placeholder="请输入验证码" name="Password" id="userpwd" maxlength="50" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                    <button class="sendbutton">发送</button>
+                </div>
+            </div>
+            <span id="checkClick">
+                <a href="/Me/SmsLogin">
+                    验证码登录
+                </a>
+            </span>
+
             <div class="mui-content-padded">
-                <button type="submit" class="mui-btn mui-btn-block mui-btn-sm">登录</button>
+                <button type="submit" class="mui-btn mui-btn-block mui-btn-sm" style="background: #d2562f;border:none;">登录</button>
             </div>
         </form>
         <div class="forget">
-            还没有账号？<a href="/Me/Register">立即注册</a>
+            还没有账号？<a href="/Me/Register">立即注册 | </a>
+            <a href="/Me/Login#" class="wjmm">忘记密码</a>
         </div>
-        <div class="copy">©2019 北京漫步科技有限公司 <br><a href="http://www.beian.miit.gov.cn/"></a></div>
     </div>
 
 
